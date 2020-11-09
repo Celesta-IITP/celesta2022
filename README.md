@@ -1,9 +1,5 @@
 # celesta2020
 
-'''
-npm run build
-'''
-
 ### For contributing
 Create a .env file in the root directory and the file should contain the following fields
 
