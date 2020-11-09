@@ -20,5 +20,6 @@ npm run add
 # Run client build
 npm run build
 
-# Server + Static Build Client - http://localhost:4500/
+# Server + Static Build Client - http://localhost:4500
+npm start
 ```
