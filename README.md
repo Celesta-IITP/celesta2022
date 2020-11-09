@@ -14,8 +14,8 @@ EMAIL_PASSWORD = password<br>
 ### Quick Start
 
 ```bash
-# Install dependencies
-npm i
+# Install dependencies (Server & Client)
+npm run add
 
 # Run client build
 npm run build
