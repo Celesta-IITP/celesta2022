@@ -1,0 +1,65 @@
+{
+  "name": "celesta20react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "antd": "^4.2.5",
+    "axios": "^0.19.2",
+    "chart.js": "2.9.3",
+    "classnames": "^2.2.6",
+    "email-validator": "^2.0.4",
+    "formik": "^2.1.4",
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8",
+    "jquery": "^3.5.1",
+    "mdbreact": "^4.27.0",
+    "moment": "2.24.0",
+    "node-sass": "^4.14.1",
+    "nouislider": "14.2.0",
+    "perfect-scrollbar": "1.5.0",
+    "react": "^16.13.1",
+    "react-awesome-modal": "^2.0.5",
+    "react-bootstrap-switch": "15.5.3",
+    "react-chartjs-2": "2.9.0",
+    "react-countup": "^4.3.3",
+    "react-datetime": "2.16.3",
+    "react-dom": "^16.13.1",
+    "react-mouse-particles": "^1.1.2",
+    "react-photo-gallery": "^8.0.0",
+    "react-redux": "^7.2.0",
+    "react-responsive-carousel": "^3.2.9",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "^3.4.3",
+    "react-web-tabs": "^1.0.1",
+    "reactstrap": "8.4.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "tabletop": "^1.6.3",
+    "yup": "^0.29.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

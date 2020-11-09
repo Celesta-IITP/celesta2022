@@ -1,0 +1,80 @@
+.man_el {
+  width: 50%;
+}
+.man_el:nth-child(1) {
+  -webkit-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+.man_cont.s--man_el-active .man_el:nth-child(1):not(.s--active) {
+  -webkit-transform: scale(0.5) translate3d(0%, 0, 0);
+          transform: scale(0.5) translate3d(0%, 0, 0);
+  opacity: 0;
+  transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: transform 0.95s, opacity 0.95s;
+  transition: transform 0.95s, opacity 0.95s, -webkit-transform 0.95s;
+}
+.man_el:nth-child(1) .man_el__inner {
+  transition-delay: 0s;
+}
+.man_el:nth-child(1) .man_el__bg {
+  -webkit-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+}
+.man_el:nth-child(1) .man_el__bg:before {
+  transition-delay: 0s;
+  background-image: url("../../../assets/event_img/engconvo.jpg");
+}
+.man_el:nth-child(2) {
+  -webkit-transform: translate3d(105.2083333333%, 0, 0);
+          transform: translate3d(105.2083333333%, 0, 0);
+  -webkit-transform-origin: 155.2083333333% 50%;
+          transform-origin: 155.2083333333% 50%;
+}
+.man_cont.s--man_el-active .man_el:nth-child(2):not(.s--active) {
+  -webkit-transform: scale(0.5) translate3d(105.2083333333%, 0, 0);
+          transform: scale(0.5) translate3d(105.2083333333%, 0, 0);
+  opacity: 0;
+  transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: transform 0.95s, opacity 0.95s;
+  transition: transform 0.95s, opacity 0.95s, -webkit-transform 0.95s;
+}
+.man_el:nth-child(2) .man_el__inner {
+  transition-delay: 0.1s;
+}
+.man_el:nth-child(2) .man_el__bg {
+  -webkit-transform: translate3d(-15.36%, 0, 0);
+          transform: translate3d(-15.36%, 0, 0);
+}
+.man_el:nth-child(2) .man_el__bg:before {
+  transition-delay: 0.1s;
+  background-image: url("../../../assets/event_img/photography.jpg");
+}
+@media only screen and (max-width: 1000px) {
+
+  .man_el {
+    height: 50% !important;
+  }
+
+  .man_cont.s--man_el-active .man_el:nth-child(1):not(.s--active) {
+    transform: none;
+    opacity: 0;
+    transition: opacity 0.95s;
+  }
+  .man_cont.s--man_el-active .man_el:nth-child(2):not(.s--active) {
+    -webkit-transform: translate3d(0, 105.2083333333%, 0);
+          transform: translate3d(0, 105.2083333333%, 0);
+    transition: opacity 0.95s;
+  }
+  .man_el:nth-child(2) {
+    -webkit-transform: translate3d(0, 105.2083333333%, 0);
+            transform: translate3d(0, 105.2083333333%, 0);
+    -webkit-transform-origin: 155.2083333333% 50%;
+            transform-origin: 155.2083333333% 50%;
+  }
+  .man_el:nth-child(2) .man_el__bg {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}

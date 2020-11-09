@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+.landing-page-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.landing-page-main {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.astronaut {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  max-height: 900px;
+  padding-top: 16.5%;
+  transform: translate(-50%, -80%);
+  animation: astroanimate 5s linear infinite;
+}
+@media only screen and (max-width: 400px) {
+  .astronaut {
+    width: 320px; 
+    height: 430px;
+  }
+}
+@keyframes astroanimate {
+  0% {
+    transform: translate(-50%, -80%);
+  }
+  50% {
+    transform: translate(-50%, -70%);
+  }
+  100% {
+    transform: translate(-50%, -80%);
+  }
+}
+.parallax-container {
+  display: block;
+  height: 750px;
+  width: 100%;
+  overflow: hidden;
+}
+.parallax-container div {
+  position: absolute;
+  top: 0;
+  background-position: center !important;
+  transform: translateY(0px);
+  height: 750px;
+  width: 100%;
+}
+.bg {
+  background-color: #030f33;
+}
+#content {
+  position: relative;
+  background-color: #030f33;
+  color: #ffffff;
+  padding: 100px 0;
+}
+#content h1 {
+  font-size: 100px;
+  text-align: center;
+  font-family: "Markazi Text", serif;
+}
+#content p {
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  #top-circle {
+    display: none;
+  }
+}
+
+.wrapper-prn {
+  margin: 80px auto;
+  width: auto;
+  max-width: 700px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.img1 {
+  width: auto;
+  border-radius: 100px;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.object_astronaut {
+  animation: rotate-astronaut 200s infinite linear both alternate;
+}
+
+.box_astronaut {
+  z-index: 110 !important;
+  position: absolute;
+  top: 60%;
+  right: 20%;
+  will-change: transform;
+  animation: move-astronaut 25s infinite linear both alternate;
+}
