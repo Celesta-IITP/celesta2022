@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "add": "npm i && cd client && npm i",
     "start": "node app.js",
     "dev": "nodemon app.js",
     "build": "cd client && npm run build"
