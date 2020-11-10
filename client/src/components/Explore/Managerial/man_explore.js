@@ -21,7 +21,7 @@ class man_explore extends Component {
 
 	getEvents = () => {
 		const token = localStorage.getItem("token");
-		axios.get('http://localhost:4500/api/events/bytype/managerial/detailed/',{
+		axios.get('/api/events/bytype/managerial/detailed/',{
 			headers: {
 			  "Content-Type": "application/json",
 			  Authorization: token,

@@ -21,7 +21,7 @@ class susp_explore extends Component {
 
 	getEvents = () => {
 		const token = localStorage.getItem("token");
-		axios.get('http://localhost:4500/api/events/bytype/school/detailed/',{
+		axios.get('/api/events/bytype/school/detailed/',{
 			headers: {
 			  "Content-Type": "application/json",
 			  Authorization: token,

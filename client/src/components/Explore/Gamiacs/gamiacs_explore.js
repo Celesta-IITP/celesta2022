@@ -23,7 +23,7 @@ class gamiacs_explore extends Component {
     const token = localStorage.getItem("token");
     console.log(token);
     axios
-      .get("http://localhost:4500/api/events/bytype/gamiacs/detailed/", {
+      .get("/api/events/bytype/gamiacs/detailed/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: token,

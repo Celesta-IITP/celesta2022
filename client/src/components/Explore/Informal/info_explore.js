@@ -23,7 +23,7 @@ class info_explore extends Component {
     const token = localStorage.getItem("token");
     console.log(token);
     axios
-      .get("http://localhost:4500/api/events/bytype/onsite/detailed/", {
+      .get("/api/events/bytype/onsite/detailed/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: token,

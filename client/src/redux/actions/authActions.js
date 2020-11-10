@@ -10,8 +10,6 @@ import {
   AUTH_ERROR,
 } from "../actions/types";
 import { returnErrors, clearErrors } from "./errorActions";
-//const serverUrl = " https://celesta-backend-iitp.herokuapp.com/api";
-const serverUrl = " http://localhost:4500/api";
 export const registerUser = (data) => async (dispatch) => {
   try {
     console.log("In auth actions");
@@ -19,7 +17,7 @@ export const registerUser = (data) => async (dispatch) => {
       type: USER_LOADING,
     });
     console.log(data);
-    const res = await Axios.post(`${serverUrl}/users/signup`, data);
+    const res = await Axios.post(`/api/users/signup`, data);
     console.log("Signup successful");
     /*dispatch({
       type: USER_LOADED,
@@ -44,7 +42,7 @@ export const loginUser = (user) => async (dispatch) => {
     dispatch({
       type: USER_LOADING,
     });
-    const res = await Axios.post(`${serverUrl}/users/signin`, user);
+    const res = await Axios.post(`/api/users/signin`, user);
     console.log(res.data.data.user);
     const token = res.data.data.token;
     localStorage.setItem("token", token);
@@ -75,7 +73,7 @@ export const uploadPhoto = (token, file) => async (dispatch) => {
       type: USER_LOADING,
     });
     const res = await Axios.post(
-      `${serverUrl}/users/profilephoto`,
+      `/api/users/profilephoto`,
       imageFormObj,
       {
         headers: {
@@ -100,7 +98,7 @@ export const forgotPassword = (email) => async (dispatch) => {
       email,
     };
     console.log(email);
-    const res = await Axios.post(`${serverUrl}/users/forgotpwd`, user);
+    const res = await Axios.post(`/api/users/forgotpwd`, user);
     dispatch(clearErrors());
     console.log(res);
   } catch (err) {
@@ -117,7 +115,7 @@ export const forgotPassword = (email) => async (dispatch) => {
 export const resetPassword = (user) => async (dispatch) => {
   try {
     console.log(user);
-    const res = await Axios.post(`${serverUrl}/users/resetpwd`, user);
+    const res = await Axios.post(`/api/users/resetpwd`, user);
     dispatch(clearErrors());
     console.log(res);
   } catch (err) {

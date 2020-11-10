@@ -21,7 +21,7 @@ class online_explore extends Component {
 
 	getEvents = () => {
 		const token = localStorage.getItem("token");
-		axios.get('http://localhost:4500/api/events/bytype/online/detailed/',{
+		axios.get('/api/events/bytype/online/detailed/',{
 			headers: {
 			  "Content-Type": "application/json",
 			  Authorization: token,
