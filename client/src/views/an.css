@@ -1,0 +1,27 @@
+@media only screen and (max-width: 777px){
+    .current-box {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+}
+
+
+  .current-box {
+    padding: 1%;
+    border-radius: 15px;
+    box-shadow: 0px 5px 5px rgba(11, 86, 199, 0.1);
+    background-color: whitesmoke;
+    text-align: center;
+    z-index: 1;
+    width: 40%;
+    margin-left: 30%;
+    font-size: 1.2rem;
+    color:black;
+}
+
+.web {
+    z-index: 5000;
+    margin-top: 81px;
+}
+
+  

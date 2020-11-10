@@ -6,6 +6,7 @@ import { withRouter } from "react-router";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
 import Footer from "components/Footer/Footer.js";
+import './an.css';
 
 
 // sections for this page/view
@@ -31,6 +32,13 @@ import { refreshPage } from "../redux/actions/authActions";
 import Timer from "views/IndexSections/Timer.js";
 
 class Index extends React.Component {
+  constructor(){
+    super();
+      this.state={
+          show:true
+      }
+  }
+
   refreshFunction = async () => {
     await this.props.refreshPage(JSON.parse(localStorage.getItem("user")));
   };
@@ -48,12 +56,18 @@ class Index extends React.Component {
   componentWillUnmount() {
     document.body.classList.toggle("index-page");
   }
+  
 
   render() {
     return (
       <div>
         <IndexNavbar />
         <div className="wrapper bg">
+          {this.state.show?<div className="web"> <div className="current-box" >
+              CA REGISTRATIONS ARE OPEN !!!
+              <br/>
+            <a href="/ca">Visit Here</a>
+          </div></div>:null}
           <Header />
           <div className="main">
             <Timer />
