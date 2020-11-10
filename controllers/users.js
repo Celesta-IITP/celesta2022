@@ -63,7 +63,7 @@ var msg =
   "Team Celesta cordially welcome you, the selected ones, onboard this enthralling journey. Give yourself a chance to develop the leadership and management qualities and build our brand to the best of your ability!!\n" +
   "We hope that you'll try hard to get those reputed Internshala certificates. So Let's get ready!!\n\n" +
   "Internshala form link : https://internshala.com/internship/detail/campus-ambassador-programme-at-celesta-iit-patna1603630139 \n" +
-  "Rulebook CA Program : https://drive.google.com/file/d/1_XuC6Q8ueSCMjeS0nzSZVwHFNiuMuqy5/view?usp=drivesdk";
+  "Rulebook CA Program : https://drive.google.com/file/d/1_XuC6Q8ueSCMjeS0nzSZVwHFNiuMuqy5/view?usp=drivesdk\n";
 sendCAMail = async (email, token, host, celestaId) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
