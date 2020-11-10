@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import classnames from "classnames";
 // react plugin used to create datetimepicker
 import ReactDatetime from "react-datetime";
@@ -145,8 +146,9 @@ class StepWise extends React.Component {
                 campus ambassadors are entitled to exciting prizes, apart from
                 the coveted certificate and many other goodies.
               </p>
-              <Button className="mt-4" color="warning" href={serverUrl + "ca"}>
-                Register
+              {/* <Button href="/ca">Register</Button> */}
+              <Button className="mt-4" color="warning">
+                <Link to="/ca">Register Here!</Link>
               </Button>
             </Col>
           </Row>

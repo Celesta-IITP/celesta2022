@@ -55,6 +55,41 @@ sendMail = async (email, token, host) => {
     return false;
   }
 };
+var msg =
+  "Hola amigos!!\n\n" +
+  "We hope you are safe, healthy and doing well in your lives.\n" +
+  "Continuing our legacy, Celesta'20 is back again this year with double excitement to promote technical and managerial enthusiasm amongst this generation and transform the innovative ideas into reality.\n" +
+  "So, Celesta, the techno-management fest of IIT Patna officially launches its Campus Ambassador program for the year 2020!!\n" +
+  "Team Celesta cordially welcome you, the selected ones, onboard this enthralling journey. Give yourself a chance to develop the leadership and management qualities and build our brand to the best of your ability!!\n" +
+  "We hope that you'll try hard to get those reputed Internshala certificates. So Let's get ready!!\n\n" +
+  "Internshala form link : https://internshala.com/internship/detail/campus-ambassador-programme-at-celesta-iit-patna1603630139 \n" +
+  "Rulebook CA Program : https://drive.google.com/file/d/1_XuC6Q8ueSCMjeS0nzSZVwHFNiuMuqy5/view?usp=drivesdk\n";
+sendCAMail = async (email, token, host, celestaId) => {
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: EMAIL_USER,
+      pass: EMAIL_PASSWORD,
+    },
+    tls: {
+      // do not fail on invalid certs
+      rejectUnauthorized: false,
+    },
+  });
+  let mailOptions = {
+    from: EMAIL_USER,
+    to: email,
+    subject: "Celesta Campus Ambassador Program 2020",
+    text: "Your Celesta Id is" + " " + celestaId + "\n" + msg,
+  };
+  try {
+    await transporter.sendMail(mailOptions);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
 
 sendPwdResetMail = async (email, code) => {
   let transporter = nodemailer.createTransport({
@@ -180,16 +215,19 @@ module.exports = {
     var newToken = new VerificationToken({
       userId: newUser._id,
     });
+    const celestaId = await generateCelestaId();
+    newUser.celestaId = celestaId;
     console.log(req.headers.host);
-    let mailresponse = await sendMail(
+    let mailresponse = await sendCAMail(
       newUser.email,
       newToken._id,
-      req.headers.host
+      req.headers.host,
+      newUser.celestaId
     );
 
     if (mailresponse === true) {
-      const celestaId = await generateCelestaId();
-      newUser.celestaId = celestaId;
+      // const celestaId = await generateCelestaId();
+      // newUser.celestaId = celestaId;
       await newUser.save();
       await newToken.save();
       console.log(newUser);

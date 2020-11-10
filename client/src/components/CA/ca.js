@@ -54,6 +54,7 @@ class CA extends Component {
         this.resetUserInputs();
       })
       .catch(() => {
+        this.setState({ msg: "Please check your details" });
         console.log("Internal server error");
       });
   };
