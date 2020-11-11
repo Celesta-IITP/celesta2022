@@ -144,6 +144,9 @@ class ComponentsNavbar extends React.Component {
                 <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
+                <NavLink href="/admin">Admin Portal</NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink href="/ca">Campus Ambasaddor</NavLink>
               </NavItem>
               <NavItem>

@@ -29,6 +29,7 @@ import TechnicalEvents from "./components/Explore/Technical/tech_explore";
 import CA from "components/CA/ca.js";
 import AddEvent from "./components/AddEvent/addEvent";
 import Points from "components/PtsTable/pts.js";
+import Admin from "components/Admin";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -44,6 +45,11 @@ class App extends React.Component {
             path="/"
             exact="true"
             render={(props) => <Index {...props} />}
+          />
+          <Route
+            path="/admin"
+            exact="true"
+            render={(props) => <Admin {...props} />}
           />
           <Route
             path="/landing-page"
