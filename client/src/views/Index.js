@@ -6,7 +6,6 @@ import { withRouter } from "react-router";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
 import Footer from "components/Footer/Footer.js";
-import './an.css';
 
 
 // sections for this page/view
@@ -30,14 +29,9 @@ import Pronites from "../components/Pronites/pronites";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { refreshPage } from "../redux/actions/authActions";
 import Timer from "views/IndexSections/Timer.js";
+import CustomizedSnackbars from "./snackBar";
 
 class Index extends React.Component {
-  constructor(){
-    super();
-      this.state={
-          show:true
-      }
-  }
 
   refreshFunction = async () => {
     await this.props.refreshPage(JSON.parse(localStorage.getItem("user")));
@@ -63,11 +57,6 @@ class Index extends React.Component {
       <div>
         <IndexNavbar />
         <div className="wrapper bg">
-          {this.state.show?<div className="web"> <div className="current-box" >
-              CA REGISTRATIONS ARE OPEN !!!
-              <br/>
-            <a href="/ca">Visit Here</a>
-          </div></div>:null}
           <Header />
           <div className="main">
             <Timer />
@@ -91,6 +80,7 @@ class Index extends React.Component {
 
           <Footer />
         </div>
+        <CustomizedSnackbars />
       </div>
     );
   }
