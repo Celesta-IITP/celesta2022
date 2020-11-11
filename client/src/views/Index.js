@@ -30,7 +30,7 @@ import Pronites from "../components/Pronites/pronites";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { refreshPage } from "../redux/actions/authActions";
 import Timer from "views/IndexSections/Timer.js";
-import CustomizedSnackbars from "./snackBar";
+import CustomizedSnackbars from "./examples/snackBar";
 
 class Index extends React.Component {
 
