@@ -2,6 +2,7 @@ import React from "react";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import {Link} from 'react-router-dom';
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
@@ -80,7 +81,7 @@ class Index extends React.Component {
 
           <Footer />
         </div>
-        <CustomizedSnackbars />
+        <CustomizedSnackbars type="info" component={<Link to="/ca" style={{textDecoration: 'none', color: '#fff'}}>Campus Ambassador Registrations are open!</Link>} />
       </div>
     );
   }

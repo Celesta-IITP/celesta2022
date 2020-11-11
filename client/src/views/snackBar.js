@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedSnackbars() {
+export default function CustomizedSnackbars(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
 
@@ -33,8 +33,8 @@ export default function CustomizedSnackbars() {
   return (
     <div className={classes.root}>
       <Snackbar open={open} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="info">
-          <Link to="/ca" style={{textDecoration: 'none', color: '#fff'}}>Campus Ambassador Registrations are open!</Link>
+        <Alert onClose={handleClose} severity={props.type}>
+          {props.component}
         </Alert>
       </Snackbar>
     </div>
