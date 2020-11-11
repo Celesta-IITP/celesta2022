@@ -51,6 +51,7 @@ class RegisterPage extends React.Component {
     college: "",
     refId: "",
     phone: "",
+    dob: "DD/MM/YYYY",
     msg: "",
     temp: "0",
     dropdownOpen: false,
@@ -140,7 +141,8 @@ class RegisterPage extends React.Component {
     college,
     sex,
     phone,
-    referralId
+    referralId,
+    dob
   ) => {
     const user = {
       name,
@@ -150,6 +152,7 @@ class RegisterPage extends React.Component {
       sex,
       phone,
       referralId,
+      dob,
     };
     this.setState({
       msg: "",
@@ -173,6 +176,7 @@ class RegisterPage extends React.Component {
       password: "",
       college: "",
       refId: "",
+      dob: "",
     });
     console.log(this.state.name);
   };
@@ -190,8 +194,9 @@ class RegisterPage extends React.Component {
     const sex = result;
     const phone = this.state.phone;
     const refId = this.state.refId ? this.state.refId : "CLST0000";
+    const dob = this.state.dob;
 
-    this.handleCreate(name, email, password, college, sex, phone, refId);
+    this.handleCreate(name, email, password, college, sex, phone, refId, dob);
   };
   changeValue = (e) => {
     let result;
@@ -357,6 +362,27 @@ class RegisterPage extends React.Component {
                               onChange={(e) =>
                                 this.setState({ password: e.target.value })
                               }
+                            />
+                          </InputGroup>
+                          <InputGroup
+                            className={classnames({
+                              "input-group-focus": this.state.dobFocus,
+                            })}
+                          >
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="tim-icons icon-email-85" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="Date of birth"
+                              type="text"
+                              value={this.state.dob}
+                              onFocus={(e) => this.setState({ dobFocus: true })}
+                              onBlur={(e) => this.setState({ dobFocus: false })}
+                              onChange={(e) => {
+                                this.setState({ dob: e.target.value });
+                              }}
                             />
                           </InputGroup>
                           <InputGroup

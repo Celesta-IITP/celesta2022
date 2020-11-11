@@ -30,6 +30,7 @@ module.exports = {
         college: Joi.string().required(),
         sex: Joi.number().required(),
         referralId: Joi.string(),
+        dob: Joi.string(),
       })
       .unknown(false),
     userSchemaPatch: Joi.object().keys({}),

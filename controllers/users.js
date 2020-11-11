@@ -203,7 +203,7 @@ module.exports = {
         .status(403)
         .json({ message: "Email is already registered with us." });
     }
-    const { name, email, password, college, phone } = rawUser;
+    const { name, email, password, college, phone, dob } = rawUser;
     const newUser = new User({
       name,
       email,
@@ -211,6 +211,7 @@ module.exports = {
       college,
       ca: 1,
       phone,
+      dob,
     });
     var newToken = new VerificationToken({
       userId: newUser._id,
