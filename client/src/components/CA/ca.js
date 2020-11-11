@@ -29,6 +29,7 @@ class CA extends Component {
     mobnum: "",
     pass: "",
     msg: "",
+    dob: "DD/MM/YYYY",
   };
 
   handleChange = ({ target }) => {
@@ -46,6 +47,7 @@ class CA extends Component {
         phone: this.state.mobnum,
         password: this.state.pass,
         college: this.state.col,
+        dob: this.state.dob,
       })
 
       .then(() => {
@@ -66,6 +68,7 @@ class CA extends Component {
       col: "",
       mobnum: "",
       pass: "",
+      dob: "",
     });
   };
 
@@ -170,6 +173,20 @@ class CA extends Component {
                         className="form-control"
                         id="identityName"
                         value={this.state.name}
+                        onChange={this.handleChange}
+                        required
+                      />
+                    </div>
+                    <div className="form-group" style={{ fontSize: "20px" }}>
+                      <label className="form-label" htmlFor="identityName">
+                        Date of birth
+                      </label>
+                      <input
+                        type="text"
+                        name="dob"
+                        className="form-control"
+                        id="identityName"
+                        value={this.state.dob}
                         onChange={this.handleChange}
                         required
                       />
