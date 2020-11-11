@@ -11,8 +11,9 @@ const tailLayout = {
 };
 
 const UpdateCAPoints = () => {
-  const onFinish = values => {
-    console.log('Success:', values);
+  const onFinish = ({celestaId, points}) => {
+    points = parseInt(points);
+    console.log(celestaId, points);
   };
 
   const onFinishFailed = errorInfo => {
@@ -23,33 +24,29 @@ const UpdateCAPoints = () => {
     <Form
       {...layout}
       name="basic"
-      initialValues={{ remember: true }}
+      initialValues={{ }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
       <Form.Item
-        label="Username"
-        name="username"
-        rules={[{ required: true, message: 'Please input your username!' }]}
+        label="Celesta-ID of CA"
+        name="celestaId"
+        rules={[{ required: true, message: 'Please enter correct celesta-id!  Example:CLST1234' }]}
       >
         <Input />
       </Form.Item>
 
       <Form.Item
-        label="Password"
-        name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}
+        label="Points to be added to existing CA score"
+        name="points"
+        rules={[{ required: true, message: 'Please input points!' }]}
       >
         <Input.Password />
       </Form.Item>
 
-      <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
       <Form.Item {...tailLayout}>
         <Button type="primary" htmlType="submit">
-          Submit
+          Add this much points to CA's score
         </Button>
       </Form.Item>
     </Form>
