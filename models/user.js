@@ -10,6 +10,7 @@ const USER_ROLES_ENUM = {
   COORD: "COORD",
   SUBCOORD: "SUBCOORD",
   COMMITTEE: "COMMITTEE",
+  MPR: "MPR"
 };
 
 const userSchema = new Schema(
