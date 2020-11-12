@@ -23,7 +23,7 @@ signToken = (user) => {
   );
 };
 
-sendMail = async (email, token, host) => {
+sendMail = async (email, token, host, celestaId) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -38,14 +38,8 @@ sendMail = async (email, token, host) => {
   let mailOptions = {
     from: EMAIL_USER,
     to: email,
-    subject: "Celesta, Activate your account",
-    text:
-      "Hello,\n\n" +
-      "Please verify your account by clicking the link: \nhttps://" +
-      host +
-      "/users/verify/" +
-      token +
-      "\n",
+    subject: "Celesta 2020",
+    text: "Your Celesta Id is" + " " + celestaId,
   };
   try {
     await transporter.sendMail(mailOptions);
@@ -63,7 +57,8 @@ var msg =
   "Team Celesta cordially welcome you, the selected ones, onboard this enthralling journey. Give yourself a chance to develop the leadership and management qualities and build our brand to the best of your ability!!\n" +
   "We hope that you'll try hard to get those reputed Internshala certificates. So Let's get ready!!\n\n" +
   "Internshala form link : https://internshala.com/internship/detail/campus-ambassador-programme-at-celesta-iit-patna1603630139 \n" +
-  "Rulebook CA Program : https://drive.google.com/file/d/1_XuC6Q8ueSCMjeS0nzSZVwHFNiuMuqy5/view?usp=drivesdk\n";
+  "Rulebook CA Program : https://drive.google.com/file/d/1_XuC6Q8ueSCMjeS0nzSZVwHFNiuMuqy5/view?usp=drivesdk \n" +
+  "Whatsapp group link:https://chat.whatsapp.com/H1xBRv4LmWbL1mrJeq1IXV \n";
 sendCAMail = async (email, token, host, celestaId) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
@@ -159,15 +154,16 @@ module.exports = {
         userId: newUser._id,
       });
       console.log(req.headers.host);
+      const celestaId = await generateCelestaId();
+      newUser.celestaId = celestaId;
       let mailresponse = await sendMail(
         newUser.email,
         newToken._id,
-        req.headers.host
+        req.headers.host,
+        celestaId
       );
 
       if (mailresponse === true) {
-        const celestaId = await generateCelestaId();
-        newUser.celestaId = celestaId;
         await newUser.save();
         await newToken.save();
         res.status(200).json({ data: newUser });
@@ -392,6 +388,44 @@ module.exports = {
       });
     } else {
       res.status(404).json({ message: "User not found!" });
+    }
+  },
+  addCAPoints: async (req, res) => {
+    try {
+      const { celestaId, points } = req.body;
+      if (!celestaId || !points) {
+        res.status(404).json({ message: "Please fill all details" });
+      }
+      const user = await User.findOne({ celestaId });
+      user.points += points;
+      await user.save();
+      res.status(200).json({ message: "Points updated successfully." });
+    } catch (e) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  },
+  getAllCA: async (req, res) => {
+    try {
+      const CA = await User.find({ ca: 1 });
+      res.status(200).json(CA);
+    } catch (e) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  },
+  findByCelestaId: async (req, res) => {
+    try {
+      console.log("hello");
+      const { celestaId } = req.body;
+      if (!celestaId) {
+        return res.status(404).json({ message: "Please fill all details" });
+      }
+      const user = await User.findOne({ celestaId });
+      if (!user) {
+        return res.status(404).json({ message: "Please fill correct details" });
+      }
+      res.status(200).json(user);
+    } catch (e) {
+      res.status(500).json({ message: "Internal server error" });
     }
   },
 };
