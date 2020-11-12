@@ -66,6 +66,7 @@ class ComponentsNavbar extends React.Component {
     /*this.props.history.push("/");*/
   };
   render() {
+    const { userInfo } = this.state;
     return (
       <Navbar
         className= {this.state.color + " fixed-top"}
@@ -149,7 +150,7 @@ class ComponentsNavbar extends React.Component {
               <NavItem>
                 <NavLink href="/ca">Campus Ambasaddor</NavLink>
               </NavItem>
-              {(this.state.userInfo.ca || this.state.userInfo.roles.includes("MPR")) &&
+              {(userInfo.ca || (userInfo.roles && userInfo.roles.includes("MPR"))) &&
                 <NavItem>
                   <NavLink href="/Points">Live Points Table</NavLink>
                 </NavItem>
