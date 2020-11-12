@@ -86,16 +86,12 @@ class StepWise extends React.Component {
               <Button
                 className="mt-4"
                 color="warning"
-                href="https://demos.creative-tim.com/blk-design-system-react/#/documentation/alerts"
+                href="https://youtu.be/iSA7maa9L2M"
               >
-                Aftermovie
+                CA Program
               </Button>
 
-              <Button
-                className="mt-4"
-                color="warning"
-                href="https://demos.creative-tim.com/blk-design-system-react/#/documentation/alerts"
-              >
+              <Button className="mt-4" color="warning">
                 Bus Schedule
               </Button>
               <br />
@@ -109,6 +105,24 @@ class StepWise extends React.Component {
             </Col>
           </Row>
         </Container>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "4rem",
+            padding: "1rem",
+          }}
+        >
+          <iframe
+            width="600"
+            height="350"
+            src="https://www.youtube.com/embed/iSA7maa9L2M"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
         <br />
         <br />
         <br />
