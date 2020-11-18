@@ -5,5 +5,6 @@ module.exports={
     DB_URI: process.env.DB_URI,
     FCM_KEY: process.env.FCM_KEY,
     EMAIL_USER: process.env.EMAIL_USER,
-    EMAIL_PASSWORD: process.env.EMAIL_PASSWORD
+    EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY
 }
