@@ -485,4 +485,27 @@ module.exports = {
       res.status(500).json({ message: "Internal server error" });
     }
   },
+  updateDetails: async (req, res) => {
+    let {id, name, phone, college } = req.body;
+    console.log(req.body);
+
+      User.findByIdAndUpdate(
+        {
+          _id: id,
+        },
+        {
+          name:name,
+          phone:phone,
+          college:college
+        },function(err,docs){
+          if(err) res.json(err);
+        }
+      ).then((updatedUser) => {
+        res.status(200).json({
+          message:
+          "Details updated",
+        });
+      })
+
+  },
 };

@@ -79,4 +79,8 @@ router.route("/forgotpwd").post(UsersControllers.forgotPwd);
 router.route("/resetpwd").post(UsersControllers.resetPwd);
 router.route("/celestaId").post(UsersControllers.findByCelestaId);
 
+//localhost:PORT/users/updatedetails
+router.route('/updatedetails')
+    .put(UsersControllers.updateDetails)
+
 module.exports = router;
