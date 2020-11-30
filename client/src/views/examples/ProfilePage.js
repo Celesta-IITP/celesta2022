@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import classnames from "classnames";
+import axios from 'axios';
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 import { compose } from "redux";
@@ -61,6 +62,9 @@ class ProfilePage extends React.Component {
       userInfo: this.props.user,
       file: "",
       tabs: 1,
+      name:this.props.user.name,
+      phone:this.props.user.phone,
+      coll:this.props.user.college
     };
   }
   componentDidMount() {
@@ -104,7 +108,37 @@ class ProfilePage extends React.Component {
     }
   };
 
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    this.setState({ [name]: value });
+  };
+
+  submit = (e) => {
+    e.preventDefault();
+    console.log("hehehe");
+    axios
+      .put("/api/users/updatedetails/", {
+        id: this.state.userInfo._id,
+        name: this.state.name,
+        phone: this.state.phone,
+        college: this.state.coll,
+      })
+
+      .then(() => {
+        console.log("Data has been sent to the server");
+        this.state.userInfo.name=this.state.name;
+        this.state.userInfo.phone=this.state.phone;
+        this.state.userInfo.college=this.state.coll;
+        localStorage.setItem("user", JSON.stringify(this.state.userInfo));
+        this.props.history.push("/");
+      })
+      .catch(() => {
+        console.log("Internal server error");
+      });
+  };
+
   render() {
+    console.log('State: ', this.state);
     return (
       <>
         <ExamplesNavbar />
@@ -179,7 +213,7 @@ class ProfilePage extends React.Component {
                       <h5 className="text-on-back">Info</h5>
                     </CardHeader>
                     <CardBody>
-                      <Form>
+                      <Form onSubmit={this.submit}>
                         <Row>
                           <Col md="6">
                             <FormGroup>
@@ -187,16 +221,16 @@ class ProfilePage extends React.Component {
                               <Input
                                 defaultValue={this.state.userInfo.name}
                                 type="text"
-                              >
-                                {this.state.userInfo.name}
-                              </Input>
+                                name="name"
+                                onChange={this.handleChange}
+                              />
                             </FormGroup>
                           </Col>
                           <Col md="6">
                             <FormGroup>
                               <label>Email address</label>
                               <Input
-                                defaultValue={this.state.userInfo.email}
+                                value={this.state.userInfo.email}
                                 type="email"
                               />
                             </FormGroup>
@@ -207,7 +241,16 @@ class ProfilePage extends React.Component {
                             <FormGroup>
                               <label>Phone</label>
                               <Input
-                                defaultValue={this.state.userInfo.phone}
+                                name="phone"
+                                onChange={this.handleChange}
+                              />
+                            </FormGroup>
+                          </Col>
+                          <Col md="6">
+                            <FormGroup>
+                              <label>Celesta Id</label>
+                              <Input
+                                value={this.state.userInfo.celestaId}
                                 type="text"
                               />
                             </FormGroup>
@@ -218,15 +261,8 @@ class ProfilePage extends React.Component {
                               <Input
                                 defaultValue={this.state.userInfo.college}
                                 type="text"
-                              />
-                            </FormGroup>
-                          </Col>
-                          <Col md="6">
-                            <FormGroup>
-                              <label>Celesta Id</label>
-                              <Input
-                                defaultValue={this.state.userInfo.celestaId}
-                                type="text"
+                                name="coll"
+                                onChange={this.handleChange}
                               />
                             </FormGroup>
                           </Col>
@@ -237,7 +273,8 @@ class ProfilePage extends React.Component {
                           color="primary"
                           data-placement="right"
                           id="tooltip341148792"
-                          type="button"
+                          type="submit"
+                          value="Submit"
                         >
                           Update details!
                         </Button>
