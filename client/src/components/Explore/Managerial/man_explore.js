@@ -7,16 +7,22 @@ import {ManCards} from './man_cards'
 import axios from 'axios';
 
 class man_explore extends Component {
-	state={
-		managerial:[]
+	constructor(props){
+		super(props);
+		this.state={
+			managerial:[],
+			dataIsReturned:false
+		}
 	}
-	// constructor(props){
-	// 	super(props);
-	// }
 
+	
 	componentDidMount(){
 		man_explore_function();
 		this.getEvents();
+	}
+
+	componentDidUpdate= () => {
+		man_explore_function();
 	}
 
 	getEvents = () => {
@@ -27,9 +33,12 @@ class man_explore extends Component {
 			  Authorization: token,
 			},
 		  })
-		  .then((response) => {
+		  .then(async(response) => {
 			const data = response.data;
 			this.setState({ managerial: data });
+			localStorage.setItem('event', JSON.stringify(data));
+			console.log(data);
+			this.setState({dataIsReturned : true});
 			console.log('Data has been received!!');
 			
 		  })
@@ -45,7 +54,7 @@ class man_explore extends Component {
 				
 			 <div className="man_cont s--inactive">
 			  <div className="man_cont__inner">
-			  	<ManCards events={this.state.managerial} />
+			  { this.state.dataIsReturned ? <ManCards /> : null}
 			  </div>
 				</div>
 			</div>

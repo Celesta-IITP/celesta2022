@@ -3,7 +3,7 @@ import React from 'react';
 import Extab from '../Extab/Extab'
 
 export const RoboticsCards = (props) => {
-	const robotics = props.events;
+	const robotics = JSON.parse(localStorage.getItem('event'));
 	return(
 		<div>
 			{Object.entries(robotics).map(([key, value]) =>

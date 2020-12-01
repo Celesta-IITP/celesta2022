@@ -7,17 +7,22 @@ import { InfoCards } from "./info_cards";
 import axios from "axios";
 
 class info_explore extends Component {
-  state = {
-    onsite: [],
-  };
-  // constructor(props){
-  // 	super(props);
-  // }
-
+  constructor(props){
+    super(props);
+    this.state = {
+      onsite: [],
+      dataIsReturned:false
+    }
+  }
+  
   componentDidMount() {
     info_explore_function();
     this.getEvents();
   }
+
+  componentDidUpdate= () => {
+		info_explore_function();
+	}
 
   getEvents = () => {
     const token = localStorage.getItem("token");
@@ -29,10 +34,12 @@ class info_explore extends Component {
           Authorization: token,
         },
       })
-      .then((response) => {
+      .then(async(response) => {
         const data = response.data;
-        console.log("Data: ", data);
         this.setState({ onsite: data });
+        localStorage.setItem('event', JSON.stringify(data));
+        console.log(data);
+        this.setState({dataIsReturned : true});
         console.log("Data has been received!!");
       })
       .catch((e) => {
@@ -47,7 +54,7 @@ class info_explore extends Component {
         <BackToEvents />
         <div className="info_cont s--inactive">
           <div className="info_cont__inner">
-            <InfoCards events={this.state.onsite} />
+          { this.state.dataIsReturned ? <InfoCards /> : null}
           </div>
         </div>
       </div>

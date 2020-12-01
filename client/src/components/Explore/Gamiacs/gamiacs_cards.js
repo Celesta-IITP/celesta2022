@@ -3,7 +3,7 @@ import React from 'react';
 import Extab from '../Extab/Extab'
 
 export const GamiacCards = (props) => {
-	const gamiacs = props.events;
+	const gamiacs = JSON.parse(localStorage.getItem('event'));
 	return(
 		<div>
 			{Object.entries(gamiacs).map(([key, value]) =>

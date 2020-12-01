@@ -3,7 +3,7 @@ import React from 'react';
 import Extab from '../Extab/Extab'
 
 export const TechnicalCards = (props) => {
-	const technical = props.events;
+	const technical = JSON.parse(localStorage.getItem('event'));
 	return(
 		<div>
 			{Object.entries(technical).map(([key, value]) =>

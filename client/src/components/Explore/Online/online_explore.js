@@ -7,16 +7,21 @@ import {OnlineCards} from './online_cards'
 import axios from 'axios';
 
 class online_explore extends Component {
-	state={
-		online:[]
+	constructor(props){
+		super(props);
+		this.state={
+			online:[],
+			dataIsReturned:false
+		}
 	}
-	// constructor(props){
-	// 	super(props);
-	// }
 
 	componentDidMount = () => {
 		online_explore_function();
 		this.getEvents();
+	}
+
+	componentDidUpdate= () => {
+		online_explore_function();
 	}
 
 	getEvents = () => {
@@ -27,9 +32,12 @@ class online_explore extends Component {
 			  Authorization: token,
 			},
 		  })
-		  .then((response) => {
+		  .then(async(response) => {
 			const data = response.data;
 			this.setState({ online: data });
+			localStorage.setItem('event', JSON.stringify(data));
+			console.log(data);
+          	this.setState({dataIsReturned : true});
 			console.log('Data has been received!!');
 			
 		  })
@@ -45,8 +53,7 @@ class online_explore extends Component {
 				
 				<div className="online_cont s--inactive">
 					  <div className="online_cont__inner">
-					  	
-					  	<OnlineCards events={this.state.online} />
+					  	{ this.state.dataIsReturned ? <OnlineCards/> : null}
 					  </div> 
 					  
 				</div>

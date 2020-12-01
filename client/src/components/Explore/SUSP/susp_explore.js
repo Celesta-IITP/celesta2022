@@ -7,16 +7,21 @@ import {SuspCards} from './susp_cards'
 import axios from 'axios';
 
 class susp_explore extends Component {
-	state={
-		school:[]
+	constructor(props){
+		super(props);
+		this.state={
+			school:[],
+			dataIsReturned:false
+		}
 	}
-	// constructor(props){
-	// 	super(props);
-	// }
-
+	
 	componentDidMount(){
 		susp_explore_function();
 		this.getEvents();
+	}
+
+	componentDidUpdate= () => {
+		susp_explore_function();
 	}
 
 	getEvents = () => {
@@ -27,9 +32,12 @@ class susp_explore extends Component {
 			  Authorization: token,
 			},
 		  })
-		  .then((response) => {
+		  .then(async(response) => {
 			const data = response.data;
 			this.setState({ school: data });
+			localStorage.setItem('event', JSON.stringify(data));
+			console.log(data);
+			this.setState({dataIsReturned : true});
 			console.log('Data has been received!!');
 			
 		  })
@@ -44,7 +52,7 @@ class susp_explore extends Component {
 				<BackToEvents />
 			 <div className="susp_cont s--inactive">
 			  <div className="susp_cont__inner">
-			  	<SuspCards events={this.state.school} />
+				  { this.state.dataIsReturned ? <SuspCards /> : null}
 			  </div>
 				</div>
 			</div>
