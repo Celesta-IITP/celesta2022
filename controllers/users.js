@@ -11,7 +11,7 @@ const JWT = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
-const sgMail = require('@sendgrid/mail');
+const sgMail = require("@sendgrid/mail");
 
 sgMail.setApiKey(SENDGRID_API_KEY);
 
@@ -27,7 +27,7 @@ signToken = (user) => {
   );
 };
 
-var msg =
+var Msg =
   "Hola amigos!!\n\n" +
   "We hope you are safe, healthy and doing well in your lives.\n" +
   "Continuing our legacy, Celesta'20 is back again this year with double excitement to promote technical and managerial enthusiasm amongst this generation and transform the innovative ideas into reality.\n" +
@@ -38,11 +38,10 @@ var msg =
   "Rulebook CA Program : https://drive.google.com/file/d/1_XuC6Q8ueSCMjeS0nzSZVwHFNiuMuqy5/view?usp=drivesdk \n" +
   "Whatsapp group link:https://chat.whatsapp.com/E6axGHXCQSG8Nto0tW5enC \n";
 
-
 sendMail = async (emailId, celestaId) => {
   const msg = {
     to: emailId,
-    from: 'celesta.iitp@gmail.com',
+    from: "celesta.iitp@gmail.com",
     subject: "Celesta 2020",
     text: "Your Celesta Id is" + " " + celestaId,
     // html: emailBody,
@@ -60,9 +59,9 @@ sendMail = async (emailId, celestaId) => {
 sendCAMail = async (emailId, celestaId) => {
   const msg = {
     to: emailId,
-    from: 'celesta.iitp@gmail.com',
+    from: "celesta.iitp@gmail.com",
     subject: "Celesta Campus Ambassador Program 2020",
-    text: "Your Celesta Id is" + " " + celestaId + "\n" + msg,
+    text: "Your Celesta Id is" + " " + celestaId + "\n" + Msg,
     // html: emailBody,
   };
 
@@ -78,12 +77,12 @@ sendCAMail = async (emailId, celestaId) => {
 sendPwdResetMail = async (emailId, code) => {
   const msg = {
     to: emailId,
-    from: 'celesta.iitp@gmail.com',
+    from: "celesta.iitp@gmail.com",
     subject: "Celesta, Password Reset Mail",
     text: `Your password reset code is ${code}`,
     // html: emailBody,
   };
-  
+
   try {
     await sgMail.send(msg);
     return true;
@@ -217,10 +216,7 @@ module.exports = {
       console.log(req.headers.host);
       const celestaId = await generateCelestaId();
       newUser.celestaId = celestaId;
-      let mailresponse = await sendMail(
-        newUser.email,
-        celestaId
-      );
+      let mailresponse = await sendMail(newUser.email, celestaId);
 
       if (mailresponse === true) {
         await newUser.save();
@@ -248,6 +244,7 @@ module.exports = {
     });
   },
   registerCA: async (req, res) => {
+    console.log("Inside CA ");
     const rawUser = req.body;
     console.log(rawUser);
     const foundUser = await User.findOne({
@@ -274,10 +271,7 @@ module.exports = {
     const celestaId = await generateCelestaId();
     newUser.celestaId = celestaId;
     console.log(req.headers.host);
-    let mailresponse = await sendCAMail(
-      newUser.email,
-      newUser.celestaId
-    );
+    let mailresponse = await sendCAMail(newUser.email, newUser.celestaId);
 
     if (mailresponse === true) {
       // const celestaId = await generateCelestaId();
@@ -463,7 +457,8 @@ module.exports = {
   },
   getAllCA: async (req, res) => {
     try {
-      const CA = await User.find({ ca: 1 });
+      var mysort = { points: -1 };
+      const CA = await User.find({ ca: 1 }).sort(mysort);
       res.status(200).json(CA);
     } catch (e) {
       res.status(500).json({ message: "Internal server error" });
@@ -486,26 +481,25 @@ module.exports = {
     }
   },
   updateDetails: async (req, res) => {
-    let {id, name, phone, college } = req.body;
+    let { id, name, phone, college } = req.body;
     console.log(req.body);
 
-      User.findByIdAndUpdate(
-        {
-          _id: id,
-        },
-        {
-          name:name,
-          phone:phone,
-          college:college
-        },function(err,docs){
-          if(err) res.json(err);
-        }
-      ).then((updatedUser) => {
-        res.status(200).json({
-          message:
-          "Details updated",
-        });
-      })
-
+    User.findByIdAndUpdate(
+      {
+        _id: id,
+      },
+      {
+        name: name,
+        phone: phone,
+        college: college,
+      },
+      function (err, docs) {
+        if (err) res.json(err);
+      }
+    ).then((updatedUser) => {
+      res.status(200).json({
+        message: "Details updated",
+      });
+    });
   },
 };
