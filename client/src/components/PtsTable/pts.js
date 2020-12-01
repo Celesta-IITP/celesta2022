@@ -167,7 +167,7 @@ export default function App() {
                     color: "white",
                   },
                   columnResizable: true,
-                  // showTitle: false,
+                  showTitle: false,
                   //search: false,
                   //toolbar: false,
 
