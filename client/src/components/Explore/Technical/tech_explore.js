@@ -7,16 +7,21 @@ import {TechnicalCards} from './technical_cards'
 import axios from 'axios';
 
 class tech_explore extends Component {
-	state={
-		technical:[]
+	constructor(props){
+		super(props);
+		this.state={
+			technical:[],
+			dataIsReturned:false
+		}
 	}
-	// constructor(props){
-	// 	super(props);
-	// }
-
+	
 	componentDidMount(){
 		tech_explore_function();
 		this.getEvents();
+	}
+
+	componentDidUpdate= () => {
+		tech_explore_function();
 	}
 
 	getEvents = () => {
@@ -27,10 +32,13 @@ class tech_explore extends Component {
 			  Authorization: token,
 			},
 		  })
-		  .then((response) => {
+		  .then(async(response) => {
 			const data = response.data;
 			console.log("Data: ", data);
 			this.setState({ technical: data });
+			localStorage.setItem('event', JSON.stringify(data));
+			console.log(data);
+			this.setState({dataIsReturned : true});
 			console.log('Data has been received!!');
 			
 		  })
@@ -45,7 +53,7 @@ class tech_explore extends Component {
 				<BackToEvents/>
 				<div className="tech_cont s--inactive">
 			  <div className="tech_cont__inner">
-			  	<TechnicalCards events={this.state.technical} />
+				  { this.state.dataIsReturned ? <TechnicalCards /> : null}
 			  </div>
 				</div>
 			</div>

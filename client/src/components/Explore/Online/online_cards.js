@@ -3,7 +3,7 @@ import React from 'react';
 import Extab from '../Extab/Extab'
 
 export const OnlineCards = (props) => {
-	const online = props.events;
+	const online = JSON.parse(localStorage.getItem('event'));
 	return(
 		<div>
 			{Object.entries(online).map(([key, value]) =>

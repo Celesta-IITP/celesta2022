@@ -3,7 +3,7 @@ import React from 'react';
 import Extab from '../Extab/Extab'
 
 export const SuspCards = (props) => {
-	const school = props.events;
+	const school = JSON.parse(localStorage.getItem('event'));
 	return(
 		<div>
 			{Object.entries(school).map(([key, value]) =>

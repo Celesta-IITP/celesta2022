@@ -7,21 +7,25 @@ import { GamiacCards } from "./gamiacs_cards";
 import axios from "axios";
 
 class gamiacs_explore extends Component {
-  state = {
-    gamiacs: [],
-  };
-  // constructor(props){
-  // 	super(props);
-  // }
-
+  constructor(props){
+    super(props);
+    this.state = {
+      gamiacs: [],
+      dataIsReturned:false
+    }
+  }
+  
   componentDidMount() {
     gam_explore_function();
     this.getEvents();
   }
 
+  componentDidUpdate= () => {
+		gam_explore_function();
+	}
+
   getEvents = () => {
     const token = localStorage.getItem("token");
-    console.log(token);
     axios
       .get("/api/events/bytype/gamiacs/detailed/", {
         headers: {
@@ -29,14 +33,16 @@ class gamiacs_explore extends Component {
           Authorization: token,
         },
       })
-      .then((response) => {
+      .then(async(response) => {
         const data = response.data;
         this.setState({ gamiacs: data });
+        localStorage.setItem('event', JSON.stringify(data));
+        console.log(data);
+        this.setState({dataIsReturned : true});
         console.log("Data has been received!!");
       })
-      .catch((e) => {
-        console.log(e.message);
-        alert("Error retrieving data!!!");
+      .catch(() => {
+        alert('Error retrieving data!!!');
       });
   };
 
@@ -44,10 +50,10 @@ class gamiacs_explore extends Component {
     return (
       <div>
         <BackToEvents />
-        {this.getEvents()}
+
         <div className="gam_cont s--inactive">
           <div className="gam_cont__inner">
-            <GamiacCards events={this.state.gamiacs} />
+            { this.state.dataIsReturned ? <GamiacCards /> : null}
           </div>
         </div>
       </div>

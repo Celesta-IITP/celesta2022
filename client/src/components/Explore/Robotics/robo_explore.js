@@ -7,16 +7,21 @@ import {RoboticsCards} from './robo_cards'
 import axios from 'axios';
 
 class robo_explore extends Component {
-	state={
-		robotics:[]
+	constructor(props){
+		super(props);
+		this.state={
+			robotics:[],
+			dataIsReturned:false
+		}
 	}
-	// constructor(props){
-	// 	super(props);
-	// }
-
+	
 	componentDidMount(){
 		robo_explore_function();
 		this.getEvents();
+	}
+
+	componentDidUpdate= () => {
+		robo_explore_function();
 	}
 
 	getEvents = () => {
@@ -27,9 +32,12 @@ class robo_explore extends Component {
 			  Authorization: token,
 			},
 		  })
-		  .then((response) => {
+		  .then(async(response) => {
 			const data = response.data;
 			this.setState({ robotics: data });
+			localStorage.setItem('event', JSON.stringify(data));
+			console.log(data);
+			this.setState({dataIsReturned : true});
 			console.log('Data has been received!!');
 			
 		  })
@@ -46,7 +54,7 @@ class robo_explore extends Component {
 
 			 <div className="robo_cont s--inactive">
 			  <div className="robo_cont__inner">
-			  	<RoboticsCards events={this.state.robotics} />
+				{ this.state.dataIsReturned ? <RoboticsCards /> : null}
 			  </div>
 			</div>
 			</div>

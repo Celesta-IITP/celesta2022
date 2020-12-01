@@ -57,7 +57,6 @@ router
 router
   .route("/bytype/:type/detailed")
   .get(
-    passport.authenticate("jwt", { session: false }),
     EventsControllers.getDetailedEventsByType
   );
 
