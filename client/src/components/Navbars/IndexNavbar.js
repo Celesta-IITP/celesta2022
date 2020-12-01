@@ -50,9 +50,9 @@ class ComponentsNavbar extends React.Component {
     //   this.setState({
     //     color: "bg-info"
     //   });
-    //} 
+    //}
     //else
-     if (
+    if (
       document.documentElement.scrollTop < 100 ||
       document.body.scrollTop < 100
     ) {
@@ -69,54 +69,46 @@ class ComponentsNavbar extends React.Component {
     const { userInfo } = this.state;
     return (
       <Navbar
-        className= {this.state.color + " fixed-top"}
+        className={this.state.color + " fixed-top"}
         color-on-scroll="100"
         expand="lg"
       >
         <Container>
-            <header className="cd-header">
+          <header className="cd-header">
             <div className="cd-logo">
-              
-                <ul>
-                  <NavItem>
-                    <NavLink href="/">
-                      <img
-                        src={logo}
-                        alt="Logo"
-                        style={{ maxHeight: "45px" }}
-                      />
-                    </NavLink>
-                  </NavItem>
-                </ul>
-              
+              <ul>
+                <NavItem>
+                  <NavLink href="/">
+                    <img src={logo} alt="Logo" style={{ maxHeight: "45px" }} />
+                  </NavLink>
+                </NavItem>
+              </ul>
             </div>
 
             {Object.keys(this.state.userInfo).length !== 0 ? (
-              
-                <ul className="cd-secondary-nav">
-                  {this.state.userInfo.isAdmin ? (
-                    <li>
-                      <Button>
-                        <Link to="/events/add">Add an event!</Link>
-                      </Button>
-                    </li>
-                  ) : (
-                    <Button>
-                      <Link to="/events-page">Events</Link>
-                    </Button>
-                  )}
+              <ul className="cd-secondary-nav">
+                {this.state.userInfo.isAdmin ? (
                   <li>
                     <Button>
-                      <Link to="/profile-page">{this.state.userInfo.name}</Link>
+                      <Link to="/events/add">Add an event!</Link>
                     </Button>
                   </li>
-                  <li>
-                    <Button onClick={this.logoutHandler}>
-                      <Link to="/signin-page">Logout</Link>
-                    </Button>
-                  </li>
-                </ul>
-              
+                ) : (
+                  <Button>
+                    <Link to="/events-page">Events</Link>
+                  </Button>
+                )}
+                <li>
+                  <Button>
+                    <Link to="/profile-page">{this.state.userInfo.name}</Link>
+                  </Button>
+                </li>
+                <li>
+                  <Button onClick={this.logoutHandler}>
+                    <Link to="/signin-page">Logout</Link>
+                  </Button>
+                </li>
+              </ul>
             ) : (
               <nav>
                 <ul className="cd-secondary-nav">
@@ -136,8 +128,7 @@ class ComponentsNavbar extends React.Component {
                 <span className="menu-icon__line menu-icon__line-right"></span>
               </div>
             </div>
-            </header>
-          
+          </header>
 
           <nav>
             <ul className="cd-primary-nav">
@@ -145,16 +136,17 @@ class ComponentsNavbar extends React.Component {
                 <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/admin">Admin Portal</NavLink>
+                <NavLink href="/Points">CA Leaderboard</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/ca">Campus Ambasaddor</NavLink>
               </NavItem>
-              {(userInfo.ca || (userInfo.roles && userInfo.roles.includes("MPR"))) &&
+              {(userInfo.ca ||
+                (userInfo.roles && userInfo.roles.includes("MPR"))) && (
                 <NavItem>
-                  <NavLink href="/Points">Live Points Table</NavLink>
+                  <NavLink href="/admin">Live Points Table</NavLink>
                 </NavItem>
-              }
+              )}
               <NavItem>
                 <NavLink href="/events-page">Events</NavLink>
               </NavItem>

@@ -24,7 +24,7 @@ body.overflow-hidden {
 }
 
 a {
-  color: white;
+  color: white !important;
   text-decoration: none;
 }
 
