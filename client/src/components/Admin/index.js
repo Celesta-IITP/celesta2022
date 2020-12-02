@@ -24,6 +24,7 @@ import {
     state = {
         celestaId: '',
         points: '',
+        msg: "",
 
       }
 
@@ -48,6 +49,8 @@ import {
           .then(res => {
             console.log(res);
             console.log(res.data);
+            this.setState({ msg: "Points updated" });
+
           })
       } 
 
@@ -107,6 +110,7 @@ import {
                           Update Points
                         </UncontrolledTooltip>
                       </Form>
+                      <h1>{this.state.msg}</h1>
                     </CardBody>
                   </Card>
                 </Col>
