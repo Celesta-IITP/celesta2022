@@ -33,6 +33,7 @@ import {
 
       handleChangepoints = event => {
         this.setState({ points: event.target.value });
+        console.log("updated");
       }
 
       handleSubmit = event => {
