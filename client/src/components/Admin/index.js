@@ -27,20 +27,23 @@ import {
 
       }
 
-      handleChange = event => {
+      idselect = event => {
         this.setState({ celestaId: event.target.value });
+      }
+
+      handleChangepoints = event => {
         this.setState({ points: event.target.value });
       }
 
       handleSubmit = event => {
         event.preventDefault();
     
-        const ca = {
-            celestaId: this.state.celestaId,
-            points: this.state.points,
-        };
     
-        axios.post("/api/ca/points", { ca })
+        axios.post("/api/ca/points", { 
+          celestaId: this.state.celestaId,
+          points: this.state.points,
+
+        })
           .then(res => {
             console.log(res);
             console.log(res.data);
@@ -66,7 +69,7 @@ import {
                           <Col md="6">
                             <FormGroup>
                               <label>CELESTA ID</label>
-                              <Input defaultValue="CLST0000" type="text" name="celestaId" onChange={this.handleChange} />
+                              <Input defaultValue="CLST0000" type="text" name="celestaId" onChange={this.idselect} />
                             </FormGroup>
                           </Col>
                           <Col md="6">
@@ -76,7 +79,7 @@ import {
                           <Col md="6">
                             <FormGroup>
                               <label>POINTS</label>
-                              <Input defaultValue="10" type="text" name="points" onChange={this.handleChange}/>
+                              <Input defaultValue="10" type="text" name="points" onChange={this.handleChangepoints}/>
                             </FormGroup>
                           </Col>
                           <Col md="6">
