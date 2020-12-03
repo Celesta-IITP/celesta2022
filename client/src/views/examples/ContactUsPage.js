@@ -113,12 +113,12 @@ class ContactUsPage extends React.Component {
                     >
                       <blockquote>
                         <p className="blockquote blockquote-info">
-                          Aman Deep :- 9931059201
+                          Kunj Taneja :- +91 77548 08781
                           <br />
-                          Priyansh Singh Rao :- 8058501770
+                          Anmol Chaddha :- +91 6387 828 505
                           <br />
-                          Roushan Kumar :- 9610098566
-                          <br />
+                          
+                          {/* <br /> */}
                         </p>
                       </blockquote>
                     </div>
@@ -127,7 +127,7 @@ class ContactUsPage extends React.Component {
                     <Button
                       className="btn-icon btn-round"
                       color="twitter"
-                      href="https://twitter.com/creativetim"
+                      href="https://twitter.com/celesta_iitp?lang=en"
                       id="tooltip639225725"
                       target="_blank"
                     >
@@ -139,7 +139,7 @@ class ContactUsPage extends React.Component {
                     <Button
                       className="btn-icon btn-round"
                       color="facebook"
-                      href="https://www.facebook.com/creativetim"
+                      href="https://www.facebook.com/CelestaIITP/"
                       id="tooltip982846143"
                       target="_blank"
                     >
@@ -151,11 +151,11 @@ class ContactUsPage extends React.Component {
                     <Button
                       className="btn-icon btn-round"
                       color="dribbble"
-                      href="https://dribbble.com/creativetim"
+                      href="https://www.instagram.com/celestaiitp_official/?hl=en"
                       id="tooltip951161185"
                       target="_blank"
                     >
-                      <i className="fab fa-dribbble" />
+                      <i className="fab fa-instagram" />
                     </Button>
                     <UncontrolledTooltip delay={0} target="tooltip951161185">
                       Follow us
