@@ -2,15 +2,58 @@ import React, { Component } from "react";
 import { Tabs, Tab, TabPanel, TabList } from "react-web-tabs";
 import "react-web-tabs/dist/react-web-tabs.css";
 import "./Extab.css";
+import {
+  Button,
+  FormGroup,
+  Form,
+  Label,
+  Input,
+  FormText,
+  Col,
+  Row,
+} from "reactstrap";
+import axios from 'axios';
 
 class Extab extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      userInfo:JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : {},
+      eventId:this.props.eventDetails._id,
+    };
   }
   componentDidMount() {}
 
   componentWillUnmount() {}
+
+  // handleChange = ({ target }) => {
+  //   const { name, value } = target;
+  //   this.setState({ [name]: value });
+  // }
+
+  submit = (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    axios
+      .post(`/api/registrations/register/${this.state.eventId}/`,{
+        teamName:"",
+        teamDetails:[]
+      },{
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      })
+
+      .then(() => {
+        console.log("Data has been sent to the server");
+        alert("Event Registration was succesfull");
+      })
+      .catch(() => {
+        console.log("Internal server error");
+        alert("Event Registration failed");
+      });
+  };
 
   render() {
     const event = this.props.eventDetails;
@@ -31,7 +74,9 @@ class Extab extends Component {
               About
             </Tab>
             <Tab tabFor="two">Rules</Tab>
+            {Object.keys(this.state.userInfo).length !== 0 ? (
             <Tab tabFor="three">Register</Tab>
+            ):null}
           </TabList>
           <TabPanel tabId="one">
             <div className="f3 underline b">Description</div>
@@ -82,7 +127,31 @@ class Extab extends Component {
               <ul dangerouslySetInnerHTML={{ __html: event.rulebookUrl }}></ul>
             </div>
           </TabPanel>
-          <TabPanel tabId="three"></TabPanel>
+          {Object.keys(this.state.userInfo).length !== 0 ? (
+          <TabPanel tabId="three">
+            <br/>
+            <br/>
+            <div className="f3 b underline" style={{alignContent:"center"}}>Click on the Register button for registration</div>
+            <Form 
+              style={{
+                padding: "30px",
+                cursor: "pointer",
+                color: "white",
+              }}
+
+              onSubmit={this.submit}>
+              <FormGroup check row>
+                <Col sm={{ size: 10, offset: 1 }}>
+                  <Button
+                    type="submit"
+                    value="Submit"
+                  >
+                  Register</Button>
+                </Col>
+              </FormGroup>
+            </Form>
+          </TabPanel>
+          ):null}
         </Tabs>
       </div>
     );

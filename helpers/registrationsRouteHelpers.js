@@ -19,7 +19,7 @@ module.exports={
     //valiadtion schemas
     schemas: {
         regSchema: Joi.object().keys({
-            teamName: Joi.string(),
+            teamName: Joi.string().allow(''),
             teamDetails: Joi.array().items(Joi.string())
         }).unknown(false),
 
