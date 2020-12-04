@@ -27,7 +27,7 @@ import {
 import { serverUrl } from "../../config";
 const carouselItems = [
   {
-    src: require("../../assets/img/homeassets/4841dad66f05d4e477b729b2ff59a19e.webp"),
+    src: "https://scontent.fpat2-2.fna.fbcdn.net/v/t1.0-9/126571846_4403571509658157_6900766232859162323_o.jpg?_nc_cat=100&ccb=2&_nc_sid=8bfeb9&_nc_ohc=09rChryv7s0AX9Iuxfv&_nc_ht=scontent.fpat2-2.fna&oh=f60d15793e291d7301ac912d1c8e1a84&oe=5FEE6710",
     altText: "Slide 1",
     caption: "",
   },
