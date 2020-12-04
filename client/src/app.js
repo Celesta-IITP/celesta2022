@@ -30,6 +30,7 @@ import CA from "components/CA/ca.js";
 import AddEvent from "./components/AddEvent/addEvent";
 import Points from "components/PtsTable/pts.js";
 import Admin from "components/Admin";
+import Schedule from "./components/Schedule/schedule";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -133,6 +134,7 @@ class App extends React.Component {
           <Route path="/gallery" render={(props) => <Photos {...props} />} />
           <Route path="/sponsors" render={(props) => <Sponsors {...props} />} />
           <Route path="/Points" render={(props) => <Points {...props} />} />
+          <Route path="/schedule" render={(props) => <Schedule {...props} />} />
           <Route path="/stats" render={(props) => <Stats {...props} />} />
           <Route path="/ca" render={(props) => <CA {...props} />} />
           <Route path="*" component={NotFound} />

@@ -148,6 +148,9 @@ class ComponentsNavbar extends React.Component {
                 </NavItem>
               )}
               <NavItem>
+                <NavLink href="/schedule">Schedule</NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink href="/events-page">Events</NavLink>
               </NavItem>
               <NavItem>
