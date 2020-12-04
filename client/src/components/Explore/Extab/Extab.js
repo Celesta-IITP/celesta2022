@@ -20,23 +20,48 @@ class Extab extends Component {
     this.state = {
       userInfo:JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : {},
       eventId:this.props.eventDetails._id,
+      teamName:"",
+      registered:false,
+      events:{}
     };
   }
-  componentDidMount() {}
+  componentDidMount() {
+    this.getReg();
+  }
 
   componentWillUnmount() {}
 
-  // handleChange = ({ target }) => {
-  //   const { name, value } = target;
-  //   this.setState({ [name]: value });
-  // }
+  getReg = () => {
+    const token = localStorage.getItem("token");
+    axios
+      .get(`/api/registrations/registered/${this.state.eventId}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      })
+      .then(async(response) => {
+        const data = response.data;
+        this.setState({registered:data.data})
+        console.log(data.data);
+        console.log("Data has been received!!");
+      })
+      .catch(() => {
+        alert('Error retrieving data!!!');
+      });
+  }
+
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    this.setState({ [name]: value });
+  }
 
   submit = (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     axios
       .post(`/api/registrations/register/${this.state.eventId}/`,{
-        teamName:"",
+        teamName:this.state.teamName,
         teamDetails:[]
       },{
         headers: {
@@ -47,11 +72,10 @@ class Extab extends Component {
 
       .then(() => {
         console.log("Data has been sent to the server");
-        alert("Event Registration was succesfull");
+        this.setState({registered:true});
       })
       .catch(() => {
         console.log("Internal server error");
-        alert("Event Registration failed");
       });
   };
 
@@ -131,7 +155,9 @@ class Extab extends Component {
           <TabPanel tabId="three">
             <br/>
             <br/>
-            <div className="f3 b underline" style={{alignContent:"center"}}>Click on the Register button for registration</div>
+            { !this.state.registered ? (
+            <div className="f3 b underline" style={{alignContent:"center"}}>Fill the form and Register</div>
+            ): null}
             <Form 
               style={{
                 padding: "30px",
@@ -140,15 +166,43 @@ class Extab extends Component {
               }}
 
               onSubmit={this.submit}>
+              { (event.teamSize>1 && !this.state.registered) ? (
+                <FormGroup row>
+                  <Label for="exampleText" sm={2}>
+                    Team Name
+                  </Label>
+                  <Col sm={10}>
+                    <Input
+                      type="textArea"
+                      name="teamName"
+                      id="exampleText"
+                      placeholder="Team Name"
+                      onChange={this.handleChange}
+                    />
+                  </Col>
+                </FormGroup>
+              ): null}
+
+              { !this.state.registered ? (
               <FormGroup check row>
                 <Col sm={{ size: 10, offset: 1 }}>
                   <Button
                     type="submit"
                     value="Submit"
+              
                   >
                   Register</Button>
                 </Col>
               </FormGroup>
+              ): (
+                <FormGroup check row>
+                <Col sm={{ size: 20, offset: 1 }}>
+                  <h3 style={{color:"white",fontFamily:"Itim,cursive"}}>
+                    You have already Registered!!
+                  </h3>
+                </Col>
+              </FormGroup>
+              )}
             </Form>
           </TabPanel>
           ):null}
