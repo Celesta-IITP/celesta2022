@@ -86,67 +86,75 @@ class schedule extends React.Component {
                               <tr>
                                 <th className="header">GUEST NAME</th>
                                 <th className="header" style={{ textAlign: "center"}}>TOPIC</th>
-                                <th className="header" style={{ textAlign: "center"}}>DATE</th>
                                 <th className="header" style={{ textAlign: "center"}}>DAY</th>
+                                <th className="header" style={{ textAlign: "center"}}>DATE</th>
                                 <th className="header" style={{ textAlign: "center"}}>TIME-SLOT</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
                                 <td>Dr. Shankar Venugopal</td>
-                                <td>DESIRable Skills for the Future</td>
-                                <td>12/12/20</td>
+                                <td>DESIrable Skills for the Future</td>
                                 <td>Saturday</td>
+                                <td>12/12/20</td>
+                                
                                 <td>10:00-11:00</td>
                               </tr>
                               <tr>
                                 <td>Avelo roy</td>
                                 <td>Business Model</td>
-                                <td>12/12/20</td>
                                 <td>Saturday</td>
+                                <td>12/12/20</td>
+                                
                                 <td>17:00-18:00</td>
                               </tr>
                               <tr>
                                 <td>Rakesh malhotra</td>
                                 <td>-</td>
-                                <td>13/12/20</td>
                                 <td>Sunday</td>
+                                <td>13/12/20</td>
+                                
                                 <td>10:00-11:00</td>
                               </tr>
                               <tr>
                                 <td>Shayamal Vallabhjee</td>
                                 <td>-</td>
-                                <td>13/12/20</td>
                                 <td>Sunday</td>
+                                <td>13/12/20</td>
+                                
                                 <td>17:00-18:00</td>
                               </tr>
                               <tr>
                                 <td>Rajan Singh</td>
                                 <td>Rediscovering focus in a sea of distraction</td>
-                                <td>18/12/20</td>
                                 <td>Friday</td>
+                                <td>18/12/20</td>
+                               
                                 <td>17:00-18:00</td>
                               </tr>
                               <tr>
                                 <td>Samar Singla</td>
                                 <td>Samar's journey as an entrepreneur </td>
-                                <td>19/12/20</td>
                                 <td>Saturday</td>
+                                <td>19/12/20</td>
+                                
                                 <td>10:00-11:00</td>
                               </tr>
                               <tr>
                                 <td>HC Verma</td>
                                 <td>-</td>
-                                <td>20/12/20</td>
                                 <td>Sunday</td>
+                                <td>20/12/20</td>
+                                
                                 <td>10:00-11:00</td>
                                 
                               </tr>
                               <tr>
-                                <td>Alyne</td>
+                                <td>Alyne Tamir</td>
                                 <td>-</td>
-                                <td>20/12/20</td>
                                 <td>Sunday</td>
+                                <td>20/12/20</td>
+                                
                                 <td>17:00-18:00</td>
                               </tr>
                             </tbody>
