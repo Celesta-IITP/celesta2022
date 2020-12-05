@@ -127,6 +127,22 @@ module.exports = {
 
     },
 
+    isRegistered: async (req, res, next) => {
+        const eventId = req.params.eventId;
+        const currUser = req.user;
+
+        const existReg = await Registration.findOne({
+            userId: currUser._id,
+            eventId: eventId
+        })
+
+        if(existReg){
+            return res.status(200).json({ data: true });
+        }else{
+            return res.status(200).json({ data: false });;
+        }
+    },
+
     getRegistrationById: async (req, res, next) => {
         if (currUser.roles.includes(USER_ROLES_ENUM.ORGANIZER) || currUser.roles.includes(USER_ROLES_ENUM.ADMIN) || currUser.roles.includes(USER_ROLES_ENUM.SUBCOORD) || currUser.roles.includes(USER_ROLES_ENUM.COORD)) {
             const regId = req.params.regId;

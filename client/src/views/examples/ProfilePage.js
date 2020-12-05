@@ -34,6 +34,8 @@ import {
 // core components
 import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footer/Footer.js";
+import MaterialTable, { MTableToolbar } from "material-table";
+import Grow from "@material-ui/core/Grow";
 
 const carouselItems = [
   {
@@ -62,12 +64,15 @@ class ProfilePage extends React.Component {
       userInfo: this.props.user,
       file: "",
       tabs: 1,
+      regEveId:[],
+      events:[],
       name:this.props.user.name,
       phone:this.props.user.phone,
       coll:this.props.user.college
     };
   }
   componentDidMount() {
+    this.getRegEve();
     console.log(this.state.userInfo.profilePhoto);
     if (navigator.platform.indexOf("Win") > -1) {
       document.documentElement.className += " perfect-scrollbar-on";
@@ -92,6 +97,52 @@ class ProfilePage extends React.Component {
       [stateName]: index,
     });
   };
+
+  getRegEve = () => {
+    const token = localStorage.getItem("token");
+    axios
+      .get(`/api/registrations/myregistrations`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      })
+      .then(async(response) => {
+        const data = response.data;
+        this.setState({regEveId:data})
+        console.log(this.state.regEveId.data);
+        console.log("Data has been received!!");
+        this.getEveDetails();
+      })
+      .catch(() => {
+        alert('Error retrieving data!!!');
+      });
+  }
+
+  getEveDetails = () => {
+    const token = localStorage.getItem("token");
+    //Object.entries(this.state.regEveId).map(([key, value]) => {
+      this.state.regEveId.data.map(val => {
+        axios
+          .get(`/api/events/event/${val.eventId}`, {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: token,
+            },
+          })
+          .then(async(response) => {
+            const data = response.data;
+            this.setState({events: this.state.events.concat(data)});
+            console.log(this.state.events);
+            console.log("Data has been received!!");
+          })
+          .catch(() => {
+            alert('Error retrieving data!!!');
+          });
+      })
+    //})
+  }
+
   uploadImage(e) {
     let imageObj = {};
     console.log(e.target.files[0]);
@@ -139,6 +190,7 @@ class ProfilePage extends React.Component {
 
   render() {
     console.log('State: ', this.state);
+
     return (
       <>
         <ExamplesNavbar />
@@ -187,7 +239,7 @@ class ProfilePage extends React.Component {
                     >
                       Update Profile Photo!
                     </Button>
-                    <CardBody>
+                    {/* <CardBody>
                       <Nav
                         className="nav-tabs-primary justify-content-center"
                         tabs
@@ -197,14 +249,14 @@ class ProfilePage extends React.Component {
                             className={classnames({
                               active: this.state.tabs === 1,
                             })}
-                            onClick={(e) => this.toggleTabs(e, "tabs", 1)}
+                            onClick={(e) => this.toggleTabs(e, "tabs", 2)}
                             href="#pablo"
                           >
                             Registered events!
                           </NavLink>
                         </NavItem>
                       </Nav>
-                    </CardBody>
+                    </CardBody> */}
                   </Card>
                 </Col>
                 <Col md="6">
@@ -289,6 +341,29 @@ class ProfilePage extends React.Component {
                     </CardBody>
                   </Card>
                 </Col>
+              </Row>
+              <Row>
+              <h2 style={{textDecoration:"underline"}}>Registered Events</h2>
+              <Table responsive>
+                  <thead>
+                    <tr>
+                      <th style={{fontSize:"18px"}}>Registered Events</th>
+                      <th style={{fontSize:"18px"}}>Date</th>
+                      <th style={{fontSize:"18px"}}>Start Time</th>
+                      <th style={{fontSize:"18px"}}>Venue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {this.state.events.map(event => 
+                    <tr>
+                      <td style={{color:"grey",fontSize:"15px"}}>{event.data.name}</td>
+                      <td style={{color:"grey",fontSize:"15px"}}>{event.data.date}</td>
+                      <td style={{color:"grey",fontSize:"15px"}}>{event.data.startTime}</td>
+                      <td style={{color:"grey",fontSize:"15px"}}>{event.data.venue}</td>
+                    </tr>
+                  )}
+                  </tbody>
+                </Table>
               </Row>
             </Container>
           </div>

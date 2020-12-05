@@ -123,7 +123,7 @@ module.exports = {
         const eventId = req.params.eventId;
         const event = await Event.findOne({
             _id: eventId
-        }, 'name description thumbnailUrl imageUrl venue venueUrl date startTime endTime eventType teamSize charge rulebookUrl registrationUrl postLinks organizers');
+        }, 'name venue date startTime endTime');
 
         if (event) {
             res.status(200).json({

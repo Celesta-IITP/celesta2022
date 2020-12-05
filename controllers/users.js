@@ -448,13 +448,17 @@ module.exports = {
   },
   addCAPoints: async (req, res) => {
     try {
+      console.log(req.body);
+      console.log("hello");
       const { celestaId, points } = req.body;
+      Number(points);
+      console.log(typeof points);
       if (!celestaId || !points) {
+        return;
         res.status(404).json({ message: "Please fill all details" });
       }
       const user = await User.findOne({ celestaId });
-      console.log(user);
-      user.points += points;
+      user.points += Number(points);
       await user.save();
       res.status(200).json({ message: "Points updated successfully." });
     } catch (e) {

@@ -5,3 +5,4 @@ router.route("/points").post(userController.addCAPoints);
 router.route("/all").get(userController.getAllCA);
 // router.route("/celestaId").post(userController.findByCelestaId);
 module.exports = router;
+ 

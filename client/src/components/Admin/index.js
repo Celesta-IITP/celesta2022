@@ -22,6 +22,7 @@ export default class Admin extends React.Component {
   state = {
     celestaId: "",
     points: "",
+    msg: "",
   };
 
   idselect = (event) => {
@@ -30,6 +31,7 @@ export default class Admin extends React.Component {
 
   handleChangepoints = (event) => {
     this.setState({ points: event.target.value });
+    console.log("updated");
   };
 
   handleSubmit = (event) => {
@@ -43,9 +45,7 @@ export default class Admin extends React.Component {
       .then((res) => {
         console.log(res);
         console.log(res.data);
-      })
-      .catch((e) => {
-        console.log(e.message);
+        this.setState({ msg: "Points updated" });
       });
   };
 
@@ -118,6 +118,7 @@ export default class Admin extends React.Component {
                       Update Points
                     </UncontrolledTooltip>
                   </Form>
+                  <h1>{this.state.msg}</h1>
                 </CardBody>
               </Card>
             </Col>
