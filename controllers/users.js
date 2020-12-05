@@ -43,7 +43,12 @@ sendMail = async (emailId, celestaId) => {
     to: emailId,
     from: "celesta.iitp@gmail.com",
     subject: "Celesta 2020",
-    text: "Your Celesta Id is" + " " + celestaId,
+    text:
+      "Your Celesta Id is" +
+      " " +
+      celestaId +
+      "\n" +
+      "Please save it for later use!",
     // html: emailBody,
   };
 
@@ -448,10 +453,12 @@ module.exports = {
         res.status(404).json({ message: "Please fill all details" });
       }
       const user = await User.findOne({ celestaId });
+      console.log(user);
       user.points += points;
       await user.save();
       res.status(200).json({ message: "Points updated successfully." });
     } catch (e) {
+      console.log(e.message);
       res.status(500).json({ message: "Internal server error" });
     }
   },

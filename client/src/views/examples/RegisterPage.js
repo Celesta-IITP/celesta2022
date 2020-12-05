@@ -160,7 +160,8 @@ class RegisterPage extends React.Component {
     await this.props.registerUser(user);
     if (this.state.msg === "") {
       this.setState({
-        msg: "Registered Succesfully",
+        msg:
+          "Registered Successfully and mail has been sent to your registered email",
       });
       this.resetUserInputs();
     }
@@ -286,7 +287,7 @@ class RegisterPage extends React.Component {
                         ) : null}
                       </div>
                       <CardBody>
-                        <h6>Or Be Classic..</h6>
+                        <h6>Time to get_techxited....</h6>
                         <Form className="form" onSubmit={this.submitHandler}>
                           <InputGroup
                             className={classnames({
@@ -396,7 +397,7 @@ class RegisterPage extends React.Component {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                              placeholder="Referal Id(if any)"
+                              placeholder="CA Referal Id(if any)"
                               type="text"
                               value={this.state.refId}
                               onFocus={(e) =>

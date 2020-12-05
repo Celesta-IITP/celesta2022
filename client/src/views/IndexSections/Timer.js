@@ -18,7 +18,7 @@ class Timer extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-      var d_day = moment("2020-12-21");
+      var d_day = moment("2020-12-12");
       var now = moment();
 
       var left_time = moment(d_day - now);

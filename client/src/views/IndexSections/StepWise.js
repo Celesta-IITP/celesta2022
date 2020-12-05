@@ -122,6 +122,42 @@ class StepWise extends React.Component {
             allowfullscreen
           ></iframe>
         </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "4rem",
+            padding: "1rem",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "4rem",
+              padding: "1rem",
+            }}
+          >
+            {/* <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "1rem",
+                marginLeft: "2rem",
+                padding: "1rem",
+              }}
+            >
+              <iframe
+                width="400"
+                height="350"
+                src="https://www.youtube.com/embed/1_xkJJ5XMyM"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div> */}
+          </div>
+        </div>
 
         <br />
         <br />
