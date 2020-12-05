@@ -72,7 +72,7 @@ export default function App() {
                     title: "Rank",
                     field: "rank",
                     align: "center",
-                    width: 10,
+                    width: 20,
                     render: (rowData) => {
                       return (
                         <span>
@@ -86,7 +86,7 @@ export default function App() {
                     title: "     Name",
                     field: "name",
                     align: "center",
-                    width: "25%",
+                    width: 20,
                     render: (rowData) => {
                       return (
                         <span>
@@ -97,19 +97,33 @@ export default function App() {
                     },
                   },
                   {
-                    title: "  College",
-                    field: "college",
+                    title: "Id",
+                    field: "Celesta Id",
                     align: "center",
-                    width: 25,
+                    width: 20,
                     render: (rowData) => {
                       return (
                         <span>
                           {/* <GitHubIcon fontSize="small" /> */}
-                          <h3> {rowData.college}</h3>
+                          <h3> {rowData.celestaId}</h3>
                         </span>
                       );
                     },
                   },
+                  // {
+                  //   title: "  College",
+                  //   field: "college",
+                  //   align: "center",
+                  //   width: 20,
+                  //   render: (rowData) => {
+                  //     return (
+                  //       <span>
+                  //         {/* <GitHubIcon fontSize="small" /> */}
+                  //         <h3> {rowData.college}</h3>
+                  //       </span>
+                  //     );
+                  //   },
+                  // },
                   {
                     title: "Points",
                     field: "points",
