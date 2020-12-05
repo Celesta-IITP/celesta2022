@@ -287,7 +287,7 @@ class RegisterPage extends React.Component {
                         ) : null}
                       </div>
                       <CardBody>
-                        <h6>Time to get_techxited....</h6>
+                        <h6>Time to get_TechXited....</h6>
                         <Form className="form" onSubmit={this.submitHandler}>
                           <InputGroup
                             className={classnames({

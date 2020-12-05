@@ -33,8 +33,7 @@ var Msg =
   "Continuing our legacy, Celesta'20 is back again this year with double excitement to promote technical and managerial enthusiasm amongst this generation and transform the innovative ideas into reality.\n" +
   "So, Celesta, the techno-management fest of IIT Patna officially launches its Campus Ambassador program for the year 2020!!\n" +
   "Team Celesta cordially welcome you, the selected ones, onboard this enthralling journey. Give yourself a chance to develop the leadership and management qualities and build our brand to the best of your ability!!\n" +
-  "We hope that you'll try hard to get those reputed Internshala certificates. So Let's get ready!!\n\n" +
-  "Internshala form link : https://internshala.com/internship/detail/campus-ambassador-programme-at-celesta-iit-patna1603630139 \n" +
+  "So Let's get ready!!\n\n" +
   "Rulebook CA Program : https://drive.google.com/file/d/1_XuC6Q8ueSCMjeS0nzSZVwHFNiuMuqy5/view?usp=drivesdk \n" +
   "Whatsapp group link:https://chat.whatsapp.com/E6axGHXCQSG8Nto0tW5enC \n";
 

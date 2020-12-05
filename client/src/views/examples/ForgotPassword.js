@@ -189,7 +189,7 @@ class ForgotPage extends React.Component {
                       </div>
                       <CardBody>
                         <h6 style={{ marginBottom: "30px" }}>
-                          Or Be Classic....
+                          Time to get_TechXited....
                         </h6>
                         <Form className="form">
                           <InputGroup
