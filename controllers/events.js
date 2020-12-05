@@ -147,6 +147,7 @@ module.exports = {
 
         newEvent.save((err, product) => {
             if (err) {
+                console.log(err);
                 res.status(500).json({
                     message: "Unable to add event"
                 });

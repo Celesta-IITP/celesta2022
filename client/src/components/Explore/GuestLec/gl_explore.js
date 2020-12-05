@@ -26,7 +26,6 @@ class info_explore extends Component {
 
   getEvents = () => {
     const token = localStorage.getItem("token");
-    console.log(token);
     axios
       .get("/api/events/bytype/gl/detailed/", {
         headers: {
@@ -52,11 +51,17 @@ class info_explore extends Component {
     return (
       <div>
         <BackToEvents />
+        { (this.state.onsite.length!=0) ? (
         <div className="info_cont s--inactive">
           <div className="info_cont__inner">
           { this.state.dataIsReturned ? <InfoCards /> : null}
           </div>
         </div>
+        ) : (
+        <h2 style={{textAlign:"center",paddingTop:"25%"}}>
+          Coming soon !!
+        </h2>
+        )}
       </div>
     );
   }

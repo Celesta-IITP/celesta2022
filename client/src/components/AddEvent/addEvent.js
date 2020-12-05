@@ -41,8 +41,6 @@ class addEvent extends Component {
   submit = (event) => {
     event.preventDefault();
     const token = localStorage.getItem("token");
-    let imageFormObj = new FormData();
-    imageFormObj.append("evepic", this.state.file);
     axios
       .post("/api/events/", {
         organizers:this.state.organizers,
@@ -155,7 +153,7 @@ class addEvent extends Component {
               />
             </Col>
           </FormGroup>
-          <FormGroup row>
+          {/* <FormGroup row>
             <Label for="exampleText" sm={2}>
               Date
             </Label>
@@ -168,10 +166,10 @@ class addEvent extends Component {
                 onChange={this.handleChange}
               />
             </Col>
-          </FormGroup>
+          </FormGroup> */}
           <FormGroup row>
             <Label for="exampleText" sm={2}>
-              Venue
+              Submission link
             </Label>
             <Col sm={10}>
               <Input
@@ -219,7 +217,7 @@ class addEvent extends Component {
           </FormGroup>
           <FormGroup row>
             <Label for="exampleText" sm={2}>
-              Start Time
+              Start Date
             </Label>
             <Col sm={10}>
               <Input
@@ -233,7 +231,7 @@ class addEvent extends Component {
           </FormGroup>
           <FormGroup row>
             <Label for="exampleText" sm={2}>
-              End Time
+              End Date
             </Label>
             <Col sm={10}>
               <Input
