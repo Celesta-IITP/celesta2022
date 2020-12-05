@@ -12,7 +12,7 @@ export const ManCards = (props) => {
 			        <div className="man_el__inner">
 			          <div className="man_el__bg"></div>
 			          <div className="man_el__preview-cont">
-			            <h2 className="man_el__heading">{value.name}</h2>
+			            <h2 className="man_el__heading" style={{fontSize:"inherit"}}>{value.name}</h2>
 			          </div>
 			          <div className="man_el__content">
 			            <div className="man_el__text">{value.name}</div>

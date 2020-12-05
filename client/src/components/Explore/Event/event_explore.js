@@ -50,13 +50,17 @@ class online_explore extends Component {
 		return (
 			<div>
 				<BackToEvents/>
-				
+				{(this.state.online.length!=0) ? (
 				<div className="online_cont s--inactive">
 					  <div className="online_cont__inner">
 					  	{ this.state.dataIsReturned ? <OnlineCards/> : null}
 					  </div> 
-					  
 				</div>
+				) : (
+					<h2 style={{textAlign:"center",paddingTop:"25%"}}>
+						Coming soon !!
+					</h2>
+				)}
 			</div>
 		)
 	}

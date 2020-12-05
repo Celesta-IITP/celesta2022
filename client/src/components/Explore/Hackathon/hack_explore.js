@@ -51,12 +51,17 @@ class man_explore extends Component {
 		return (
 			<div>
 				<BackToEvents/>
-				
+			{ (this.state.managerial.length!=0) ? (
 			 <div className="man_cont s--inactive">
 			  <div className="man_cont__inner">
 			  { this.state.dataIsReturned ? <ManCards /> : null}
 			  </div>
 				</div>
+			) : (
+				<h2 style={{textAlign:"center",paddingTop:"25%"}}>
+          			Coming soon !!
+        		</h2>
+			)}
 			</div>
 		)
 	}

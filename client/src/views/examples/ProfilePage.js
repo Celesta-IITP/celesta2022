@@ -344,22 +344,20 @@ class ProfilePage extends React.Component {
               </Row>
               <Row>
               <h2 style={{textDecoration:"underline"}}>Registered Events</h2>
-              <Table responsive>
+              <Table responsive style={{width:"max-content",borderCollapse: "collapse",borderStyle:"hidden",border:"2px solid grey"}}>
                   <thead>
                     <tr>
-                      <th style={{fontSize:"18px"}}>Registered Events</th>
-                      <th style={{fontSize:"18px"}}>Date</th>
-                      <th style={{fontSize:"18px"}}>Start Time</th>
-                      <th style={{fontSize:"18px"}}>Venue</th>
+                      <th style={{fontSize:"18px",textAlign:"center",border:"2px solid grey"}}>Registered Events</th>
+                      <th style={{fontSize:"18px",textAlign:"center",border:"2px solid grey"}}>Start Date</th>
+                      <th style={{fontSize:"18px",textAlign:"center",border:"2px solid grey"}}>End Date</th>
                     </tr>
                   </thead>
                   <tbody>
                   {this.state.events.map(event => 
                     <tr>
-                      <td style={{color:"grey",fontSize:"15px"}}>{event.data.name}</td>
-                      <td style={{color:"grey",fontSize:"15px"}}>{event.data.date}</td>
-                      <td style={{color:"grey",fontSize:"15px"}}>{event.data.startTime}</td>
-                      <td style={{color:"grey",fontSize:"15px"}}>{event.data.venue}</td>
+                      <td style={{color:"grey",fontSize:"15px",textAlign:"center",border:"2px solid grey"}}>{event.data.name}</td>
+                      <td style={{color:"grey",fontSize:"15px",textAlign:"center",border:"2px solid grey"}}>{event.data.startTime}</td>
+                      <td style={{color:"grey",fontSize:"15px",textAlign:"center",border:"2px solid grey"}}>{event.data.endTime}</td>
                     </tr>
                   )}
                   </tbody>

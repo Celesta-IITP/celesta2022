@@ -27,9 +27,9 @@ class Events extends Component {
           <div className="fnc-slider__slides">
             <div className="fnc-slide m--blend-green m--active-slide">
               <div className="fnc-slide__inner">
-                <div className="fnc-slide__mask">
+                {/* <div className="fnc-slide__mask">
                   <div className="fnc-slide__mask-inner"></div>
-                </div>
+                </div> */}
                 <div className="fnc-slide__content">
                   <h2 className="fnc-slide__heading">
                     <div className="fnc-slide__heading-line">
@@ -50,9 +50,9 @@ class Events extends Component {
             </div>
             <div className="fnc-slide m--blend-dark">
               <div className="fnc-slide__inner">
-                <div className="fnc-slide__mask">
+                {/* <div className="fnc-slide__mask">
                   <div className="fnc-slide__mask-inner"></div>
-                </div>
+                </div> */}
                 <div className="fnc-slide__content">
                   <h2 className="fnc-slide__heading">
                     <div className="fnc-slide__heading-line">
@@ -119,9 +119,9 @@ class Events extends Component {
             </div> */}
             <div className="fnc-slide m--blend-dark">
               <div className="fnc-slide__inner">
-                <div className="fnc-slide__mask">
+                {/* <div className="fnc-slide__mask">
                   <div className="fnc-slide__mask-inner"></div>
-                </div>
+                </div> */}
                 <div className="fnc-slide__content">
                   <h2 className="fnc-slide__heading">
                     <div className="fnc-slide__heading-line">
@@ -142,9 +142,9 @@ class Events extends Component {
             </div>
             <div className="fnc-slide m--blend-red">
               <div className="fnc-slide__inner">
-                <div className="fnc-slide__mask">
+                {/* <div className="fnc-slide__mask">
                   <div className="fnc-slide__mask-inner"></div>
-                </div>
+                </div> */}
                 <div className="fnc-slide__content">
                   <h2 className="fnc-slide__heading">
                     <div className="fnc-slide__heading-line">

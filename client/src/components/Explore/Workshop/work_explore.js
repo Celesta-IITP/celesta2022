@@ -50,12 +50,17 @@ class gamiacs_explore extends Component {
     return (
       <div>
         <BackToEvents />
-
+        {(this.state.gamiacs.length!=0) ? (
         <div className="gam_cont s--inactive">
           <div className="gam_cont__inner">
             { this.state.dataIsReturned ? <GamiacCards /> : null}
           </div>
         </div>
+        ) : (
+          <h2 style={{textAlign:"center",paddingTop:"25%"}}>
+            Coming soon !!
+          </h2>
+        )}
       </div>
     );
   }

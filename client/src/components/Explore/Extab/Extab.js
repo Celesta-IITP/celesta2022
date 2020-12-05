@@ -35,7 +35,7 @@ class Extab extends Component {
       eventId:this.props.eventDetails._id,
       teamName:"",
       registered:false,
-      events:{}
+      dispmsg:""
     };
   }
   componentDidMount() {
@@ -56,6 +56,7 @@ class Extab extends Component {
       .then(async(response) => {
         const data = response.data;
         this.setState({registered:data.data})
+        this.setState({dispmsg:"You have already registered!!"})
         console.log(data.data);
         console.log("Data has been received!!");
       })
@@ -86,6 +87,7 @@ class Extab extends Component {
       .then(() => {
         console.log("Data has been sent to the server");
         this.setState({registered:true});
+        this.setState({dispmsg:"Registration Successful!!"})
       })
       .catch(() => {
         console.log("Internal server error");
@@ -94,16 +96,17 @@ class Extab extends Component {
 
   render() {
     const event = this.props.eventDetails;
-    if (!event.charge) event.charge = "To be announced";
+    if (!event.charge) event.charge = "free";
     /*if(!event.organizers.length)
       event.organizers='To be announced'*/
     if (!event.description) event.description = "To be announced";
-    if (!event.date) event.date = "To be announced";
-    if (!event.venue) event.venue = "To be announced";
+    //if (!event.date) event.date = "To be announced";
+    //if (!event.venue) event.venue = "To be announced";
     if (!event.startTime) event.startTime = "To be announced";
     if (!event.endTime) event.endTime = "To be announced";
 
-    let description = processString(config)(event.description)
+    let submission = processString(config)(event.venue)
+    let rule = processString(config)(event.rulebookUrl)
 
     return (
       <div className="white tl tabs">
@@ -122,8 +125,18 @@ class Extab extends Component {
             <div className="f3 underline b">Description</div>
             <p
               className="eventDescription"
-            >{description}</p>
+              dangerouslySetInnerHTML={{ __html: event.description }}
+            ></p>
             <br/>
+            { this.state.registered &&
+              <>
+              <div className="f3 underline b">Submission Link</div>
+              <p
+                className="eventDescription"
+              >{submission}</p>
+              <br/>
+              </>
+             }
             <div className="f3 underline b">Charge</div>
 
             <p
@@ -138,28 +151,28 @@ class Extab extends Component {
               dangerouslySetInnerHTML={{ __html: event.organizers }}
             ></p>
             <br/>
-            <div className="f3 underline b">Registration Link</div>
+            {/* <div className="f3 underline b">Registration Link</div>
 
             <p
               className="eventHead"
               dangerouslySetInnerHTML={{ __html: event.registrationUrl }}
             ></p>
-            <br/>
-            <div className="f3 underline b">Date</div>
+            <br/> */}
+            {/* <div className="f3 underline b">Date</div>
 
             <p
               className="eventHead"
               dangerouslySetInnerHTML={{ __html: event.date }}
             ></p>
-            <br/>
-            <div className="f3 underline b">Start Time</div>
+            <br/> */}
+            <div className="f3 underline b">Start Date</div>
 
             <p
               className="eventHead"
               dangerouslySetInnerHTML={{ __html: event.startTime }}
             ></p>
             <br/>
-            <div className="f3 underline b">End Time</div>
+            <div className="f3 underline b">End Date</div>
 
             <p
               className="eventHead"
@@ -170,8 +183,8 @@ class Extab extends Component {
           <br/>
             <div className="f3 b underline">Rules</div>
             <div className="eventRules">
-              <ul dangerouslySetInnerHTML={{ __html: event.rulebookUrl }}></ul>
-            </div>
+              <ul>{rule}</ul>
+            </div> 
           </TabPanel>
           {Object.keys(this.state.userInfo).length !== 0 ? (
           <TabPanel tabId="three">
@@ -220,7 +233,7 @@ class Extab extends Component {
                 <FormGroup check row>
                 <Col sm={{ size: 20, offset: 1 }}>
                   <h3 style={{color:"white",fontFamily:"Itim,cursive"}}>
-                    You have already Registered!!
+                    {this.state.dispmsg}
                   </h3>
                 </Col>
               </FormGroup>
