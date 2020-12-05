@@ -1,33 +1,34 @@
 import React, { Component } from "react";
-import { gam_explore_function } from "./gamiacs_explore_function";
-import "./gamiacs_explore.css";
-import "./gamiacs_explore_main.css";
+import { info_explore_function } from "./gl_explore_function";
+import "./gl_explore.css";
+import "./gl_explore_main.css";
 import { BackToEvents } from "../../_BackToEvents/BackToEvents";
-import { GamiacCards } from "./gamiacs_cards";
+import { InfoCards } from "./gl_cards";
 import axios from "axios";
 
-class gamiacs_explore extends Component {
+class info_explore extends Component {
   constructor(props){
     super(props);
     this.state = {
-      gamiacs: [],
+      onsite: [],
       dataIsReturned:false
     }
   }
   
   componentDidMount() {
-    gam_explore_function();
+    info_explore_function();
     this.getEvents();
   }
 
   componentDidUpdate= () => {
-		gam_explore_function();
+		info_explore_function();
 	}
 
   getEvents = () => {
     const token = localStorage.getItem("token");
+    console.log(token);
     axios
-      .get("/api/events/bytype/gamiacs/detailed/", {
+      .get("/api/events/bytype/gl/detailed/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: token,
@@ -35,14 +36,15 @@ class gamiacs_explore extends Component {
       })
       .then(async(response) => {
         const data = response.data;
-        this.setState({ gamiacs: data });
+        this.setState({ onsite: data });
         localStorage.setItem('event', JSON.stringify(data));
         console.log(data);
         this.setState({dataIsReturned : true});
         console.log("Data has been received!!");
       })
-      .catch(() => {
-        alert('Error retrieving data!!!');
+      .catch((e) => {
+        console.log(e.message);
+        //alert('Error retrieving data!!!');
       });
   };
 
@@ -50,10 +52,9 @@ class gamiacs_explore extends Component {
     return (
       <div>
         <BackToEvents />
-
-        <div className="gam_cont s--inactive">
-          <div className="gam_cont__inner">
-            { this.state.dataIsReturned ? <GamiacCards /> : null}
+        <div className="info_cont s--inactive">
+          <div className="info_cont__inner">
+          { this.state.dataIsReturned ? <InfoCards /> : null}
           </div>
         </div>
       </div>
@@ -61,4 +62,4 @@ class gamiacs_explore extends Component {
   }
 }
 
-export default gamiacs_explore;
+export default info_explore;

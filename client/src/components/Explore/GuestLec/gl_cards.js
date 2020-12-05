@@ -30,7 +30,7 @@ export const InfoCards = (props) => {
 			        </div>
 			      </div>
 			    </div>
-			)};
+			)}
 		</div>
 	);
 }

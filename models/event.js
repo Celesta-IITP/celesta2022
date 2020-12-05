@@ -7,10 +7,9 @@ const eventSchema = new Schema({
         ref: 'user',
         required: true
     },
-    organizers: [{
-        type: Schema.Types.ObjectId,
-        ref: 'user'
-    }],
+    organizers: {
+        type: String,
+    },
 
     name: {
         type: String,
@@ -50,8 +49,8 @@ const eventSchema = new Schema({
     },
     eventType: {
         type: String,
-        enum: ['robotics', 'technical', 'managerial', 'school', 'online', 'onsite','gamiacs'],
-        default: 'open'
+        enum: ['event','gl','workshop','hackathon'],
+        default: 'event'
     },
 
     rulebookUrl: {

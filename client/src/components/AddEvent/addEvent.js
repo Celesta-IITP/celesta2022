@@ -11,14 +11,87 @@ import {
   Col,
   Row,
 } from "reactstrap";
+import axios from 'axios';
+
 class addEvent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      organizers: [],
+      organizers:"",
+      name:"",
+      description:"",
+      venue:"",
+      date:"",
+      startTime:"",
+      endTime:"",
+      teamSize:"",
+      eventType:"event",
+      rulebookUrl:"",
+      charge:""
     };
   }
+
+  componentDidMount = () => {}
+
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    this.setState({ [name]: value });
+  };
+
+  submit = (event) => {
+    event.preventDefault();
+    const token = localStorage.getItem("token");
+    let imageFormObj = new FormData();
+    imageFormObj.append("evepic", this.state.file);
+    axios
+      .post("/api/events/", {
+        organizers:this.state.organizers,
+        name:this.state.name,
+        description:this.state.description,
+        imageUrl:"",
+        venue:this.state.venue,
+        venueUrl:"",
+        date:this.state.date,
+        startTime:this.state.startTime,
+        endTime:this.state.endTime,
+        teamSize:this.state.teamSize,
+        eventType:this.state.eventType,
+        rulebookUrl:this.state.rulebookUrl,
+        charge:this.state.charge
+      },{
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      })
+
+      .then(() => {
+        console.log("Data has been sent to the server");
+        this.resetUserInputs();
+      })
+      .catch(() => {
+        console.log("Internal server error");
+      });
+  };
+
+  resetUserInputs = () => {
+    this.setState({
+      organizers:"",
+      name:"",
+      description:"",
+      venue:"",
+      date:"",
+      startTime:"",
+      endTime:"event",
+      teamSize:"",
+      eventType:"",
+      rulebookUrl:"",
+      charge:""
+    })
+  }
+
   render() {
+    console.log("State: ",this.state);
     return (
       <div style={{ overflowX: "hidden" }}>
         <div>
@@ -39,6 +112,7 @@ class addEvent extends Component {
             cursor: "pointer",
             color: "white",
           }}
+          onSubmit={this.submit}
         >
           <FormGroup row>
             <Label for="exampleText" sm={2}>
@@ -47,13 +121,14 @@ class addEvent extends Component {
             <Col sm={10}>
               <Input
                 type="textArea"
-                name="text"
+                name="name"
                 id="exampleText"
-                placeholder="Robowars"
+                placeholder="Name"
+                onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
-          <FormGroup row>
+          {/* <FormGroup row>
             <Label for="exampleText" sm={2}>
               Prices
             </Label>
@@ -65,7 +140,7 @@ class addEvent extends Component {
                 placeholder="Robowars"
               />
             </Col>
-          </FormGroup>
+          </FormGroup> */}
           <FormGroup row>
             <Label for="exampleText" sm={2}>
               Description
@@ -73,9 +148,10 @@ class addEvent extends Component {
             <Col sm={10}>
               <Input
                 type="textArea"
-                name="text"
+                name="description"
                 id="exampleText"
-                placeholder="....."
+                placeholder="Description"
+                onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
@@ -86,9 +162,10 @@ class addEvent extends Component {
             <Col sm={10}>
               <Input
                 type="textArea"
-                name="text"
+                name="date"
                 id="exampleText"
-                placeholder="Robowars"
+                placeholder="Date"
+                onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
@@ -99,9 +176,10 @@ class addEvent extends Component {
             <Col sm={10}>
               <Input
                 type="textArea"
-                name="text"
+                name="venue"
                 id="exampleText"
-                placeholder="Robowars"
+                placeholder="Venue"
+                onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
@@ -112,16 +190,16 @@ class addEvent extends Component {
             <Col sm={10}>
               <Input
                 type="select"
-                name="select"
+                name="eventType"
                 id="exampleSelect"
+                defaultValue="technical"
+                onChange={this.handleChange}
                 style={{ backgroundColor: "#05001e" }}
               >
-                <option>Tech</option>
-                <option>Management</option>
-                <option>Robotics</option>
-                <option>Management</option>
-                <option>School</option>
-                <option>Open for all</option>
+                <option value="event">Event</option>
+                <option value="gl">Guest Lecture</option>
+                <option value="workshop">Workshop</option>
+                <option value="hackathon">Hackathon</option>
               </Input>
             </Col>
           </FormGroup>
@@ -132,9 +210,10 @@ class addEvent extends Component {
             <Col sm={10}>
               <Input
                 type="textArea"
-                name="text"
+                name="teamSize"
                 id="exampleText"
-                placeholder="Robowars"
+                placeholder="Team Size"
+                onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
@@ -145,9 +224,10 @@ class addEvent extends Component {
             <Col sm={10}>
               <Input
                 type="textArea"
-                name="text"
+                name="startTime"
                 id="exampleText"
-                placeholder="Robowars"
+                placeholder="Start Time"
+                onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
@@ -158,9 +238,10 @@ class addEvent extends Component {
             <Col sm={10}>
               <Input
                 type="textArea"
-                name="text"
+                name="endTime"
                 id="exampleText"
-                placeholder="Robowars"
+                placeholder="End Time"
+                onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
@@ -171,9 +252,10 @@ class addEvent extends Component {
             <Col sm={10}>
               <Input
                 type="textArea"
-                name="text"
+                name="charge"
                 id="exampleText"
-                placeholder="Robowars"
+                placeholder="Charge"
+                onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
@@ -184,16 +266,34 @@ class addEvent extends Component {
             <Col sm={10}>
               <Input
                 type="textArea"
-                name="text"
+                name="rulebookUrl"
                 id="exampleText"
-                placeholder="Robowars"
+                placeholder="Rulebook Url"
+                onChange={this.handleChange}
+              />
+            </Col>
+          </FormGroup>
+          <FormGroup row>
+            <Label for="exampleText" sm={2}>
+              Organizers
+            </Label>
+            <Col sm={10}>
+              <Input
+                type="textArea"
+                name="organizers"
+                id="exampleText"
+                placeholder="Organizers"
+                onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
 
           <FormGroup check row>
             <Col sm={{ size: 10, offset: 2 }}>
-              <Button>Submit</Button>
+              <Button
+              type="submit"
+              value="Submit"
+              >Submit</Button>
             </Col>
           </FormGroup>
         </Form>
