@@ -30,7 +30,7 @@ export const GamiacCards = (props) => {
 			        </div>
 			      </div>
 			    </div>
-			)};
+			)}
 		</div>
 	);
 }
