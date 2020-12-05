@@ -290,6 +290,7 @@
 
     .page-header{
       min-height: 550px;
+      max-height:none ;
 
       .container {
         padding-top: 30vh;
@@ -600,6 +601,7 @@
 
   .profile-page .page-header{
     max-height: unset;
+
   }
 
   .landing-page{

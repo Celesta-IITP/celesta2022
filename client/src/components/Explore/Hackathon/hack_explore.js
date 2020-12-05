@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {man_explore_function} from './man_explore_function';
-import './man_explore.css';
-import './man_explore_main.css'
+import {man_explore_function} from './hack_explore_function';
+import './hack_explore.css';
+import './hack_explore_main.css'
 import {BackToEvents} from '../../_BackToEvents/BackToEvents'
-import {ManCards} from './man_cards'
+import {ManCards} from './hack_cards'
 import axios from 'axios';
 
 class man_explore extends Component {
@@ -27,7 +27,7 @@ class man_explore extends Component {
 
 	getEvents = () => {
 		const token = localStorage.getItem("token");
-		axios.get('/api/events/bytype/managerial/detailed/',{
+		axios.get('/api/events/bytype/hackathon/detailed/',{
 			headers: {
 			  "Content-Type": "application/json",
 			  Authorization: token,

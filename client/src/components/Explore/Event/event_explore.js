@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {online_explore_function} from './online_explore_function';
-import './online_explore.css';
-import './online_explore_main.css';
+import {online_explore_function} from './event_explore_function';
+import './event_explore.css';
+import './event_explore_main.css';
 import {BackToEvents} from '../../_BackToEvents/BackToEvents'
-import {OnlineCards} from './online_cards'
+import {OnlineCards} from './event_cards'
 import axios from 'axios';
 
 class online_explore extends Component {
@@ -26,7 +26,7 @@ class online_explore extends Component {
 
 	getEvents = () => {
 		const token = localStorage.getItem("token");
-		axios.get('/api/events/bytype/online/detailed/',{
+		axios.get('/api/events/bytype/event/detailed/',{
 			headers: {
 			  "Content-Type": "application/json",
 			  Authorization: token,

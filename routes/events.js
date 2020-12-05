@@ -17,7 +17,7 @@ router
   )
   .post(
     passport.authenticate("jwt", { session: false }),
-    checkIfEventsCommittee,
+    //checkIfEventsCommittee,
     validateBody(schemas.eventSchema),
     EventsControllers.postEvent
   );

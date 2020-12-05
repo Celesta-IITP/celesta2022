@@ -1,5 +1,5 @@
 .online_el {
-  width: 12%;
+  width: 50%;
 }
 .online_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -51,7 +51,7 @@
   transition-delay: 0.1s;
   background-image: url("../../../assets/event_img/robosoc.jpg");
 }
-.online_el:nth-child(3) {
+/* .online_el:nth-child(3) {
   -webkit-transform: translate3d(210.4166666667%, 0, 0);
           transform: translate3d(210.4166666667%, 0, 0);
   -webkit-transform-origin: 260.4166666667% 50%;
@@ -75,8 +75,8 @@
 .online_el:nth-child(3) .online_el__bg:before {
   transition-delay: 0.2s;
   background-image: url("../../../assets/event_img/njath.jpg");
-}
-.online_el:nth-child(4) {
+} */
+/* .online_el:nth-child(4) {
   -webkit-transform: translate3d(315.625%, 0, 0);
           transform: translate3d(315.625%, 0, 0);
   -webkit-transform-origin: 365.625% 50%;
@@ -200,7 +200,7 @@
 .online_el:nth-child(8) .online_el__bg:before {
   transition-delay: 0.7s;
   background-image: url("../../../assets/event_img/chemcharades.jpg");
-}
+} */
 
 @media only screen and (max-width: 1000px) {
 

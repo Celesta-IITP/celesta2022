@@ -30,7 +30,7 @@ export const ManCards = (props) => {
 			        </div>
 			      </div>
 			    </div>
-			)};
+			)}
 		</div>
 	);
 }

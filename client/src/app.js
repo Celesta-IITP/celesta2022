@@ -19,10 +19,10 @@ import Stats from "components/Stats/stats.js";
 import MouseEffect from "components/MouseEffect/mouseEffect";
 import NotFound from "components/NotFound/notFound.js";
 import Events from "components/Events/Events.js";
-import OnlineEvents from "./components/Explore/Online/online_explore";
-import InformalEvents from "./components/Explore/Informal/info_explore";
-import GamiacsEvents from "./components/Explore/Gamiacs/gamiacs_explore";
-import ManagerialEvents from "./components/Explore/Managerial/man_explore";
+import Event from "./components/Explore/Event/event_explore";
+import GuestLecture from "./components/Explore/GuestLec/gl_explore";
+import Workshop from "./components/Explore/Workshop/work_explore";
+import Hackathon from "./components/Explore/Hackathon/hack_explore";
 import RoboticsEvents from "./components/Explore/Robotics/robo_explore";
 import SuspEvents from "./components/Explore/SUSP/susp_explore";
 import TechnicalEvents from "./components/Explore/Technical/tech_explore";
@@ -97,26 +97,26 @@ class App extends React.Component {
             render={(props) => <AddEvent {...props} />}
           />
           <Route
-            path="/events/online_events"
+            path="/events/event"
             exact
-            render={(props) => <OnlineEvents {...props} />}
+            render={(props) => <Event {...props} />}
           />
           <Route
-            path="/events/onsite_events"
+            path="/events/gl"
             exact
-            render={(props) => <InformalEvents {...props} />}
+            render={(props) => <GuestLecture {...props} />}
           />
           <Route
-            path="/events/gamiacs_events"
+            path="/events/workshop"
             exact
-            render={(props) => <GamiacsEvents {...props} />}
+            render={(props) => <Workshop {...props} />}
           />
           <Route
-            path="/events/man_events"
+            path="/events/hackathon"
             exact
-            render={(props) => <ManagerialEvents {...props} />}
+            render={(props) => <Hackathon {...props} />}
           />
-          <Route
+          {/* <Route
             path="/events/robo_events"
             exact
             render={(props) => <RoboticsEvents {...props} />}
@@ -130,7 +130,7 @@ class App extends React.Component {
             path="/events/tech_events"
             exact
             render={(props) => <TechnicalEvents {...props} />}
-          />
+          /> */}
           <Route path="/gallery" render={(props) => <Photos {...props} />} />
           <Route path="/sponsors" render={(props) => <Sponsors {...props} />} />
           <Route path="/Points" render={(props) => <Points {...props} />} />

@@ -14,6 +14,19 @@ import {
 } from "reactstrap";
 import axios from 'axios';
 
+const processString = require('react-process-string');
+let config = [{
+  regex: /(http|https):\/\/(\S+)\.([a-z]{2,}?)(.*?)( |\,|$|\.)/gim,
+  fn: (key, result) => <span key={key}>
+                          <a target="_blank" href={`${result[1]}://${result[2]}.${result[3]}${result[4]}`}>{result[2]}.{result[3]}{result[4]}</a>{result[5]}
+                      </span>
+}, {
+  regex: /(\S+)\.([a-z]{2,}?)(.*?)( |\,|$|\.)/gim,
+  fn: (key, result) => <span key={key}>
+                          <a target="_blank" href={`http://${result[1]}.${result[2]}${result[3]}`}>{result[1]}.{result[2]}{result[3]}</a>{result[4]}
+                      </span>
+}];
+
 class Extab extends Component {
   constructor(props) {
     super(props);
@@ -90,6 +103,8 @@ class Extab extends Component {
     if (!event.startTime) event.startTime = "To be announced";
     if (!event.endTime) event.endTime = "To be announced";
 
+    let description = processString(config)(event.description)
+
     return (
       <div className="white tl tabs">
         <Tabs defaultTab="one" className="tab-content mv2">
@@ -103,41 +118,47 @@ class Extab extends Component {
             ):null}
           </TabList>
           <TabPanel tabId="one">
+          <br/>
             <div className="f3 underline b">Description</div>
             <p
               className="eventDescription"
-              dangerouslySetInnerHTML={{ __html: event.description }}
-            ></p>
+            >{description}</p>
+            <br/>
             <div className="f3 underline b">Charge</div>
 
             <p
               className="eventPrizes"
               dangerouslySetInnerHTML={{ __html: event.charge }}
             ></p>
+            <br/>
             <div className="f3 underline b">Event Organizers</div>
 
             <p
               className="eventHead"
               dangerouslySetInnerHTML={{ __html: event.organizers }}
             ></p>
+            <br/>
             <div className="f3 underline b">Registration Link</div>
 
             <p
               className="eventHead"
               dangerouslySetInnerHTML={{ __html: event.registrationUrl }}
             ></p>
+            <br/>
             <div className="f3 underline b">Date</div>
 
             <p
               className="eventHead"
               dangerouslySetInnerHTML={{ __html: event.date }}
             ></p>
+            <br/>
             <div className="f3 underline b">Start Time</div>
 
             <p
               className="eventHead"
               dangerouslySetInnerHTML={{ __html: event.startTime }}
             ></p>
+            <br/>
             <div className="f3 underline b">End Time</div>
 
             <p
@@ -146,6 +167,7 @@ class Extab extends Component {
             ></p>
           </TabPanel>
           <TabPanel tabId="two">
+          <br/>
             <div className="f3 b underline">Rules</div>
             <div className="eventRules">
               <ul dangerouslySetInnerHTML={{ __html: event.rulebookUrl }}></ul>

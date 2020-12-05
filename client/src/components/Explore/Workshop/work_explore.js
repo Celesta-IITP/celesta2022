@@ -1,34 +1,33 @@
 import React, { Component } from "react";
-import { info_explore_function } from "./info_explore_function";
-import "./info_explore.css";
-import "./info_explore_main.css";
+import { gam_explore_function } from "./work_explore_function";
+import "./work_explore.css";
+import "./work_explore_main.css";
 import { BackToEvents } from "../../_BackToEvents/BackToEvents";
-import { InfoCards } from "./info_cards";
+import { GamiacCards } from "./work_cards";
 import axios from "axios";
 
-class info_explore extends Component {
+class gamiacs_explore extends Component {
   constructor(props){
     super(props);
     this.state = {
-      onsite: [],
+      gamiacs: [],
       dataIsReturned:false
     }
   }
   
   componentDidMount() {
-    info_explore_function();
+    gam_explore_function();
     this.getEvents();
   }
 
   componentDidUpdate= () => {
-		info_explore_function();
+		gam_explore_function();
 	}
 
   getEvents = () => {
     const token = localStorage.getItem("token");
-    console.log(token);
     axios
-      .get("/api/events/bytype/onsite/detailed/", {
+      .get("/api/events/bytype/workshop/detailed/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: token,
@@ -36,15 +35,14 @@ class info_explore extends Component {
       })
       .then(async(response) => {
         const data = response.data;
-        this.setState({ onsite: data });
+        this.setState({ gamiacs: data });
         localStorage.setItem('event', JSON.stringify(data));
         console.log(data);
         this.setState({dataIsReturned : true});
         console.log("Data has been received!!");
       })
-      .catch((e) => {
-        console.log(e.message);
-        //alert('Error retrieving data!!!');
+      .catch(() => {
+        alert('Error retrieving data!!!');
       });
   };
 
@@ -52,9 +50,10 @@ class info_explore extends Component {
     return (
       <div>
         <BackToEvents />
-        <div className="info_cont s--inactive">
-          <div className="info_cont__inner">
-          { this.state.dataIsReturned ? <InfoCards /> : null}
+
+        <div className="gam_cont s--inactive">
+          <div className="gam_cont__inner">
+            { this.state.dataIsReturned ? <GamiacCards /> : null}
           </div>
         </div>
       </div>
@@ -62,4 +61,4 @@ class info_explore extends Component {
   }
 }
 
-export default info_explore;
+export default gamiacs_explore;
