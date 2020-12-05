@@ -4,9 +4,11 @@ export const man_explore_function = () => {
     var $elsArr = [].slice.call(document.querySelectorAll('.man_el'));
     var $closeBtnsArr = [].slice.call(document.querySelectorAll('.man_el__close-btn'));
 
-    setTimeout(function() {
-      $cont.classList.remove('s--inactive');
-    }, 200);
+    if($cont){
+      setTimeout(function() {
+        $cont.classList.remove('s--inactive');
+      }, 200);
+    }
 
     $elsArr.forEach(function($man_el) {
       $man_el.addEventListener('click', function() {

@@ -4,9 +4,11 @@ export const online_explore_function = () => {
     var $elsArr = [].slice.call(document.querySelectorAll('.online_el'));
     var $closeBtnsArr = [].slice.call(document.querySelectorAll('.online_el__close-btn'));
 
-    setTimeout(function() {
-      $cont.classList.remove('s--inactive');
-    }, 200);
+    if($cont){
+      setTimeout(function() {
+        $cont.classList.remove('s--inactive');
+      }, 200);
+    }
 
     $elsArr.forEach(function($online_el) {
       $online_el.addEventListener('click', function() {
