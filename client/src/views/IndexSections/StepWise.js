@@ -27,7 +27,8 @@ import {
 import { serverUrl } from "../../config";
 const carouselItems = [
   {
-    src: "https://scontent.fpat2-2.fna.fbcdn.net/v/t1.0-9/126571846_4403571509658157_6900766232859162323_o.jpg?_nc_cat=100&ccb=2&_nc_sid=8bfeb9&_nc_ohc=09rChryv7s0AX9Iuxfv&_nc_ht=scontent.fpat2-2.fna&oh=f60d15793e291d7301ac912d1c8e1a84&oe=5FEE6710",
+    src:
+      "https://scontent.fpat2-2.fna.fbcdn.net/v/t1.0-9/126571846_4403571509658157_6900766232859162323_o.jpg?_nc_cat=100&ccb=2&_nc_sid=8bfeb9&_nc_ohc=09rChryv7s0AX9Iuxfv&_nc_ht=scontent.fpat2-2.fna&oh=f60d15793e291d7301ac912d1c8e1a84&oe=5FEE6710",
     altText: "Slide 1",
     caption: "",
   },
@@ -92,7 +93,7 @@ class StepWise extends React.Component {
               </Button>
 
               <Button className="mt-4" color="warning">
-                Bus Schedule
+                <Link to="/schedule">Events Schedule!</Link>
               </Button>
               <br />
             </Col>
@@ -100,7 +101,7 @@ class StepWise extends React.Component {
               <UncontrolledCarousel
                 items={carouselItems}
                 indicators={false}
-                autoPlay={false}
+                autoPlay={true}
               />
             </Col>
           </Row>
@@ -122,6 +123,42 @@ class StepWise extends React.Component {
             allowfullscreen
           ></iframe>
         </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "4rem",
+            padding: "1rem",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "4rem",
+              padding: "1rem",
+            }}
+          >
+            {/* <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "1rem",
+                marginLeft: "2rem",
+                padding: "1rem",
+              }}
+            >
+              <iframe
+                width="400"
+                height="350"
+                src="https://www.youtube.com/embed/1_xkJJ5XMyM"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div> */}
+          </div>
+        </div>
 
         <br />
         <br />
@@ -132,7 +169,8 @@ class StepWise extends React.Component {
             <Col lg="6">
               <div className="img1">
                 <img
-                  src={require("../../assets/img/homeassets/119210264_4193612400654070_2709213598359851591_o.jpg")}
+                  className="ca_img"
+                  src={require("../../assets/img/ca.jpg")}
                   rounded
                 />
               </div>{" "}

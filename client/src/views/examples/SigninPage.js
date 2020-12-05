@@ -198,7 +198,7 @@ class SigninPage extends React.Component {
                         ) : null}
                       </div>
                       <CardBody>
-                        <h6>Or Be Classic..</h6>
+                        <h6>Time to get_TechXited....</h6>
                         <Form className="form">
                           <InputGroup
                             className={classnames({

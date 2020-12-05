@@ -37,6 +37,21 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Teams from "./components/Team/team";
 
 class App extends React.Component {
+  // function SecuredRoute = (props) => {
+  //   const user = localStorage.getItem("user");
+  //   return (
+  //     <Route
+  //       path={props.path}
+  //       render={(data) =>
+  //         user.isAdmin ? (
+  //           <props.component {...data}></props.component>
+  //         ) : (
+  //           <Redirect to={{ pathname: "/" }}></Redirect>
+  //         )
+  //       }
+  //     ></Route>
+  //   );
+  // };
   render() {
     return (
       <BrowserRouter>
@@ -47,10 +62,11 @@ class App extends React.Component {
             exact="true"
             render={(props) => <Index {...props} />}
           />
-          <Route
+          <ProtectedRoute
             path="/admin"
             exact="true"
-            render={(props) => <Admin {...props} />}
+            component={Admin}
+            // render={(props) => <Admin {...props} />}
           />
           <Route
             path="/landing-page"
@@ -83,10 +99,7 @@ class App extends React.Component {
             component={ProfilePage}
           />
           <Route path="/Team" render={(props) => <Teams {...props} />} />
-          <Route
-            path="/Team"
-            render={(props) => <Teams {...props} />}
-          />
+          <Route path="/Team" render={(props) => <Teams {...props} />} />
           <Route
             path="/contact-us-page"
             render={(props) => <ContactUsPage {...props} />}
