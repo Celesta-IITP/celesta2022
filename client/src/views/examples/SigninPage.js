@@ -42,10 +42,17 @@ class SigninPage extends React.Component {
     msg: null,
   };
   componentDidMount() {
+    console.log("Mounted");
+    const { error, isAuthenticated } = this.props;
+    if (isAuthenticated) {
+      console.log("in");
+      this.setState({ msg: "Signin Successful" });
+    }
     document.body.classList.toggle("register-page");
     document.documentElement.addEventListener("mousemove", this.followCursor);
   }
   componentDidUpdate(prevProps) {
+    console.log("Updated");
     //console.log(prevProps);
     const { error, isAuthenticated } = this.props;
     const { email, password } = this.state;
@@ -78,7 +85,9 @@ class SigninPage extends React.Component {
   }
   toggleModal = () => {
     this.props.clearErrors();
-    this.props.history.push("/");
+    // alert("Signin successful");
+    console.log("Reload starts");
+    window.location.reload("/signin-page");
   };
 
   componentWillUnmount() {

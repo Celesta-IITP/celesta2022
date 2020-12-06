@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import classnames from "classnames";
-import axios from 'axios';
+import axios from "axios";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 import { compose } from "redux";
@@ -64,11 +64,11 @@ class ProfilePage extends React.Component {
       userInfo: this.props.user,
       file: "",
       tabs: 1,
-      regEveId:[],
-      events:[],
-      name:this.props.user.name,
-      phone:this.props.user.phone,
-      coll:this.props.user.college
+      regEveId: [],
+      events: [],
+      name: this.props.user.name,
+      phone: this.props.user.phone,
+      coll: this.props.user.college,
     };
   }
   componentDidMount() {
@@ -107,41 +107,41 @@ class ProfilePage extends React.Component {
           Authorization: token,
         },
       })
-      .then(async(response) => {
+      .then(async (response) => {
         const data = response.data;
-        this.setState({regEveId:data})
+        this.setState({ regEveId: data });
         console.log(this.state.regEveId.data);
         console.log("Data has been received!!");
         this.getEveDetails();
       })
       .catch(() => {
-        alert('Error retrieving data!!!');
+        alert("Error retrieving data!!!");
       });
-  }
+  };
 
   getEveDetails = () => {
     const token = localStorage.getItem("token");
     //Object.entries(this.state.regEveId).map(([key, value]) => {
-      this.state.regEveId.data.map(val => {
-        axios
-          .get(`/api/events/event/${val.eventId}`, {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: token,
-            },
-          })
-          .then(async(response) => {
-            const data = response.data;
-            this.setState({events: this.state.events.concat(data)});
-            console.log(this.state.events);
-            console.log("Data has been received!!");
-          })
-          .catch(() => {
-            alert('Error retrieving data!!!');
-          });
-      })
+    this.state.regEveId.data.map((val) => {
+      axios
+        .get(`/api/events/event/${val.eventId}`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+        })
+        .then(async (response) => {
+          const data = response.data;
+          this.setState({ events: this.state.events.concat(data) });
+          console.log(this.state.events);
+          console.log("Data has been received!!");
+        })
+        .catch(() => {
+          alert("Error retrieving data!!!");
+        });
+    });
     //})
-  }
+  };
 
   uploadImage(e) {
     let imageObj = {};
@@ -177,9 +177,9 @@ class ProfilePage extends React.Component {
 
       .then(() => {
         console.log("Data has been sent to the server");
-        this.state.userInfo.name=this.state.name;
-        this.state.userInfo.phone=this.state.phone;
-        this.state.userInfo.college=this.state.coll;
+        this.state.userInfo.name = this.state.name;
+        this.state.userInfo.phone = this.state.phone;
+        this.state.userInfo.college = this.state.coll;
         localStorage.setItem("user", JSON.stringify(this.state.userInfo));
         this.props.history.push("/");
       })
@@ -189,7 +189,7 @@ class ProfilePage extends React.Component {
   };
 
   render() {
-    console.log('State: ', this.state);
+    console.log("State: ", this.state);
 
     return (
       <>
@@ -222,14 +222,14 @@ class ProfilePage extends React.Component {
                             : `http://${this.state.userInfo.profilePhoto}`
                         }
                       />
-                      <input
+                      {/* <input
                         type="file"
                         onChange={(e) => {
                           this.uploadImage(e);
                         }}
-                      ></input>
+                      ></input> */}
                     </CardHeader>
-                    <Button
+                    {/* <Button
                       className="btn-round float-right"
                       color="primary"
                       data-placement="right"
@@ -238,7 +238,7 @@ class ProfilePage extends React.Component {
                       onClick={(e) => this.updateProfilePicture(e)}
                     >
                       Update Profile Photo!
-                    </Button>
+                    </Button> */}
                     {/* <CardBody>
                       <Nav
                         className="nav-tabs-primary justify-content-center"
@@ -343,23 +343,84 @@ class ProfilePage extends React.Component {
                 </Col>
               </Row>
               <Row>
-              <h2 style={{textDecoration:"underline"}}>Registered Events</h2>
-              <Table responsive style={{width:"max-content",borderCollapse: "collapse",borderStyle:"hidden",border:"2px solid grey"}}>
+                <h2 style={{ textDecoration: "underline" }}>
+                  Registered Events
+                </h2>
+                <Table
+                  responsive
+                  style={{
+                    width: "max-content",
+                    borderCollapse: "collapse",
+                    borderStyle: "hidden",
+                    border: "2px solid grey",
+                  }}
+                >
                   <thead>
                     <tr>
-                      <th style={{fontSize:"18px",textAlign:"center",border:"2px solid grey"}}>Registered Events</th>
-                      <th style={{fontSize:"18px",textAlign:"center",border:"2px solid grey"}}>Start Date</th>
-                      <th style={{fontSize:"18px",textAlign:"center",border:"2px solid grey"}}>End Date</th>
+                      <th
+                        style={{
+                          fontSize: "18px",
+                          textAlign: "center",
+                          border: "2px solid grey",
+                        }}
+                      >
+                        Registered Events
+                      </th>
+                      <th
+                        style={{
+                          fontSize: "18px",
+                          textAlign: "center",
+                          border: "2px solid grey",
+                        }}
+                      >
+                        Start Date
+                      </th>
+                      <th
+                        style={{
+                          fontSize: "18px",
+                          textAlign: "center",
+                          border: "2px solid grey",
+                        }}
+                      >
+                        End Date
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
-                  {this.state.events.map(event => 
-                    <tr>
-                      <td style={{color:"grey",fontSize:"15px",textAlign:"center",border:"2px solid grey"}}>{event.data.name}</td>
-                      <td style={{color:"grey",fontSize:"15px",textAlign:"center",border:"2px solid grey"}}>{event.data.startTime}</td>
-                      <td style={{color:"grey",fontSize:"15px",textAlign:"center",border:"2px solid grey"}}>{event.data.endTime}</td>
-                    </tr>
-                  )}
+                    {this.state.events.map((event) => (
+                      <tr>
+                        <td
+                          style={{
+                            color: "grey",
+                            fontSize: "15px",
+                            textAlign: "center",
+                            border: "2px solid grey",
+                          }}
+                        >
+                          {event.data.name}
+                        </td>
+                        <td
+                          style={{
+                            color: "grey",
+                            fontSize: "15px",
+                            textAlign: "center",
+                            border: "2px solid grey",
+                          }}
+                        >
+                          {event.data.startTime}
+                        </td>
+                        <td
+                          style={{
+                            color: "grey",
+                            fontSize: "15px",
+                            textAlign: "center",
+                            border: "2px solid grey",
+                          }}
+                        >
+                          {event.data.endTime}
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </Table>
               </Row>

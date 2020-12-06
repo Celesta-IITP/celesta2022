@@ -2,12 +2,11 @@ import React from "react";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
 import Footer from "components/Footer/Footer.js";
-
 
 // sections for this page/view
 import Basics from "views/IndexSections/Basics.js";
@@ -33,7 +32,6 @@ import Timer from "views/IndexSections/Timer.js";
 import CustomizedSnackbars from "./examples/snackBar";
 
 class Index extends React.Component {
-
   refreshFunction = async () => {
     await this.props.refreshPage(JSON.parse(localStorage.getItem("user")));
   };
@@ -51,7 +49,6 @@ class Index extends React.Component {
   componentWillUnmount() {
     document.body.classList.toggle("index-page");
   }
-  
 
   render() {
     return (
@@ -61,18 +58,18 @@ class Index extends React.Component {
           <Header />
           <div className="main">
             <Timer />
-            <br/>
-            <br/>
-            <br/>
+            <br />
+            <br />
+            <br />
             <StepWise />
             <Stats />
             <EventSlider />
-            <br/>
-            <br/>
-            <br/>
+            <br />
+            <br />
+            <br />
           </div>
-          <h1 align="center"  className="prontxt">
-            LAST YEAR <br/> PRONITES ...
+          <h1 align="center" className="prontxt">
+            LAST YEAR <br /> PRONITES ...
           </h1>
 
           <div className="wrapper-prn">
@@ -81,7 +78,14 @@ class Index extends React.Component {
 
           <Footer />
         </div>
-        <CustomizedSnackbars type="info" component={<Link to="/ca" style={{textDecoration: 'none', color: '#fff'}}>Campus Ambassador Registrations are open!</Link>} />
+        <CustomizedSnackbars
+          type="info"
+          component={
+            <Link to="/ca" style={{ textDecoration: "none", color: "#fff" }}>
+              Campus Ambassador Registrations are open!
+            </Link>
+          }
+        />
       </div>
     );
   }
