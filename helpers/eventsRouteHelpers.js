@@ -20,7 +20,7 @@ module.exports={
     //valiadtion schemas
     schemas: {
         eventSchema: Joi.object().keys({
-            organizers: Joi.string(),
+            organizers: Joi.string().allow(''),
             name: Joi.string().required(),
             description: Joi.string(),
             imageUrl: Joi.string().allow(''),
@@ -31,9 +31,9 @@ module.exports={
             endTime: Joi.string(),
             teamSize: Joi.number(),
             eventType: Joi.string(),
-            rulebookUrl: Joi.string(),
+            rulebookUrl: Joi.string().allow(''),
             charge: Joi.number(),
-            //postLinks: Joi.array()
+            postLinks: Joi.string().allow('')
         }).unknown(false),
 
     }

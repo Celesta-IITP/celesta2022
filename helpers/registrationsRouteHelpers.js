@@ -20,7 +20,8 @@ module.exports={
     schemas: {
         regSchema: Joi.object().keys({
             teamName: Joi.string().allow(''),
-            teamDetails: Joi.array().items(Joi.string())
+            teamDetails: Joi.array().items(Joi.string()),
+            paymentStatus: Joi.string()
         }).unknown(false),
 
     }

@@ -28,6 +28,8 @@ router.route('/myregistrations')
     .get(passport.authenticate('jwt',{session: false}), Controller.getMyRegistrations)
     
 router.route('/registered/:eventId')
-    .get(passport.authenticate('jwt',{session: false}), Controller.isRegistered)
+    .get(
+        passport.authenticate('jwt',{session: false}), 
+        Controller.isRegistered)
 
 module.exports=router;
