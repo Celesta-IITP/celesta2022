@@ -33,6 +33,7 @@ import Admin from "components/Admin";
 import Schedule from "./components/Schedule/schedule";
 
 import ProtectedRoute from "./components/ProtectedRoute";
+import AuthenticatedRoute from "./components/AuthenticatedRoute";
 
 import Teams from "./components/Team/team";
 
@@ -93,7 +94,7 @@ class App extends React.Component {
             exact="true"
             render={(props) => <SigninPage {...props} />}
           />
-          <ProtectedRoute
+          <AuthenticatedRoute
             path="/profile-page"
             exact="true"
             component={ProfilePage}
