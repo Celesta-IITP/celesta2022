@@ -38,7 +38,7 @@ class Extab extends Component {
       dispmsg:"",
       youtubeLink:"",
       fbLink:"",
-      paymentStatus: this.props.eventDetails.charge ? "pending" : "completed"
+      paymentStatus: (this.props.eventDetails.charge==="0") ? "pending" : "completed"
     };
   }
   componentDidMount() {
@@ -100,19 +100,18 @@ class Extab extends Component {
 
   render() {
     const event = this.props.eventDetails;
-    let charge = "";
-    if (!event.charge) charge = "Free";
+    //if (event.charge==="0") event.charge = "Free";
     /*if(!event.organizers.length)
       event.organizers='To be announced'*/
     if (!event.description) event.description = "To be announced";
     //if (!event.date) event.date = "To be announced";
     if (!event.venue) event.venue = "To be announced";
-    if (!event.venue) event.venueUrl = "To be announced";
+    if (!event.venueUrl) event.venueUrl = "To be announced";
     if (!event.startTime) event.startTime = "To be announced";
     if (!event.endTime) event.endTime = "To be announced";
 
     let submission = processString(config)(event.venue)
-    let fb = processString(config)(event.venueUrl)
+    let fb = processString(config)(event.postLinks)
     let rule = processString(config)(event.rulebookUrl)
 
     return (
@@ -147,7 +146,7 @@ class Extab extends Component {
               dangerouslySetInnerHTML={{ __html: event.description }}
             ></p>
             <br/>
-            { this.state.registered && (event.eventType!=='gl') &&
+            { this.state.registered && (event.eventType!=='gl') && (event.imageUrl==="sel") &&
               <>
               <div className="f3 underline b">Submission Link</div>
               <p
@@ -170,7 +169,16 @@ class Extab extends Component {
               <div className="f3 underline b">Facebook Link</div>
               <p
                 className="eventDescription"
-              >{submission}</p>
+              >{fb}</p>
+              <br/>
+              </>
+             }
+             { this.state.registered && (event.eventType!=='gl') && (event.imageUrl==="reg") &&
+              <>
+              <div className="f3 underline b">Registration link</div>
+              <p
+                className="eventDescription"
+              >{fb}</p>
               <br/>
               </>
              }
@@ -178,8 +186,7 @@ class Extab extends Component {
 
             <p
               className="eventPrizes"
-              dangerouslySetInnerHTML={{ __html: charge }}
-            ></p>
+            >{(event.charge==="0") ? "Free" : "₹"+event.charge}</p>
             { event.organizers &&
             <>
             <br/>
@@ -267,7 +274,7 @@ class Extab extends Component {
           {Object.keys(this.state.userInfo).length !== 0 ? (
           <TabPanel tabId="three">
             <br/>
-            { (charge!=="Free") ? (
+            { (event.charge!=="0") ? (
               <div className="f3 b underline" style={{alignContent:"center"}}>
                 Please click on both the buttons for registration
               </div>
@@ -284,7 +291,7 @@ class Extab extends Component {
               }}
 
               onSubmit={this.submit}>
-              { (event.teamSize>1 && !this.state.registered) ? (
+              { (event.teamSize!=="1" && !this.state.registered) ? (
                 <FormGroup row>
                   <Label for="exampleText" sm={2}>
                     Team Name
@@ -322,7 +329,7 @@ class Extab extends Component {
               </FormGroup>
               )}
             </Form>
-            { (charge!=="Free") ? (
+            { (event.charge!=="0") ? (
               <Col sm={{ size: 10, offset: 1 }}>
                 <Button href="https://www.townscript.com/v2/e/celesta2k20/booking/tickets">Pay</Button>
               </Col>

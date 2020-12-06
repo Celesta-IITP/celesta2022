@@ -29,7 +29,8 @@ class addEvent extends Component {
       eventType:"event",
       rulebookUrl:"",
       charge:"",
-      postLinks:""
+      postLinks:"",
+      imageUrl:"sel"
     };
   }
 
@@ -48,7 +49,7 @@ class addEvent extends Component {
         organizers:this.state.organizers,
         name:this.state.name,
         description:this.state.description,
-        imageUrl:"",
+        imageUrl:this.state.imageUrl,
         venue:this.state.venue,
         venueUrl:this.state.venueUrl,
         date:this.state.date,
@@ -173,6 +174,24 @@ class addEvent extends Component {
           </FormGroup>
           <FormGroup row>
             <Label for="exampleText" sm={2}>
+              Submission or Registration
+            </Label>
+            <Col sm={10}>
+              <Input
+                type="select"
+                name="imageUrl"
+                id="exampleSelect"
+                onChange={this.handleChange}
+                style={{ backgroundColor: "#05001e" }}
+              >
+                <option value="sel">Selection</option>
+                <option value="reg">Registration</option>
+                <option value="none">None</option>
+              </Input>
+            </Col>
+          </FormGroup>
+          <FormGroup row>
+            <Label for="exampleText" sm={2}>
               Submission/YT link
             </Label>
             <Col sm={10}>
@@ -208,7 +227,6 @@ class addEvent extends Component {
                 type="select"
                 name="eventType"
                 id="exampleSelect"
-                defaultValue="technical"
                 onChange={this.handleChange}
                 style={{ backgroundColor: "#05001e" }}
               >
