@@ -8,8 +8,9 @@ module.exports = {
     const eventId = req.params.eventId;
     const currUser = req.user;
     const { referralId } = currUser;
+    console.log(referralId);
     const paystat = req.value.body.paymentStatus;
-    if (referralId) {
+    if (referralId !== "CLST0000") {
       const ca = await User.findOne({ celestaId: referralId });
       ca.points += 200;
       await ca.save();
