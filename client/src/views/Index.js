@@ -30,7 +30,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { refreshPage } from "../redux/actions/authActions";
 import Timer from "views/IndexSections/Timer.js";
 import CustomizedSnackbars from "./examples/snackBar";
-
+import { NavLink } from "reactstrap";
 class Index extends React.Component {
   refreshFunction = async () => {
     await this.props.refreshPage(JSON.parse(localStorage.getItem("user")));
@@ -81,9 +81,12 @@ class Index extends React.Component {
         <CustomizedSnackbars
           type="info"
           component={
-            <Link to="/ca" style={{ textDecoration: "none", color: "#fff" }}>
+            <NavLink
+              href="/ca"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
               Campus Ambassador Registrations are open!
-            </Link>
+            </NavLink>
           }
         />
       </div>

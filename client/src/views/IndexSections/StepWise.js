@@ -23,6 +23,7 @@ import {
   InputGroupText,
   Label,
   UncontrolledCarousel,
+  NavLink,
 } from "reactstrap";
 import { serverUrl } from "../../config";
 const carouselItems = [
@@ -84,17 +85,22 @@ class StepWise extends React.Component {
                 bright minds of our nation and to provide a platform to
                 transform their innovative ideas into a meaningful reality.
               </p>
-              <Button
-                className="mt-4"
-                color="warning"
-                href="https://youtu.be/iSA7maa9L2M"
-              >
-                CA Program
-              </Button>
+              <NavLink>
+                <Button
+                  className="mt-4"
+                  color="warning"
+                  href="https://youtu.be/iSA7maa9L2M"
+                >
+                  CA Program
+                </Button>
+              </NavLink>
 
-              <Button className="mt-4" color="warning">
-                <Link to="/schedule">Events Schedule!</Link>
-              </Button>
+              <NavLink href="/schedule">
+                <Button className="mt-4" color="warning">
+                  Events Schedule!
+                </Button>
+              </NavLink>
+
               <br />
             </Col>
             <Col lg="6">
@@ -200,10 +206,12 @@ class StepWise extends React.Component {
               </p>
               {/* <Button href="/ca">Register</Button> */}
               <Button className="mt-4" color="warning">
-                <Link to="/ca">Register Here!</Link>
+                <NavLink href="/ca">Register Here!</NavLink>
               </Button>
               <Button className="mt-4" color="warning">
-                <a href="https://drive.google.com/file/d/1zohNkaeDEnM9wURCbqpQ3lRGWs5oyCOy/view?usp=sharing">FAQ</a>
+                <NavLink href="https://drive.google.com/file/d/1zohNkaeDEnM9wURCbqpQ3lRGWs5oyCOy/view?usp=sharing">
+                  FAQ
+                </NavLink>
               </Button>
             </Col>
           </Row>
