@@ -24,7 +24,7 @@ const teamdata = [
                 "teamname" : "Marketing and Sponsorship",
                 "members" : [{
                         "name" : "Shashwat Mahajan ",
-                        "image" :  "https://i.ibb.co/JC4skS0/team-animate.jpg",
+                        "image" :  require("../../assets/img/CORDS/shashwat_mahajan.jpg"),
                         "position" : "",
                         "fb" : "www.fb.com",
                         "ln" : "www.linkedin.com",
