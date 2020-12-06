@@ -33,6 +33,7 @@
     "react-dom": "^16.13.1",
     "react-mouse-particles": "^1.1.2",
     "react-photo-gallery": "^8.0.0",
+    "react-process-string": "^1.2.0",
     "react-redux": "^7.2.0",
     "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "5.1.2",

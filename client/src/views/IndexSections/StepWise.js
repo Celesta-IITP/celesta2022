@@ -202,6 +202,9 @@ class StepWise extends React.Component {
               <Button className="mt-4" color="warning">
                 <Link to="/ca">Register Here!</Link>
               </Button>
+              <Button className="mt-4" color="warning">
+                <a href="https://drive.google.com/file/d/1zohNkaeDEnM9wURCbqpQ3lRGWs5oyCOy/view?usp=sharing">FAQ</a>
+              </Button>
             </Col>
           </Row>
         </Container>
