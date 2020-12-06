@@ -1,5 +1,5 @@
 .info_el {
-  width: 13.8%;
+  width: 100%;
 }
 .info_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -24,9 +24,9 @@
 }
 .info_el:nth-child(1) .info_el__bg:before {
   transition-delay: 0s;
-  background-image: url("../../../assets/event_img/robowar.jpg");
+  background-image: url("../../../assets/event_img/venugopal_cropped.png");
 }
-.info_el:nth-child(2) {
+/* .info_el:nth-child(2) {
   -webkit-transform: translate3d(105.2083333333%, 0, 0);
           transform: translate3d(105.2083333333%, 0, 0);
   -webkit-transform-origin: 155.2083333333% 50%;
@@ -179,11 +179,11 @@
 }
 .info_el:hover .info_el__bg:after {
   opacity: 0;
-}
+}*/
 @media only screen and (max-width: 1000px) {
 
   .info_el {
-    height: 13.8% !important;
+    height: 100% !important;
   }
 
   .info_cont.s--info_el-active .info_el:nth-child(1):not(.s--active) {
@@ -191,7 +191,7 @@
     opacity: 0;
     transition: opacity 0.95s;
   }
-  .info_cont.s--info_el-active .info_el:nth-child(2):not(.s--active) {
+  /* .info_cont.s--info_el-active .info_el:nth-child(2):not(.s--active) {
     -webkit-transform: translate3d(0, 105.2083333333%, 0);
           transform: translate3d(0, 105.2083333333%, 0);
     transition: opacity 0.95s;
@@ -280,5 +280,5 @@
   .info_el:nth-child(7) .info_el__bg {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-  }
-}
+  }*/
+} 

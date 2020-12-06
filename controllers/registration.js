@@ -10,6 +10,7 @@ module.exports = {
     registerInEvent: async (req, res, next) => {
         const eventId = req.params.eventId;
         const currUser = req.user;
+        const paystat = req.value.body.paymentStatus;
 
         const event = await Event.findOne({
             _id: eventId
@@ -35,7 +36,7 @@ module.exports = {
                 let newReg = new Registration({
                     userId: currUser._id,
                     eventId: eventId,
-                    paymentStatus: 'pending'
+                    paymentStatus: paystat
                 })
 
                 newReg.save((err, product) => {
@@ -50,7 +51,7 @@ module.exports = {
                 let newReg = new Registration({
                     userId: currUser._id,
                     eventId: eventId,
-                    paymentStatus: 'pending',
+                    paymentStatus: paystat,
                     teamName: req.value.body.teamName,
                     teamDetails: []
                 })

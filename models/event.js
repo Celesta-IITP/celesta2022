@@ -20,7 +20,9 @@ const eventSchema = new Schema({
         required: true
     },
     imageUrl: {
-        type: String
+        type: String,
+        enum: ['sel','reg','none'],
+        default: 'sel'
     },
     thumbnailUrl: {
         type: String
@@ -28,15 +30,15 @@ const eventSchema = new Schema({
 
     venue: {
         type: String,
-        required: true
+    //    required: true
     },
     venueUrl: {
         type: String,
     },
-    // date: {
-    //     type: String,
-    //     required: true
-    // },
+    date: {
+        type: String,
+    //    required: true
+    },
     startTime: {
         type: String
     },
@@ -44,7 +46,7 @@ const eventSchema = new Schema({
         type: String
     },
     teamSize: {
-        type: Number,
+        type: String,
         default: 1
     },
     eventType: {
@@ -60,13 +62,13 @@ const eventSchema = new Schema({
         type: String
     },
     charge: {
-        type: Number,
+        type: String,
         default: 0
     },
 
-    postLinks: [{
+    postLinks: {
         type: String
-    }],
+    },
 }, {
     timestamps: true
 });

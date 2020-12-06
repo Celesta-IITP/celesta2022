@@ -408,19 +408,19 @@ body {
 
 .example-slider .fnc-slide-1 .fnc-slide__inner,
 .example-slider .fnc-slide-1 .fnc-slide__mask-inner {
-  background-image: url("./../../assets/event_img/starr4.jpg");
+  background-image: url("./../../assets/event_img/starry4-min.jpg");
 }
 .example-slider .fnc-slide-2 .fnc-slide__inner,
 .example-slider .fnc-slide-2 .fnc-slide__mask-inner {
-  background-image: url("./../../assets/event_img/starry1.jpg");
+  background-image: url("./../../assets/event_img/starry1-min.jpg");
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner,
 .example-slider .fnc-slide-3 .fnc-slide__mask-inner {
-  background-image: url("./../../assets/event_img/starry5.jpg");
+  background-image: url("./../../assets/event_img/starry5-min.jpg");
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner,
 .example-slider .fnc-slide-4 .fnc-slide__mask-inner {
-  background-image: url("./../../assets/event_img/starry6.jpg");
+  background-image: url("./../../assets/event_img/starry6-min.jpg");
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner:before {
   content: "";
@@ -521,19 +521,19 @@ body {
 
 	.example-slider .fnc-slide-1 .fnc-slide__inner,
 	.example-slider .fnc-slide-1 .fnc-slide__mask-inner {
-	  background-image: url("../../assets/event_img/starr4.jpg");
+	  background-image: url("../../assets/event_img/starry4-min.jpg");
 	}
 	.example-slider .fnc-slide-2 .fnc-slide__inner,
 	.example-slider .fnc-slide-2 .fnc-slide__mask-inner {
-	  background-image: url("../../assets/event_img/starry1.jpg");
+	  background-image: url("../../assets/event_img/starry1-min.jpg");
 	}
 	.example-slider .fnc-slide-3 .fnc-slide__inner,
 	.example-slider .fnc-slide-3 .fnc-slide__mask-inner {
-	  background-image: url("../../assets/event_img/starry5.jpg");
+	  background-image: url("../../assets/event_img/starry5-min.jpg");
 	}
 	.example-slider .fnc-slide-4 .fnc-slide__inner,
 	.example-slider .fnc-slide-4 .fnc-slide__mask-inner {
-	  background-image: url("../../assets/event_img/starry6.jpg");
+	  background-image: url("../../assets/event_img/starry6-min.jpg");
 	}
 	.example-slider .fnc-slide-5 .fnc-slide__inner,
   .example-slider .fnc-slide-5 .fnc-slide__mask-inner {
