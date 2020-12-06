@@ -1,5 +1,5 @@
 .online_el {
-  width: 100%;
+  width: 33%;
 }
 .online_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -26,7 +26,7 @@
   transition-delay: 0s;
   background-image: url("./../../../assets/event_img/astro_new_cropped.png");
 }
-/* .online_el:nth-child(2) {
+.online_el:nth-child(2) {
   -webkit-transform: translate3d(105.2083333333%, 0, 0);
           transform: translate3d(105.2083333333%, 0, 0);
   -webkit-transform-origin: 155.2083333333% 50%;
@@ -49,9 +49,9 @@
 }
 .online_el:nth-child(2) .online_el__bg:before {
   transition-delay: 0.1s;
-  background-image: url("../../../assets/event_img/robosoc.jpg");
-} */
-/* .online_el:nth-child(3) {
+  background-image: url("../../../assets/event_img/soliddesign.jpg");
+} 
+.online_el:nth-child(3) {
   -webkit-transform: translate3d(210.4166666667%, 0, 0);
           transform: translate3d(210.4166666667%, 0, 0);
   -webkit-transform-origin: 260.4166666667% 50%;
@@ -74,8 +74,8 @@
 }
 .online_el:nth-child(3) .online_el__bg:before {
   transition-delay: 0.2s;
-  background-image: url("../../../assets/event_img/njath.jpg");
-} */
+  background-image: url("../../../assets/event_img/quest.jpeg");
+}
 /* .online_el:nth-child(4) {
   -webkit-transform: translate3d(315.625%, 0, 0);
           transform: translate3d(315.625%, 0, 0);
@@ -205,7 +205,7 @@
 @media only screen and (max-width: 1000px) {
 
   .online_el {
-    height: 12% !important;
+    height: 33% !important;
   }
 
   .online_cont.s--online_el-active .online_el:nth-child(1):not(.s--active) {
@@ -223,7 +223,7 @@
           transform: translate3d(0, 210.4166666667%, 0);
     transition: opacity 0.95s;
   }
-  .online_cont.s--online_el-active .online_el:nth-child(4):not(.s--active) {
+  /*.online_cont.s--online_el-active .online_el:nth-child(4):not(.s--active) {
     -webkit-transform: translate3d(0, 315.625%, 0);
           transform: translate3d(0, 315.625%, 0);
     transition: opacity 0.95s;
@@ -247,7 +247,7 @@
     -webkit-transform: translate3d(0, 736.457%, 0);
           transform: translate3d(0, 736.457%, 0);
     transition: opacity 0.95s;
-  }
+  } */
 
   .online_el:nth-child(2) {
     -webkit-transform: translate3d(0, 105.2083333333%, 0);
@@ -269,7 +269,7 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  .online_el:nth-child(4) {
+  /*.online_el:nth-child(4) {
     -webkit-transform: translate3d(0, 315.625%, 0);
             transform: translate3d(0, 315.625%, 0);
     -webkit-transform-origin: 365.625% 50%;
@@ -318,6 +318,6 @@
   .online_el:nth-child(8) .online_el__bg {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-  }
+  } */
 
 }
