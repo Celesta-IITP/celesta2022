@@ -166,7 +166,7 @@ body {
   height: 2px;
   width: 30px;
   display: block;
-  background-color: #fff;
+  background-color: violet;
   margin-bottom: 7px;
   cursor: pointer;
   -webkit-transition: background-color 0.5s ease, -webkit-transform 0.2s ease;

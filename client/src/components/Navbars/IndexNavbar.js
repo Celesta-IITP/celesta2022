@@ -90,7 +90,7 @@ class ComponentsNavbar extends React.Component {
                 {this.state.userInfo.isAdmin ? (
                   <li>
                     <Button>
-                      <NavLink to="/events/add">Add an event!</NavLink>
+                      <NavLink href="/events/add">Add an event!</NavLink>
                     </Button>
                   </li>
                 ) : (
