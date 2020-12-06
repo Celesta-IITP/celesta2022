@@ -35,11 +35,14 @@ class Extab extends Component {
       eventId:this.props.eventDetails._id,
       teamName:"",
       registered:false,
-      dispmsg:""
+      dispmsg:"",
+      youtubeLink:"",
+      fbLink:"",
+      paymentStatus: this.props.eventDetails.charge ? "pending" : "completed"
     };
   }
   componentDidMount() {
-    this.getReg();
+    if(localStorage.getItem('user')) this.getReg();
   }
 
   componentWillUnmount() {}
@@ -69,14 +72,15 @@ class Extab extends Component {
     const { name, value } = target;
     this.setState({ [name]: value });
   }
-
+  
   submit = (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     axios
       .post(`/api/registrations/register/${this.state.eventId}/`,{
         teamName:this.state.teamName,
-        teamDetails:[]
+        teamDetails:[],
+        paymentStatus:this.state.paymentStatus
       },{
         headers: {
           "Content-Type": "application/json",
@@ -96,16 +100,19 @@ class Extab extends Component {
 
   render() {
     const event = this.props.eventDetails;
-    if (!event.charge) event.charge = "free";
+    let charge = "";
+    if (!event.charge) charge = "Free";
     /*if(!event.organizers.length)
       event.organizers='To be announced'*/
     if (!event.description) event.description = "To be announced";
     //if (!event.date) event.date = "To be announced";
-    //if (!event.venue) event.venue = "To be announced";
+    if (!event.venue) event.venue = "To be announced";
+    if (!event.venue) event.venueUrl = "To be announced";
     if (!event.startTime) event.startTime = "To be announced";
     if (!event.endTime) event.endTime = "To be announced";
 
     let submission = processString(config)(event.venue)
+    let fb = processString(config)(event.venueUrl)
     let rule = processString(config)(event.rulebookUrl)
 
     return (
@@ -115,12 +122,24 @@ class Extab extends Component {
             <Tab autoFocus tabFor="one">
               About
             </Tab>
+            { (event.eventType!=='gl') ? ( 
             <Tab tabFor="two">Rules</Tab>
+            ) : null}
             {Object.keys(this.state.userInfo).length !== 0 ? (
             <Tab tabFor="three">Register</Tab>
             ):null}
           </TabList>
           <TabPanel tabId="one">
+          { (event.eventType==='gl') && 
+              <>
+          <br/>
+            <div className="f3 underline b">Topic</div>
+            <p
+              className="eventDescription"
+              dangerouslySetInnerHTML={{ __html: event.venueUrl }}
+            ></p>
+            </>
+          }
           <br/>
             <div className="f3 underline b">Description</div>
             <p
@@ -128,9 +147,27 @@ class Extab extends Component {
               dangerouslySetInnerHTML={{ __html: event.description }}
             ></p>
             <br/>
-            { this.state.registered &&
+            { this.state.registered && (event.eventType!=='gl') &&
               <>
               <div className="f3 underline b">Submission Link</div>
+              <p
+                className="eventDescription"
+              >{submission}</p>
+              <br/>
+              </>
+             }
+             { this.state.registered && (event.eventType==='gl') &&
+              <>
+              <div className="f3 underline b">Youtube Link</div>
+              <p
+                className="eventDescription"
+              >{submission}</p>
+              <br/>
+              </>
+             }
+             { this.state.registered && (event.eventType==='gl') &&
+              <>
+              <div className="f3 underline b">Facebook Link</div>
               <p
                 className="eventDescription"
               >{submission}</p>
@@ -141,8 +178,10 @@ class Extab extends Component {
 
             <p
               className="eventPrizes"
-              dangerouslySetInnerHTML={{ __html: event.charge }}
+              dangerouslySetInnerHTML={{ __html: charge }}
             ></p>
+            { event.organizers &&
+            <>
             <br/>
             <div className="f3 underline b">Event Organizers</div>
 
@@ -150,6 +189,8 @@ class Extab extends Component {
               className="eventHead"
               dangerouslySetInnerHTML={{ __html: event.organizers }}
             ></p>
+            </>
+            }
             <br/>
             {/* <div className="f3 underline b">Registration Link</div>
 
@@ -158,13 +199,20 @@ class Extab extends Component {
               dangerouslySetInnerHTML={{ __html: event.registrationUrl }}
             ></p>
             <br/> */}
-            {/* <div className="f3 underline b">Date</div>
+            { event.date &&
+            <>
+            <div className="f3 underline b">Date</div>
 
             <p
               className="eventHead"
               dangerouslySetInnerHTML={{ __html: event.date }}
             ></p>
-            <br/> */}
+            <br/>
+            </>
+            }
+
+            { (!event.date) &&
+            <>
             <div className="f3 underline b">Start Date</div>
 
             <p
@@ -172,12 +220,42 @@ class Extab extends Component {
               dangerouslySetInnerHTML={{ __html: event.startTime }}
             ></p>
             <br/>
+            </>
+            }
+
+            { (event.date) &&
+            <>
+            <div className="f3 underline b">Start Time</div>
+
+            <p
+              className="eventHead"
+              dangerouslySetInnerHTML={{ __html: event.startTime }}
+            ></p>
+            <br/>
+            </>
+            }
+
+            { (!event.date) &&
+            <>
             <div className="f3 underline b">End Date</div>
 
             <p
               className="eventHead"
               dangerouslySetInnerHTML={{ __html: event.endTime }}
             ></p>
+            </>
+            }
+
+            { (event.date) &&
+            <>
+            <div className="f3 underline b">End Time</div>
+
+            <p
+              className="eventHead"
+              dangerouslySetInnerHTML={{ __html: event.endTime }}
+            ></p>
+            </>
+            }
           </TabPanel>
           <TabPanel tabId="two">
           <br/>
@@ -189,6 +267,11 @@ class Extab extends Component {
           {Object.keys(this.state.userInfo).length !== 0 ? (
           <TabPanel tabId="three">
             <br/>
+            { (charge!=="Free") ? (
+              <div className="f3 b underline" style={{alignContent:"center"}}>
+                Please click on both the buttons for registration
+              </div>
+            ) : null }
             <br/>
             { !this.state.registered ? (
             <div className="f3 b underline" style={{alignContent:"center"}}>Fill the form and Register</div>
@@ -239,6 +322,11 @@ class Extab extends Component {
               </FormGroup>
               )}
             </Form>
+            { (charge!=="Free") ? (
+              <Col sm={{ size: 10, offset: 1 }}>
+                <Button href="https://www.townscript.com/v2/e/celesta2k20/booking/tickets">Pay</Button>
+              </Col>
+              ) : null }
           </TabPanel>
           ):null}
         </Tabs>

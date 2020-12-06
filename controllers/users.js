@@ -208,7 +208,7 @@ module.exports = {
             .status(404)
             .json({ message: "Please give correct referal id" });
         }
-        user.points += 30;
+        user.points += 200;
         console.log(user);
         await user.save();
       }

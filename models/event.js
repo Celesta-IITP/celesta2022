@@ -28,15 +28,15 @@ const eventSchema = new Schema({
 
     venue: {
         type: String,
-        required: true
+    //    required: true
     },
     venueUrl: {
         type: String,
     },
-    // date: {
-    //     type: String,
-    //     required: true
-    // },
+    date: {
+        type: String,
+    //    required: true
+    },
     startTime: {
         type: String
     },
@@ -64,9 +64,9 @@ const eventSchema = new Schema({
         default: 0
     },
 
-    postLinks: [{
+    postLinks: {
         type: String
-    }],
+    },
 }, {
     timestamps: true
 });

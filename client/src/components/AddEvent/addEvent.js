@@ -21,13 +21,15 @@ class addEvent extends Component {
       name:"",
       description:"",
       venue:"",
+      venueUrl:"",
       date:"",
       startTime:"",
       endTime:"",
       teamSize:"",
       eventType:"event",
       rulebookUrl:"",
-      charge:""
+      charge:"",
+      postLinks:""
     };
   }
 
@@ -48,14 +50,15 @@ class addEvent extends Component {
         description:this.state.description,
         imageUrl:"",
         venue:this.state.venue,
-        venueUrl:"",
+        venueUrl:this.state.venueUrl,
         date:this.state.date,
         startTime:this.state.startTime,
         endTime:this.state.endTime,
         teamSize:this.state.teamSize,
         eventType:this.state.eventType,
         rulebookUrl:this.state.rulebookUrl,
-        charge:this.state.charge
+        charge:this.state.charge,
+        postLinks:this.state.postLinks
       },{
         headers: {
           "Content-Type": "application/json",
@@ -126,19 +129,20 @@ class addEvent extends Component {
               />
             </Col>
           </FormGroup>
-          {/* <FormGroup row>
+          <FormGroup row>
             <Label for="exampleText" sm={2}>
-              Prices
+              Topic
             </Label>
             <Col sm={10}>
               <Input
                 type="textArea"
-                name="text"
+                name="venueUrl"
                 id="exampleText"
-                placeholder="Robowars"
+                placeholder="Topic (if a guest lecture)"
+                onChange={this.handleChange}
               />
             </Col>
-          </FormGroup> */}
+          </FormGroup>
           <FormGroup row>
             <Label for="exampleText" sm={2}>
               Description
@@ -153,7 +157,7 @@ class addEvent extends Component {
               />
             </Col>
           </FormGroup>
-          {/* <FormGroup row>
+          <FormGroup row>
             <Label for="exampleText" sm={2}>
               Date
             </Label>
@@ -166,17 +170,31 @@ class addEvent extends Component {
                 onChange={this.handleChange}
               />
             </Col>
-          </FormGroup> */}
+          </FormGroup>
           <FormGroup row>
             <Label for="exampleText" sm={2}>
-              Submission link
+              Submission/YT link
             </Label>
             <Col sm={10}>
               <Input
                 type="textArea"
                 name="venue"
                 id="exampleText"
-                placeholder="Venue"
+                placeholder="Submission/YT link"
+                onChange={this.handleChange}
+              />
+            </Col>
+          </FormGroup>
+          <FormGroup row>
+            <Label for="exampleText" sm={2}>
+              FB link
+            </Label>
+            <Col sm={10}>
+              <Input
+                type="textArea"
+                name="postLinks"
+                id="exampleText"
+                placeholder="FB link"
                 onChange={this.handleChange}
               />
             </Col>
@@ -217,28 +235,28 @@ class addEvent extends Component {
           </FormGroup>
           <FormGroup row>
             <Label for="exampleText" sm={2}>
-              Start Date
+              Start Date/Time
             </Label>
             <Col sm={10}>
               <Input
                 type="textArea"
                 name="startTime"
                 id="exampleText"
-                placeholder="Start Time"
+                placeholder="Start Time/Date"
                 onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
           <FormGroup row>
             <Label for="exampleText" sm={2}>
-              End Date
+              End Date/Time
             </Label>
             <Col sm={10}>
               <Input
                 type="textArea"
                 name="endTime"
                 id="exampleText"
-                placeholder="End Time"
+                placeholder="End Time/Date"
                 onChange={this.handleChange}
               />
             </Col>
