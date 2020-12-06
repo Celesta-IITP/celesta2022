@@ -35,6 +35,7 @@ class Extab extends Component {
       eventId:this.props.eventDetails._id,
       teamName:"",
       registered:false,
+      team: (this.props.eventDetails.teamSize==="1") ? true : false,
       dispmsg:"",
       youtubeLink:"",
       fbLink:"",
@@ -72,30 +73,35 @@ class Extab extends Component {
     const { name, value } = target;
     this.setState({ [name]: value });
   }
-  
+
   submit = (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("token");
-    axios
-      .post(`/api/registrations/register/${this.state.eventId}/`,{
-        teamName:this.state.teamName,
-        teamDetails:[],
-        paymentStatus:this.state.paymentStatus
-      },{
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-      })
+    if(!this.state.team && this.state.teamName===""){
+      console.log("hehehehe");
+      alert("Please enter the team name");
+    }else{
+      const token = localStorage.getItem("token");
+      axios
+        .post(`/api/registrations/register/${this.state.eventId}/`,{
+          teamName:this.state.teamName,
+          teamDetails:[],
+          paymentStatus:this.state.paymentStatus
+        },{
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+        })
 
-      .then(() => {
-        console.log("Data has been sent to the server");
-        this.setState({registered:true});
-        this.setState({dispmsg:"Registration Successful!!"})
-      })
-      .catch(() => {
-        console.log("Internal server error");
-      });
+        .then(() => {
+          console.log("Data has been sent to the server");
+          this.setState({registered:true});
+          this.setState({dispmsg:"Registration Successful!!"})
+        })
+        .catch(() => {
+          console.log("Internal server error");
+        });
+    }
   };
 
   render() {
@@ -113,6 +119,7 @@ class Extab extends Component {
     let submission = processString(config)(event.venue)
     let fb = processString(config)(event.postLinks)
     let rule = processString(config)(event.rulebookUrl)
+    let description = processString(config)(event.description)
 
     return (
       <div className="white tl tabs">
@@ -143,8 +150,7 @@ class Extab extends Component {
             <div className="f3 underline b">Description</div>
             <p
               className="eventDescription"
-              dangerouslySetInnerHTML={{ __html: event.description }}
-            ></p>
+            >{description}</p>
             <br/>
             { this.state.registered && (event.eventType!=='gl') && (event.imageUrl==="sel") &&
               <>
