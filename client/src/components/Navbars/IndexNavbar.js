@@ -90,22 +90,24 @@ class ComponentsNavbar extends React.Component {
                 {this.state.userInfo.isAdmin ? (
                   <li>
                     <Button>
-                      <Link to="/events/add">Add an event!</Link>
+                      <NavLink to="/events/add">Add an event!</NavLink>
                     </Button>
                   </li>
                 ) : (
                   <Button>
-                    <Link to="/events-page">Events</Link>
+                    <NavLink href="/events-page">Events</NavLink>
                   </Button>
                 )}
                 <li>
                   <Button>
-                    <Link to="/profile-page">{this.state.userInfo.name}</Link>
+                    <NavLink href="/profile-page">
+                      {this.state.userInfo.name}
+                    </NavLink>
                   </Button>
                 </li>
                 <li>
                   <Button onClick={this.logoutHandler}>
-                    <Link to="/signin-page">Logout</Link>
+                    <NavLink href="/signin-page">Logout</NavLink>
                   </Button>
                 </li>
               </ul>
@@ -171,9 +173,9 @@ class ComponentsNavbar extends React.Component {
                 <nav>
                   <ul>
                     <NavItem>
-                      <Link to="/signin-page" onClick={this.logoutHandler}>
+                      <NavLink href="/signin-page" onClick={this.logoutHandler}>
                         Logout
-                      </Link>
+                      </NavLink>
                     </NavItem>
                     <NavItem>
                       <NavLink href="/profile-page">
@@ -185,12 +187,12 @@ class ComponentsNavbar extends React.Component {
                     {this.state.userInfo.isAdmin ? (
                       <li>
                         <Button>
-                          <Link to="/events/add">Add an event!</Link>
+                          <NavLink href="/events/add">Add an event!</NavLink>
                         </Button>
                       </li>
                     ) : (
                       <Button>
-                        <Link to="/events-page">Events</Link>
+                        <NavLink href="/events-page">Events</NavLink>
                       </Button>
                     )}
                   </ul>
