@@ -38,7 +38,7 @@ class Extab extends Component {
       dispmsg:"",
       youtubeLink:"",
       fbLink:"",
-      paymentStatus: (this.props.eventDetails.charge==="0") ? "pending" : "completed"
+      paymentStatus: (this.props.eventDetails.charge!=="0") ? "pending" : "completed"
     };
   }
   componentDidMount() {
