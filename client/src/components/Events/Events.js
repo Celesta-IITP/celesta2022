@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { EventsFunctions } from "./EventsFunctions";
 import "./Events.css";
 import IndexNavbar from "../Navbars/IndexNavbar";
+import {Button} from 'reactstrap'
 
 class Events extends Component {
   constructor(props) {
@@ -33,17 +34,17 @@ class Events extends Component {
                 <div className="fnc-slide__content">
                   <h2 className="fnc-slide__heading">
                     <div className="fnc-slide__heading-line">
-                      {/*<span>Events Open to All</span>*/}
+                      <span>Events</span>
                     </div>
                     <div className="fnc-slide__heading-line">
                       <span></span>
                     </div>
                   </h2>
                   <Link to="events/event">
-                    <button type="button" className="fnc-slide__action-btn">
-                      Explore
-                      <span data-text="Explore">Explore</span>
-                    </button>
+                    <Button className="fnc-slide__action-btn">
+                      View All
+                      <span data-text="View All">View All</span>
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -56,17 +57,17 @@ class Events extends Component {
                 <div className="fnc-slide__content">
                   <h2 className="fnc-slide__heading">
                     <div className="fnc-slide__heading-line">
-                      {/*<span>College</span>*/}
+                      <span>Guest Lecture</span>
                     </div>
                     <div className="fnc-slide__heading-line">
-                      {/*<span>Events</span>*/}
+                      <span></span>
                     </div>
                   </h2>
                   <Link to="events/gl">
-                    <button type="button" className="fnc-slide__action-btn">
-                      Explore
-                      <span data-text="Explore">Explore</span>
-                    </button>
+                    <Button className="fnc-slide__action-btn">
+                      View All
+                      <span data-text="View All">View All</span>
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -125,17 +126,17 @@ class Events extends Component {
                 <div className="fnc-slide__content">
                   <h2 className="fnc-slide__heading">
                     <div className="fnc-slide__heading-line">
-                      {/*<span className="managerial">Workshops</span>*/}
+                      <span>Hackathons</span>
                     </div>
                     <div className="fnc-slide__heading-line">
                       <span></span>
                     </div>
                   </h2>
                   <Link to="events/hackathon">
-                    <button type="button" className="fnc-slide__action-btn">
-                      Explore
-                      <span data-text="Explore">Explore</span>
-                    </button>
+                    <Button className="fnc-slide__action-btn">
+                      View All
+                      <span data-text="View All">View All</span>
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -148,17 +149,17 @@ class Events extends Component {
                 <div className="fnc-slide__content">
                   <h2 className="fnc-slide__heading">
                     <div className="fnc-slide__heading-line">
-                      {/*<span>Guest</span>*/}
+                      <span>Workshops</span>
                     </div>
                     <div className="fnc-slide__heading-line">
-                      {/*<span>Talks</span>*/}
+                      <span></span>
                     </div>
                   </h2>
                   <Link to="events/workshop">
-                    <button type="button" className="fnc-slide__action-btn">
-                      Explore
-                      <span data-text="Explore">Explore</span>
-                    </button>
+                    <Button className="fnc-slide__action-btn">
+                      View All
+                      <span data-text="View All">View All</span>
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -202,11 +203,11 @@ class Events extends Component {
                   <span className="fnc-nav__control-progress"></span>
                 </button>
                 <button className="fnc-nav__control">
-                  Guest Lecture 
+                  Guest Lectures 
                   <span className="fnc-nav__control-progress"></span>
                 </button>
                 <button className="fnc-nav__control">
-                  Hackathon
+                  Hackathons
                   <span className="fnc-nav__control-progress"></span>
                 </button>
                 <button className="fnc-nav__control">

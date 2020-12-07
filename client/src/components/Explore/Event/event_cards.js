@@ -12,7 +12,7 @@ export const OnlineCards = (props) => {
 			        <div className="online_el__inner">
 			          <div className="online_el__bg"></div>
 			          <div className="online_el__preview-cont">
-			            <h2 className="online_el__heading" style={{fontSize:"inherit"}}>{value.name}</h2>
+			            <h2 className="online_el__heading" style={{fontSize:"inherit",textAlign:"center"}}>{value.name}</h2>
 			          </div>
 			          <div className="online_el__content">
 			            <div className="online_el__text">{value.name}</div>

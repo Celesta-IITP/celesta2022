@@ -268,7 +268,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid #fff;
+  border: 2px solid #58047b;
   border-top: none;
   border-bottom: none;
 }
@@ -280,7 +280,7 @@
   width: 100%;
   height: 100%;
   line-height: 70px;
-  background: #1F2833;
+  background: #58047b;
   opacity: 0;
   -webkit-transform-origin: 50% 0;
           transform-origin: 50% 0;
@@ -408,19 +408,27 @@ body {
 
 .example-slider .fnc-slide-1 .fnc-slide__inner,
 .example-slider .fnc-slide-1 .fnc-slide__mask-inner {
-  background-image: url("./../../assets/event_img/starry4-min.jpg");
+  background-image: url("./../../assets/event_img/cp8.jpeg");
+  background-size: auto;
+  background-position: center;
 }
 .example-slider .fnc-slide-2 .fnc-slide__inner,
 .example-slider .fnc-slide-2 .fnc-slide__mask-inner {
-  background-image: url("./../../assets/event_img/starry1-min.jpg");
+  background-image: url("./../../assets/event_img/cp2.jpeg");
+  background-size: auto;
+  background-position: center;
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner,
 .example-slider .fnc-slide-3 .fnc-slide__mask-inner {
-  background-image: url("./../../assets/event_img/starry5-min.jpg");
+  background-image: url("./../../assets/event_img/cp1.jpeg");
+  background-size: auto;
+  background-position: center;
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner,
 .example-slider .fnc-slide-4 .fnc-slide__mask-inner {
-  background-image: url("./../../assets/event_img/starry6-min.jpg");
+  background-image: url("./../../assets/event_img/cp7.jpeg");
+  background-size: auto;
+  background-position: center;
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner:before {
   content: "";
@@ -434,6 +442,8 @@ body {
 .example-slider .fnc-slide-5 .fnc-slide__inner,
 .example-slider .fnc-slide-5 .fnc-slide__mask-inner {
   background-image: url("./../../assets/event_img/workshops.jpg");
+  background-size: auto;
+  background-position: center;
 }
 .example-slider .fnc-slide-5 .fnc-slide__inner:before {
   content: "";
@@ -447,6 +457,8 @@ body {
 .example-slider .fnc-slide-6 .fnc-slide__inner,
 .example-slider .fnc-slide-6 .fnc-slide__mask-inner {
   background-image: url("../../assets/event_img/guesttalks.jpg");
+  background-size: auto;
+  background-position: center;
 }
 .example-slider .fnc-slide-6 .fnc-slide__inner:before {
   content: "";
@@ -466,6 +478,8 @@ body {
 .example-slider .fnc-slide-7 .fnc-slide__inner,
 .example-slider .fnc-slide-7 .fnc-slide__mask-inner {
   background-image: url("../../assets/event_img/pronite.jpg");
+  background-size: auto;
+  background-position: center;
 }
 
 
@@ -521,19 +535,27 @@ body {
 
 	.example-slider .fnc-slide-1 .fnc-slide__inner,
 	.example-slider .fnc-slide-1 .fnc-slide__mask-inner {
-	  background-image: url("../../assets/event_img/starry4-min.jpg");
+    background-image: url("../../assets/event_img/cp8.jpeg");
+    background-size: auto;
+    background-position: center;
 	}
 	.example-slider .fnc-slide-2 .fnc-slide__inner,
 	.example-slider .fnc-slide-2 .fnc-slide__mask-inner {
-	  background-image: url("../../assets/event_img/starry1-min.jpg");
+    background-image: url("../../assets/event_img/cp2.jpeg");
+    background-size: auto;
+    background-position: center;
 	}
 	.example-slider .fnc-slide-3 .fnc-slide__inner,
 	.example-slider .fnc-slide-3 .fnc-slide__mask-inner {
-	  background-image: url("../../assets/event_img/starry5-min.jpg");
+    background-image: url("../../assets/event_img/cp1.jpeg");
+    background-size: auto;
+    background-position: center;
 	}
 	.example-slider .fnc-slide-4 .fnc-slide__inner,
 	.example-slider .fnc-slide-4 .fnc-slide__mask-inner {
-	  background-image: url("../../assets/event_img/starry6-min.jpg");
+    background-image: url("../../assets/event_img/cp7.jpeg");
+    background-size: auto;
+    background-position: center;
 	}
 	.example-slider .fnc-slide-5 .fnc-slide__inner,
   .example-slider .fnc-slide-5 .fnc-slide__mask-inner {

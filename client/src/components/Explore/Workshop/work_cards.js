@@ -12,7 +12,7 @@ export const GamiacCards = (props) => {
 			        <div className="gam_el__inner">
 			          <div className="gam_el__bg"></div>
 			          <div className="gam_el__preview-cont">
-			            <h2 className="gam_el__heading" style={{fontSize:"inherit"}}>{value.name}</h2>
+			            <h2 className="gam_el__heading" style={{fontSize:"inherit",textAlign:"center"}}>{value.name}</h2>
 			          </div>
 			          <div className="gam_el__content">
 			            <div className="gam_el__text">{value.name}</div>
