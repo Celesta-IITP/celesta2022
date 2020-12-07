@@ -69,8 +69,13 @@ class ProfilePage extends React.Component {
       name: this.props.user.name,
       phone: this.props.user.phone,
       coll: this.props.user.college,
+      //payUser:[]
     };
   }
+  // componentWillMount(){
+  //   if(this.props.user && this.state.payUser.length===0) this.getTownReg();
+  // }
+
   componentDidMount() {
     this.getRegEve();
     console.log(this.state.userInfo.profilePhoto);
@@ -97,6 +102,29 @@ class ProfilePage extends React.Component {
       [stateName]: index,
     });
   };
+
+  // getTownReg = () => {
+  //   console.log("hi");
+  //   const token = `eyJhbGciOiJIUzUxMiJ9.eyJST0xFIjoiUk9MRV9VU0VSIiwic3ViIjoic3BvbnNvcnNoaXAuY2VsZXN0YS5paXRwQGdtYWlsLmNvbSIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTYwNzE5OTI4MzYwNywiVVNFUl9JRCI6MjQ3ODE1MSwiZXhwIjoxNjE0OTc1MjgzfQ.3KzAA3QYDuVFW2QlKw7ahuv1SvlI55TdPwNOcTrCrNaUaPXmebh4KGocBENCVAMih-mGc7dntVWrNbIp-6962w`;
+  //   axios
+  //     .get(`https://cors-anywhere.herokuapp.com/https://www.townscript.com/api/registration/getRegisteredUsers?eventCode=celesta2k20`, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: token,
+  //       },
+  //     })
+  //     .then(async(response) => {
+  //       const data = response.data;
+  //       const arrdata = JSON.parse(data.data);
+  //       const filterdata = arrdata.filter(dat => dat.customQuestion1.includes(this.props.user.celestaId));
+  //       this.setState({payUser: filterdata});
+  //       this.check();
+  //       console.log("Data has been received!!");
+  //     })
+  //     .catch(() => {
+  //       console.log('Error retrieving data!!!');
+  //     });
+  // }
 
   getRegEve = () => {
     const token = localStorage.getItem("token");
@@ -373,7 +401,7 @@ class ProfilePage extends React.Component {
                           border: "2px solid grey",
                         }}
                       >
-                        Start Date
+                        Date
                       </th>
                       <th
                         style={{
@@ -382,7 +410,16 @@ class ProfilePage extends React.Component {
                           border: "2px solid grey",
                         }}
                       >
-                        End Date
+                        Start Date/Time
+                      </th>
+                      <th
+                        style={{
+                          fontSize: "18px",
+                          textAlign: "center",
+                          border: "2px solid grey",
+                        }}
+                      >
+                        End Date/Time
                       </th>
                     </tr>
                   </thead>
@@ -398,6 +435,16 @@ class ProfilePage extends React.Component {
                           }}
                         >
                           {event.data.name}
+                        </td>
+                        <td
+                          style={{
+                            color: "grey",
+                            fontSize: "15px",
+                            textAlign: "center",
+                            border: "2px solid grey",
+                          }}
+                        >
+                          {event.data.date==="" ? "-" : event.data.date}
                         </td>
                         <td
                           style={{
