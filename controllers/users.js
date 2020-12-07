@@ -35,7 +35,9 @@ var msg =
   "Team Celesta cordially welcome you, the selected ones, onboard this enthralling journey. Give yourself a chance to develop the leadership and management qualities and build our brand to the best of your ability!!\n" +
   "So Let's get ready!!\n\n" +
   "Rulebook CA Program : https://drive.google.com/file/d/1_XuC6Q8ueSCMjeS0nzSZVwHFNiuMuqy5/view?usp=drivesdk \n" +
-  "Whatsapp group link:https://chat.whatsapp.com/E6axGHXCQSG8Nto0tW5enC \n";
+  "Whatsapp group link:https://chat.whatsapp.com/E6axGHXCQSG8Nto0tW5enC \n \n \n" +
+  "Regards,\n" +
+  "CELESTA DEV Team";
 
 // sendMail = async (emailId, celestaId) => {
 //   const msg = {
@@ -117,7 +119,9 @@ sendMail = async (email, celestaId) => {
       " " +
       celestaId +
       "\n" +
-      "Please save it for further use!",
+      "Please save it for further use! \n \n" +
+      "Regards,\n " +
+      "CELESTA DEV Team",
   };
   try {
     await transporter.sendMail(mailOptions);

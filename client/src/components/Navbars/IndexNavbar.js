@@ -191,9 +191,10 @@ class ComponentsNavbar extends React.Component {
                         </Button>
                       </li>
                     ) : (
-                      <Button>
-                        <NavLink href="/events-page">Events</NavLink>
-                      </Button>
+                      <div></div>
+                      // <Button>
+                      //   <NavLink href="/events-page">Events</NavLink>
+                      // </Button>
                     )}
                   </ul>
                 </nav>
