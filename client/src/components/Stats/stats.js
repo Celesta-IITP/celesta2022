@@ -19,7 +19,7 @@ const Stats = () => {
               <p
                 id="number1"
                 className="number"
-                style={{ alignContent: "center" }}
+                style={{ textAlign: "center" }}
               >
                 <Countup end={100} duration={6} suffix="+" />
                 <br />
@@ -36,7 +36,7 @@ const Stats = () => {
               <p
                 id="number2"
                 className="number"
-                style={{ alignContent: "center" }}
+                style={{ textAlign: "center" }}
               >
                 <Countup end={5000} duration={6} suffix="+" />
                 <br />
@@ -53,7 +53,7 @@ const Stats = () => {
               <p
                 id="number3"
                 className="number"
-                style={{ alignContent: "center" }}
+                style={{ textAlign: "center" }}
               >
                 <Countup end={50} duration={6} suffix="+" />
                 <br />
@@ -70,7 +70,7 @@ const Stats = () => {
               <p
                 id="number4"
                 className="number"
-                style={{ alignContent: "center" }}
+                style={{ textAlign: "left" }}
               >
                 <Countup end={50000} duration={6} suffix="+" />
                 <br />
