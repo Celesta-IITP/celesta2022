@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Tabs, Tab, TabPanel, TabList } from "react-web-tabs";
 import "react-web-tabs/dist/react-web-tabs.css";
+import { NavLink } from "reactstrap";
 import "./Extab.css";
 import {
   Button,
@@ -131,9 +132,7 @@ class Extab extends Component {
             { (event.eventType!=='gl') ? ( 
             <Tab tabFor="two">Rules</Tab>
             ) : null}
-            {Object.keys(this.state.userInfo).length !== 0 ? (
             <Tab tabFor="three">Register</Tab>
-            ):null}
           </TabList>
           <TabPanel tabId="one">
           { (event.eventType==='gl') && 
@@ -340,6 +339,20 @@ class Extab extends Component {
                 <Button href="https://www.townscript.com/v2/e/celesta2k20/booking/tickets">Pay</Button>
               </Col>
               ) : null }
+          </TabPanel>
+          ):null}
+          {Object.keys(this.state.userInfo).length === 0 ? (
+          <TabPanel tabId="three">
+            <br/>
+            <div className="f3 b underline" style={{alignContent:"center"}}>
+              Please login to the website to be able to register for the event. Click the button below to be directed to the signin page.
+            </div>
+            <br/>          
+            <Col sm={{ size: 10, offset: 1 }}>
+              <Button>
+                <NavLink href="/signin-page">Signin Page</NavLink>
+              </Button>
+            </Col>
           </TabPanel>
           ):null}
         </Tabs>
