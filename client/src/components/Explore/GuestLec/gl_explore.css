@@ -1,5 +1,5 @@
 .info_el {
-  width: 100%;
+  width: 10%;
 }
 .info_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -258,7 +258,7 @@
 @media only screen and (max-width: 1000px) {
 
   .info_el {
-    height: 100% !important;
+    height: 10% !important;
   }
 
   .info_cont.s--info_el-active .info_el:nth-child(1):not(.s--active) {

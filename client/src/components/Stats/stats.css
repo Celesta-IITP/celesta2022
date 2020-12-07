@@ -99,9 +99,10 @@ body, div, dl, dt, dd, ul, ol, li, pre, form, p, blockquote, th, td {
 }
 
 .projectFactsWrap .item p.number{
-  font-size: 40px;
+  font-size: 22px;
   padding: 0;
   font-weight: bold;
+  margin-left: auto;
 }
 
 .projectFactsWrap .item p{
