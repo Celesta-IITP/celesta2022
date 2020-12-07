@@ -13,7 +13,7 @@ const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 const sgMail = require("@sendgrid/mail");
 
-sgMail.setApiKey(SENDGRID_API_KEY);
+// sgMail.setApiKey(SENDGRID_API_KEY);
 
 signToken = (user) => {
   return JWT.sign(
@@ -27,7 +27,7 @@ signToken = (user) => {
   );
 };
 
-var Msg =
+var msg =
   "Hola amigos!!\n\n" +
   "We hope you are safe, healthy and doing well in your lives.\n" +
   "Continuing our legacy, Celesta'20 is back again this year with double excitement to promote technical and managerial enthusiasm amongst this generation and transform the innovative ideas into reality.\n" +
@@ -37,22 +37,90 @@ var Msg =
   "Rulebook CA Program : https://drive.google.com/file/d/1_XuC6Q8ueSCMjeS0nzSZVwHFNiuMuqy5/view?usp=drivesdk \n" +
   "Whatsapp group link:https://chat.whatsapp.com/E6axGHXCQSG8Nto0tW5enC \n";
 
-sendMail = async (emailId, celestaId) => {
-  const msg = {
-    to: emailId,
-    from: "celesta.iitp@gmail.com",
+// sendMail = async (emailId, celestaId) => {
+//   const msg = {
+//     to: emailId,
+//     from: "celesta.iitp@gmail.com",
+//     subject: "Celesta 2020",
+//     text:
+//       "Your Celesta Id is" +
+//       " " +
+//       celestaId +
+//       "\n" +
+//       "Please save it for later use!",
+//     // html: emailBody,
+//   };
+
+//   try {
+//     await sgMail.send(msg);
+//     return true;
+//   } catch (error) {
+//     console.log(error);
+//     return false;
+//   }
+// };
+
+// sendCAMail = async (emailId, celestaId) => {
+//   const msg = {
+//     to: emailId,
+//     from: "celesta.iitp@gmail.com",
+//     subject: "Celesta Campus Ambassador Program 2020",
+//     text: "Your Celesta Id is" + " " + celestaId + "\n" + Msg,
+//     // html: emailBody,
+//   };
+
+//   try {
+//     await sgMail.send(msg);
+//     return true;
+//   } catch (error) {
+//     console.log(error);
+//     return false;
+//   }
+// };
+
+// sendPwdResetMail = async (emailId, code) => {
+//   const msg = {
+//     to: emailId,
+//     from: "celesta.iitp@gmail.com",
+//     subject: "Celesta, Password Reset Mail",
+//     text: `Your password reset code is ${code}`,
+//     // html: emailBody,
+//   };
+
+//   try {
+//     await sgMail.send(msg);
+//     return true;
+//   } catch (error) {
+//     console.log(error);
+//     return false;
+//   }
+// };
+
+sendMail = async (email, celestaId) => {
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: EMAIL_USER,
+      pass: EMAIL_PASSWORD,
+    },
+    tls: {
+      // do not fail on invalid certs
+      rejectUnauthorized: false,
+    },
+  });
+  let mailOptions = {
+    from: EMAIL_USER,
+    to: email,
     subject: "Celesta 2020",
     text:
       "Your Celesta Id is" +
       " " +
       celestaId +
       "\n" +
-      "Please save it for later use!",
-    // html: emailBody,
+      "Please save it for further use!",
   };
-
   try {
-    await sgMail.send(msg);
+    await transporter.sendMail(mailOptions);
     return true;
   } catch (error) {
     console.log(error);
@@ -60,17 +128,26 @@ sendMail = async (emailId, celestaId) => {
   }
 };
 
-sendCAMail = async (emailId, celestaId) => {
-  const msg = {
-    to: emailId,
-    from: "celesta.iitp@gmail.com",
+sendCAMail = async (email, celestaId) => {
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: EMAIL_USER,
+      pass: EMAIL_PASSWORD,
+    },
+    tls: {
+      // do not fail on invalid certs
+      rejectUnauthorized: false,
+    },
+  });
+  let mailOptions = {
+    from: EMAIL_USER,
+    to: email,
     subject: "Celesta Campus Ambassador Program 2020",
-    text: "Your Celesta Id is" + " " + celestaId + "\n" + Msg,
-    // html: emailBody,
+    text: "Your Celesta Id is" + " " + celestaId + "\n" + msg,
   };
-
   try {
-    await sgMail.send(msg);
+    await transporter.sendMail(mailOptions);
     return true;
   } catch (error) {
     console.log(error);
@@ -78,99 +155,27 @@ sendCAMail = async (emailId, celestaId) => {
   }
 };
 
-sendPwdResetMail = async (emailId, code) => {
-  const msg = {
-    to: emailId,
-    from: "celesta.iitp@gmail.com",
+sendPwdResetMail = async (email, code) => {
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: EMAIL_USER,
+      pass: EMAIL_PASSWORD,
+    },
+  });
+  let mailOptions = {
+    from: EMAIL_USER,
+    to: email,
     subject: "Celesta, Password Reset Mail",
     text: `Your password reset code is ${code}`,
-    // html: emailBody,
   };
-
   try {
-    await sgMail.send(msg);
+    await transporter.sendMail(mailOptions);
     return true;
   } catch (error) {
-    console.log(error);
     return false;
   }
 };
-
-// sendMail = async (email, token, host, celestaId) => {
-//   let transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: EMAIL_USER,
-//       pass: EMAIL_PASSWORD,
-//     },
-//     tls: {
-//       // do not fail on invalid certs
-//       rejectUnauthorized: false,
-//     },
-//   });
-//   let mailOptions = {
-//     from: EMAIL_USER,
-//     to: email,
-//     subject: "Celesta 2020",
-//     text: "Your Celesta Id is" + " " + celestaId,
-//   };
-//   try {
-//     await transporter.sendMail(mailOptions);
-//     return true;
-//   } catch (error) {
-//     console.log(error);
-//     return false;
-//   }
-// };
-
-// sendCAMail = async (email, token, host, celestaId) => {
-//   let transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: EMAIL_USER,
-//       pass: EMAIL_PASSWORD,
-//     },
-//     tls: {
-//       // do not fail on invalid certs
-//       rejectUnauthorized: false,
-//     },
-//   });
-//   let mailOptions = {
-//     from: EMAIL_USER,
-//     to: email,
-//     subject: "Celesta Campus Ambassador Program 2020",
-//     text: "Your Celesta Id is" + " " + celestaId + "\n" + msg,
-//   };
-//   try {
-//     await transporter.sendMail(mailOptions);
-//     return true;
-//   } catch (error) {
-//     console.log(error);
-//     return false;
-//   }
-// };
-
-// sendPwdResetMail = async (email, code) => {
-//   let transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: EMAIL_USER,
-//       pass: EMAIL_PASSWORD,
-//     },
-//   });
-//   let mailOptions = {
-//     from: EMAIL_USER,
-//     to: email,
-//     subject: "Celesta, Password Reset Mail",
-//     text: `Your password reset code is ${code}`,
-//   };
-//   try {
-//     await transporter.sendMail(mailOptions);
-//     return true;
-//   } catch (error) {
-//     return false;
-//   }
-// };
 
 generateCelestaId = async () => {
   var minm = 1000;
