@@ -1,5 +1,5 @@
 .online_el {
-  width: 33%;
+  width: 25%;
 }
 .online_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -76,7 +76,7 @@
   transition-delay: 0.2s;
   background-image: url("../../../assets/event_img/quest.jpeg");
 }
-/* .online_el:nth-child(4) {
+.online_el:nth-child(4) {
   -webkit-transform: translate3d(315.625%, 0, 0);
           transform: translate3d(315.625%, 0, 0);
   -webkit-transform-origin: 365.625% 50%;
@@ -99,9 +99,9 @@
 }
 .online_el:nth-child(4) .online_el__bg:before {
   transition-delay: 0.3s;
-  background-image: url("../../../assets/event_img/iplauc.jpg");
+  background-image: url("../../../assets/event_img/1v1.jpeg");
 }
-.online_el:nth-child(5) {
+/*.online_el:nth-child(5) {
   -webkit-transform: translate3d(420.8333333333%, 0, 0);
           transform: translate3d(420.8333333333%, 0, 0);
   -webkit-transform-origin: 470.8333333333% 50%;
@@ -205,7 +205,7 @@
 @media only screen and (max-width: 1000px) {
 
   .online_el {
-    height: 33% !important;
+    height: 25% !important;
   }
 
   .online_cont.s--online_el-active .online_el:nth-child(1):not(.s--active) {
@@ -223,12 +223,12 @@
           transform: translate3d(0, 210.4166666667%, 0);
     transition: opacity 0.95s;
   }
-  /*.online_cont.s--online_el-active .online_el:nth-child(4):not(.s--active) {
+  .online_cont.s--online_el-active .online_el:nth-child(4):not(.s--active) {
     -webkit-transform: translate3d(0, 315.625%, 0);
           transform: translate3d(0, 315.625%, 0);
     transition: opacity 0.95s;
   }
-  .online_cont.s--online_el-active .online_el:nth-child(5):not(.s--active) {
+  /*.online_cont.s--online_el-active .online_el:nth-child(5):not(.s--active) {
     -webkit-transform: translate3d(0, 420.8333333333%, 0);
           transform: translate3d(0, 420.8333333333%, 0);
     transition: opacity 0.95s;
@@ -269,7 +269,7 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  /*.online_el:nth-child(4) {
+  .online_el:nth-child(4) {
     -webkit-transform: translate3d(0, 315.625%, 0);
             transform: translate3d(0, 315.625%, 0);
     -webkit-transform-origin: 365.625% 50%;
@@ -279,7 +279,7 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  .online_el:nth-child(5) {
+  /*.online_el:nth-child(5) {
     -webkit-transform: translate3d(0, 420.8333333333%, 0);
             transform: translate3d(0, 420.8333333333%, 0);
     -webkit-transform-origin: 470.8333333333% 50%;
