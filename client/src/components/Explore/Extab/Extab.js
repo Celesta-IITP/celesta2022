@@ -178,7 +178,7 @@ class Extab extends Component {
               <br/>
               </>
              }
-             { this.state.registered && (event.eventType!=='gl') && (event.imageUrl==="reg") &&
+             { this.state.registered && (event.eventType!=='gl') && (event.imageUrl==="reg") && (event.postLinks!=="") &&
               <>
               <div className="f3 underline b">Registration link</div>
               <p
