@@ -82,10 +82,10 @@ class Index extends React.Component {
           type="info"
           component={
             <NavLink
-              href="/ca"
+              href="/register-page"
               style={{ textDecoration: "none", color: "#fff" }}
             >
-              Campus Ambassador Registrations are open!
+              Be part of Celesta! Register now!
             </NavLink>
           }
         />
