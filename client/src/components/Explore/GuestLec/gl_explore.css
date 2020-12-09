@@ -225,7 +225,7 @@
 }
 .info_el:nth-child(9) .info_el__bg:before {
   transition-delay: 0.8s;
-  background-image: url("../../../assets/event_img/Alyne.jpg");
+  background-image: url("../../../assets/event_img/alyne.jpg");
 }
 .info_el:nth-child(10) {
   -webkit-transform: translate3d(946.875%, 0, 0);
