@@ -209,7 +209,7 @@ class StepWise extends React.Component {
                 <NavLink href="/ca">Register Here!</NavLink>
               </Button>
               <Button className="mt-4" color="warning">
-                <NavLink href="https://drive.google.com/file/d/1zohNkaeDEnM9wURCbqpQ3lRGWs5oyCOy/view?usp=sharing">
+                <NavLink href="https://drive.google.com/file/d/1eoq0klP8LmGccQWTx-F-H9nrU7LOWj1z/view?usp=sharing">
                   FAQ
                 </NavLink>
               </Button>
