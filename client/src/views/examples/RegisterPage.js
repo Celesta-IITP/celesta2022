@@ -534,7 +534,7 @@ class RegisterPage extends React.Component {
                           >
                             register
                           </Button>
-                          <Link to="/ca">
+                          {/* <Link to="/ca">
                             <Button
                               className="btn-round"
                               color="primary"
@@ -542,7 +542,7 @@ class RegisterPage extends React.Component {
                             >
                               Register as CA?
                             </Button>
-                          </Link>
+                          </Link> */}
                         </CardFooter>
 
                         {/* <a href={serverUrl + "ca"}>

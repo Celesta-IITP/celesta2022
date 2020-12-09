@@ -1,9 +1,14 @@
-import React, { Component, Link } from "react";
+import React, { Component } from "react";
 import Navbar from "../Navbars/IndexNavbar";
+import CustomizedSnackbars from "../../views/examples/snackBar";
 import Footer from "../Footer/Footer.js";
 import Loader from "../Loader/loader";
 import "./ca.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import {
+  Button,
+} from "reactstrap";
 
 // import { contactFunctions } from "./caFunctions";
 /*class Ca extends Component {
@@ -89,7 +94,7 @@ class CA extends Component {
 
           <div id="homeSection" className="homes">
             <h1 className="display-3 main-headline">
-              Join CELESTA'20 Campus Ambassador Program
+              CELESTA'20 Campus Ambassador Program
             </h1>
             <p className="abt-headline">
               Indian Institute Of Technology Patna is bringing forward it’s very
@@ -98,10 +103,23 @@ class CA extends Component {
               take part in the exciting events, be the leader!!
             </p>
             <br />
-            <a href="#register" className="btn btn-outline-dark register-btn">
+            {/* <a href="#register" className="btn btn-outline-dark register-btn">
               {" "}
               Register Now{" "}
-            </a>
+            </a> */}
+
+                      <Link to="/register-page">
+                            <Button
+                              className="btn-round"
+                              color="primary"
+                              size="lg"
+                            >
+                              Normal Registration
+                            </Button>
+                          </Link>
+            
+
+
           </div>
           {/* home section ends here */}
           {/* features start here */}
@@ -154,11 +172,11 @@ class CA extends Component {
           {/* registration section start here */}
           <div id="register" className="register-x">
             <h1 className="display-3 register-headline">
-              Hurry Up and Register Yourself!
+              {/* Hurry Up and Register Yourself! */}
             </h1>
             <br />
             <br />
-            <div className="form-registration">
+            {/* <div className="form-registration">
               <div className="card card-x">
                 <div className="card-body card-bodyx">
                   <form onSubmit={this.submit}>
@@ -255,10 +273,20 @@ class CA extends Component {
                   </form>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           {/* end of registration section here */}
+        <Footer/>
         </div>
+        <CustomizedSnackbars
+          type="info"
+          component={
+            <a>
+              Campus Ambassador Registrations are now closed!
+              </a>
+            
+          }
+        />
       </div>
     );
   }
