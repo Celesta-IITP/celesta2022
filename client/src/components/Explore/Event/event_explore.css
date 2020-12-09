@@ -1,5 +1,5 @@
 .online_el {
-  width: 25%;
+  width: 20%;
 }
 .online_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -101,7 +101,7 @@
   transition-delay: 0.3s;
   background-image: url("../../../assets/event_img/1v1.jpeg");
 }
-/*.online_el:nth-child(5) {
+.online_el:nth-child(5) {
   -webkit-transform: translate3d(420.8333333333%, 0, 0);
           transform: translate3d(420.8333333333%, 0, 0);
   -webkit-transform-origin: 470.8333333333% 50%;
@@ -124,9 +124,9 @@
 }
 .online_el:nth-child(5) .online_el__bg:before {
   transition-delay: 0.4s;
-  background-image: url("../../../assets/event_img/staticrush.jpg");
+  background-image: url("../../../assets/event_img/case_study.jpg");
 }
-.online_el:nth-child(6) {
+/*.online_el:nth-child(6) {
   -webkit-transform: translate3d(526.041333333%, 0, 0);
           transform: translate3d(526.041333333%, 0, 0);
   -webkit-transform-origin: 575.8333333333% 50%;
@@ -205,7 +205,7 @@
 @media only screen and (max-width: 1000px) {
 
   .online_el {
-    height: 25% !important;
+    height: 20% !important;
   }
 
   .online_cont.s--online_el-active .online_el:nth-child(1):not(.s--active) {
@@ -228,12 +228,12 @@
           transform: translate3d(0, 315.625%, 0);
     transition: opacity 0.95s;
   }
-  /*.online_cont.s--online_el-active .online_el:nth-child(5):not(.s--active) {
+  .online_cont.s--online_el-active .online_el:nth-child(5):not(.s--active) {
     -webkit-transform: translate3d(0, 420.8333333333%, 0);
           transform: translate3d(0, 420.8333333333%, 0);
     transition: opacity 0.95s;
   }
-  .online_cont.s--online_el-active .online_el:nth-child(6):not(.s--active) {
+  /*.online_cont.s--online_el-active .online_el:nth-child(6):not(.s--active) {
     -webkit-transform: translate3d(0, 526.041333333%, 0);
           transform: translate3d(0, 526.041333333%, 0);
     transition: opacity 0.95s;
@@ -279,7 +279,7 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  /*.online_el:nth-child(5) {
+  .online_el:nth-child(5) {
     -webkit-transform: translate3d(0, 420.8333333333%, 0);
             transform: translate3d(0, 420.8333333333%, 0);
     -webkit-transform-origin: 470.8333333333% 50%;
@@ -289,7 +289,7 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  .online_el:nth-child(6) {
+  /*.online_el:nth-child(6) {
     -webkit-transform: translate3d(0, 526.041333333%, 0);
             transform: translate3d(0, 526.041333333%, 0);
     -webkit-transform-origin: 575.8333333333% 50%;
