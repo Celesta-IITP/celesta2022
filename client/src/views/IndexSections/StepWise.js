@@ -94,7 +94,11 @@ class StepWise extends React.Component {
                   CA Program
                 </Button>
               </NavLink>
-
+              <NavLink href="/events-page">
+                <Button className="mt-4" color="warning">
+                  Events
+                </Button>
+              </NavLink>
               <NavLink href="/schedule">
                 <Button className="mt-4" color="warning">
                   Events Schedule!
