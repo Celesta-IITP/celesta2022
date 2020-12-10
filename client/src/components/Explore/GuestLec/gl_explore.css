@@ -1,5 +1,5 @@
 .info_el {
-  width: 10%;
+  width: 11.1%;
 }
 .info_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -99,7 +99,7 @@
 }
 .info_el:nth-child(4) .info_el__bg:before {
   transition-delay: 0.3s;
-  background-image: url("../../../assets/event_img/vallabhjee.jpg");
+  background-image: url("../../../assets/event_img/rajan.jpg");
 }
 .info_el:nth-child(5) {
   -webkit-transform: translate3d(420.8333333333%, 0, 0);
@@ -124,7 +124,7 @@
 }
 .info_el:nth-child(5) .info_el__bg:before {
   transition-delay: 0.4s;
-  background-image: url("../../../assets/event_img/rajan.jpg");
+  background-image: url("../../../assets/event_img/singla.jpg");
 }
 
 .info_el:nth-child(6) {
@@ -150,7 +150,7 @@
 }
 .info_el:nth-child(6) .info_el__bg:before {
   transition-delay: 0.5s;
-  background-image: url("../../../assets/event_img/singla.jpg");
+  background-image: url("../../../assets/event_img/bhasin.jpg");
 }
 .info_el:nth-child(7) {
   -webkit-transform: translate3d(631.249%, 0, 0);
@@ -175,7 +175,7 @@
 }
 .info_el:nth-child(7) .info_el__bg:before {
   transition-delay: 0.6s;
-  background-image: url("../../../assets/event_img/bhasin.jpg");
+  background-image: url("../../../assets/event_img/HCV.jpg");
 }
 .info_el:nth-child(8) {
   -webkit-transform: translate3d(736.458333333%, 0, 0);
@@ -200,7 +200,7 @@
 }
 .info_el:nth-child(8) .info_el__bg:before {
   transition-delay: 0.7s;
-  background-image: url("../../../assets/event_img/HCV.jpg");
+  background-image: url("../../../assets/event_img/alyne.jpg");
 }
 .info_el:nth-child(9) {
   -webkit-transform: translate3d(841.666666666%, 0, 0);
@@ -225,9 +225,9 @@
 }
 .info_el:nth-child(9) .info_el__bg:before {
   transition-delay: 0.8s;
-  background-image: url("../../../assets/event_img/alyne.jpg");
+  background-image: url("../../../assets/event_img/minwalla.jpg");
 }
-.info_el:nth-child(10) {
+/* .info_el:nth-child(10) {
   -webkit-transform: translate3d(946.875%, 0, 0);
   transform: translate3d(946.875%, 0, 0);
   -webkit-transform-origin: 996.875% 50%;
@@ -251,13 +251,13 @@
 .info_el:nth-child(10) .info_el__bg:before {
   transition-delay: 0.8s;
   background-image: url("../../../assets/event_img/minwalla.jpg");
-}
+} */
 .info_el:hover .info_el__bg:after {
   opacity: 0;
 }
 @media only screen and (max-width: 1000px) {
   .info_el {
-    height: 10% !important;
+    height: 11.1% !important;
   }
 
   .info_cont.s--info_el-active .info_el:nth-child(1):not(.s--active) {
@@ -305,11 +305,11 @@
     transform: translate3d(0, 841.666666666%, 0);
     transition: opacity 0.95s;
   }
-  .info_cont.s--info_el-active .info_el:nth-child(10):not(.s--active) {
+  /* .info_cont.s--info_el-active .info_el:nth-child(10):not(.s--active) {
     -webkit-transform: translate3d(0, 946.875%, 0);
     transform: translate3d(0, 946.875%, 0);
     transition: opacity 0.95s;
-  }
+  } */
   .info_el:nth-child(2) {
     -webkit-transform: translate3d(0, 105.2083333333%, 0);
     transform: translate3d(0, 105.2083333333%, 0);
@@ -390,7 +390,7 @@
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-  .info_el:nth-child(10) {
+  /* .info_el:nth-child(10) {
     -webkit-transform: translate3d(0, 946.875%, 0);
     transform: translate3d(0, 946.875%, 0);
     -webkit-transform-origin: 996.875% 50%;
@@ -399,5 +399,5 @@
   .info_el:nth-child(10) .info_el__bg {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-  }
+  } */
 }

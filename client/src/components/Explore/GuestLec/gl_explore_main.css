@@ -259,7 +259,7 @@ body {
   transition: transform 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
   color: transparent;
   font-size: 400%;
-  margin-right: 25px;
+  margin-right: 0px;
 }
 .info_el__index-overlay:before {
   content: attr(data-index);
