@@ -1,5 +1,5 @@
 .man_el {
-  width: 50%;
+  width: 100%;
 }
 .man_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -24,7 +24,7 @@
 }
 .man_el:nth-child(1) .man_el__bg:before {
   transition-delay: 0s;
-  background-image: url("../../../assets/event_img/engconvo.jpg");
+  background-image: url("../../../assets/event_img/hackawork.jpeg");
 }
 /* .man_el:nth-child(2) {
   -webkit-transform: translate3d(105.2083333333%, 0, 0);
