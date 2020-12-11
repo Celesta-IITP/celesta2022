@@ -1,5 +1,5 @@
 .online_el {
-  width: 16.6%;
+  width: 14%;
 }
 .online_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -151,7 +151,7 @@
   transition-delay: 0.5s;
   background-image: url("../../../assets/event_img/vchroma.png");
 }
-/*.online_el:nth-child(7) {
+.online_el:nth-child(7) {
   -webkit-transform: translate3d(631.249%, 0, 0);
           transform: translate3d(631.249%, 0, 0);
   -webkit-transform-origin: 681.041% 50%;
@@ -174,9 +174,9 @@
 }
 .online_el:nth-child(7) .online_el__bg:before {
   transition-delay: 0.6s;
-  background-image: url("../../../assets/event_img/lockandload.jpg");
+  background-image: url("../../../assets/event_img/innover.jpg");
 }
-.online_el:nth-child(8) {
+/*.online_el:nth-child(8) {
   -webkit-transform: translate3d(736.457%, 0, 0);
           transform: translate3d(736.457%, 0, 0);
   -webkit-transform-origin: 786.249% 50%;
@@ -205,7 +205,7 @@
 @media only screen and (max-width: 1000px) {
 
   .online_el {
-    height: 16.6% !important;
+    height: 14% !important;
   }
 
   .online_cont.s--online_el-active .online_el:nth-child(1):not(.s--active) {
@@ -238,12 +238,12 @@
           transform: translate3d(0, 526.041333333%, 0);
     transition: opacity 0.95s;
   }
-  /*.online_cont.s--online_el-active .online_el:nth-child(7):not(.s--active) {
+  .online_cont.s--online_el-active .online_el:nth-child(7):not(.s--active) {
     -webkit-transform: translate3d(0, 631.249%, 0);
           transform: translate3d(0, 631.249%, 0);
     transition: opacity 0.95s;
   }
-  .online_cont.s--online_el-active .online_el:nth-child(8):not(.s--active) {
+  /*.online_cont.s--online_el-active .online_el:nth-child(8):not(.s--active) {
     -webkit-transform: translate3d(0, 736.457%, 0);
           transform: translate3d(0, 736.457%, 0);
     transition: opacity 0.95s;
@@ -299,7 +299,7 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  /*.online_el:nth-child(7) {
+  .online_el:nth-child(7) {
     -webkit-transform: translate3d(0, 631.249%, 0);
             transform: translate3d(0, 631.249%, 0);
     -webkit-transform-origin: 681.041% 50%;
@@ -309,7 +309,7 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  .online_el:nth-child(8) {
+  /*.online_el:nth-child(8) {
     -webkit-transform: translate3d(0, 736.457%, 0);
             transform: translate3d(0, 736.457%, 0);
     -webkit-transform-origin: 786.249% 50%;
