@@ -135,7 +135,7 @@ module.exports = {
 
   getRegistrationsByEvent: async (req, res, next) => {
     const eventId = req.params.eventId;
-    const currUser = req.user;
+    //const currUser = req.user;
 
     const regs = await Registration.find({
       eventId: eventId,

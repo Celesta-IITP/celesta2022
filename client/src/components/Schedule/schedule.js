@@ -110,17 +110,17 @@ class schedule extends React.Component {
                               </tr>
                               <tr>
                                 <td>Rakesh malhotra</td>
-                                <td>-</td>
+                                <td>Enterpreneurship</td>
                                 <td>Sunday</td>
                                 <td>13/12/20</td>
                                 
                                 <td>10:00-11:00</td>
                               </tr>
                               <tr>
-                                <td>Shayamal Vallabhjee</td>
-                                <td>-</td>
-                                <td>Sunday</td>
-                                <td>13/12/20</td>
+                                <td>Shiraz Minwalla</td>
+                                <td>The search for Quantum Gravity</td>
+                                <td>Thursday</td>
+                                <td>17/12/20</td>
                                 
                                 <td>17:00-18:00</td>
                               </tr>
@@ -141,8 +141,17 @@ class schedule extends React.Component {
                                 <td>10:00-11:00</td>
                               </tr>
                               <tr>
+                                <td>Abhinay Bhasin</td>
+                                <td>The Impact of AI on Human Effort: Does it Empower or Overpower</td>
+                                <td>Saturday</td>
+                                <td>19/12/20</td>
+                                
+                                <td>17:00-18:00</td>
+                                
+                              </tr>
+                              <tr>
                                 <td>HC Verma</td>
-                                <td>-</td>
+                                <td>The spirit of taking up challenges</td>
                                 <td>Sunday</td>
                                 <td>20/12/20</td>
                                 
@@ -151,7 +160,7 @@ class schedule extends React.Component {
                               </tr>
                               <tr>
                                 <td>Alyne Tamir</td>
-                                <td>-</td>
+                                <td>Ask Alyne</td>
                                 <td>Sunday</td>
                                 <td>20/12/20</td>
                                 
