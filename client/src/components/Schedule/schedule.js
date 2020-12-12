@@ -178,32 +178,59 @@ class schedule extends React.Component {
                               <tr>
                                 <th className="header">Event</th>
                                 <th className="header" style={{ textAlign: "center"}}>Date</th>
+                                <th className="header" style={{ textAlign: "center"}}>Paid/Non-Paid</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
-                                <td>ByteRace</td>
-                                <td>Dec 12th, 2020 - Dec 12th, 2020 </td>
+                                <td>Are We Alone</td>
+                                <td>Till 25th December 2020</td>
+                                <td>Not Paid</td>
                               </tr>
                               <tr>
                                 <td>SolidDesigns</td>
-                                <td>Dec 12th, 2020 - Dec 19th, 2020 </td>
+                                <td>12-24 December 2020</td>
+                                <td>Paid</td>
                               </tr>
                               <tr>
                                 <td>Quest-Ion</td>
-                                <td>Dec 11th,13th,15th,17th,19th 2020 (8PM) </td>
+                                <td>11/13/15/17/19 December 2020</td>
+                                <td>Not Paid</td>
                               </tr>
                               <tr>
-                                <td>NJATH</td>
-                                <td>Dec 18th,19th,20th 2020</td>
+                                <td>1v1 Debate</td>
+                                <td>19-20th December 2020</td>
+                                <td>Paid</td>
                               </tr>
                               <tr>
-                                  <td>Debate</td>
-                                  <td>Dec 19th, 2020</td>
+                                <td>Case Study</td>
+                                <td>20th December 2020</td>
+                                <td>Paid</td>
                               </tr>
                               <tr>
-                                  <td>AP</td>
-                                  <td>Till the End</td>
+                                <td>Vivus Chroma</td>
+                                <td>Till 25th December 2020</td>
+                                <td>Paid</td>
+                              </tr>
+                              <tr>
+                                <td>ROS Workshop+Hackathon</td>
+                                <td>"Workshop: 09-14 Jan,Hackathon: 15-16 Jan"</td>
+                                <td>Paid</td>
+                              </tr>
+                              <tr>
+                                <td>ByteRace</td>
+                                <td>21st Dec(subject to change)</td>
+                                <td>Not Paid</td>
+                              </tr>
+                              <tr>
+                                <td>Innover</td>
+                                <td>Till 21st December 2020</td>
+                                <td>Not Paid</td>
+                              </tr>
+                              <tr>
+                                <td>Hack It Out</td>
+                                <td>-</td>
+                                <td>Not Paid</td>
                               </tr>
                             </tbody>
                           </Table>
