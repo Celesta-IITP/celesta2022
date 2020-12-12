@@ -16,7 +16,7 @@ router.route('/completepayment/:eventId')
     .post(passport.authenticate('jwt',{session: false}), Controller.completePayment)
 
 router.route('/byevent/:eventId')
-    .post(passport.authenticate('jwt',{session: false}), checkEventAccess, Controller.getRegistrationsByEvent)
+    .get(Controller.getRegistrationsByEvent)
 
 router.route('/registration/:regId')
     .get(passport.authenticate('jwt',{session: false}), checkEventAccess, Controller.getRegistrationById)
