@@ -57,10 +57,10 @@ class Index extends React.Component {
         <div className="wrapper bg">
           <Header />
           <div className="main">
-            <Timer />
-            <br />
-            <br />
-            <br />
+            {/* <Timer /> */}
+            {/* <br />
+            <br /> */}
+            {/* <br /> */}
             <StepWise />
             <Stats />
             <EventSlider />
