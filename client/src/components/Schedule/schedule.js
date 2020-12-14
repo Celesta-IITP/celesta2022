@@ -228,6 +228,11 @@ class schedule extends React.Component {
                                 <td>Not Paid</td>
                               </tr>
                               <tr>
+                                <td>NJATH</td>
+                                <td>18-20th December 2020</td>
+                                <td>Not Paid</td>
+                              </tr>
+                              <tr>
                                 <td>Hack It Out</td>
                                 <td>-</td>
                                 <td>Not Paid</td>
