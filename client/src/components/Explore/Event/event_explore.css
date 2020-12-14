@@ -1,5 +1,5 @@
 .online_el {
-  width: 14%;
+  width: 12%;
 }
 .online_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -176,7 +176,7 @@
   transition-delay: 0.6s;
   background-image: url("../../../assets/event_img/innover.jpg");
 }
-/*.online_el:nth-child(8) {
+.online_el:nth-child(8) {
   -webkit-transform: translate3d(736.457%, 0, 0);
           transform: translate3d(736.457%, 0, 0);
   -webkit-transform-origin: 786.249% 50%;
@@ -199,13 +199,13 @@
 }
 .online_el:nth-child(8) .online_el__bg:before {
   transition-delay: 0.7s;
-  background-image: url("../../../assets/event_img/chemcharades.jpg");
-} */
+  background-image: url("../../../assets/event_img/NJATH.png");
+} 
 
 @media only screen and (max-width: 1000px) {
 
   .online_el {
-    height: 14% !important;
+    height: 12% !important;
   }
 
   .online_cont.s--online_el-active .online_el:nth-child(1):not(.s--active) {
@@ -243,11 +243,11 @@
           transform: translate3d(0, 631.249%, 0);
     transition: opacity 0.95s;
   }
-  /*.online_cont.s--online_el-active .online_el:nth-child(8):not(.s--active) {
+  .online_cont.s--online_el-active .online_el:nth-child(8):not(.s--active) {
     -webkit-transform: translate3d(0, 736.457%, 0);
           transform: translate3d(0, 736.457%, 0);
     transition: opacity 0.95s;
-  } */
+  } 
 
   .online_el:nth-child(2) {
     -webkit-transform: translate3d(0, 105.2083333333%, 0);
@@ -309,7 +309,7 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  /*.online_el:nth-child(8) {
+  .online_el:nth-child(8) {
     -webkit-transform: translate3d(0, 736.457%, 0);
             transform: translate3d(0, 736.457%, 0);
     -webkit-transform-origin: 786.249% 50%;
@@ -318,6 +318,6 @@
   .online_el:nth-child(8) .online_el__bg {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-  } */
+  } 
 
 }
