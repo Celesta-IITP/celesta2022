@@ -99,7 +99,7 @@
 }
 .info_el:nth-child(4) .info_el__bg:before {
   transition-delay: 0.3s;
-  background-image: url("../../../assets/event_img/rajan.jpg");
+  background-image: url("../../../assets/event_img/rajan.png");
 }
 .info_el:nth-child(5) {
   -webkit-transform: translate3d(420.8333333333%, 0, 0);
@@ -124,7 +124,7 @@
 }
 .info_el:nth-child(5) .info_el__bg:before {
   transition-delay: 0.4s;
-  background-image: url("../../../assets/event_img/singla.jpg");
+  background-image: url("../../../assets/event_img/Samar.png");
 }
 
 .info_el:nth-child(6) {
@@ -225,7 +225,7 @@
 }
 .info_el:nth-child(9) .info_el__bg:before {
   transition-delay: 0.8s;
-  background-image: url("../../../assets/event_img/minwalla.jpg");
+  background-image: url("../../../assets/event_img/shiraz.png");
 }
 /* .info_el:nth-child(10) {
   -webkit-transform: translate3d(946.875%, 0, 0);
