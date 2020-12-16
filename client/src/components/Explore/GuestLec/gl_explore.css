@@ -150,7 +150,7 @@
 }
 .info_el:nth-child(6) .info_el__bg:before {
   transition-delay: 0.5s;
-  background-image: url("../../../assets/event_img/bhasin.jpg");
+  background-image: url("../../../assets/event_img/abhinay_cropped.png");
 }
 .info_el:nth-child(7) {
   -webkit-transform: translate3d(631.249%, 0, 0);
@@ -200,7 +200,7 @@
 }
 .info_el:nth-child(8) .info_el__bg:before {
   transition-delay: 0.7s;
-  background-image: url("../../../assets/event_img/alyne.jpg");
+  background-image: url("../../../assets/event_img/tamir_cropped.png");
 }
 .info_el:nth-child(9) {
   -webkit-transform: translate3d(841.666666666%, 0, 0);
