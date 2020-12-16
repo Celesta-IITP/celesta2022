@@ -215,14 +215,14 @@
   transition: transform 0.95s, opacity 0.95s;
   transition: transform 0.95s, opacity 0.95s, -webkit-transform 0.95s;
 }
-.online_el:nth-child(9) .info_el__inner {
+.online_el:nth-child(9) .online_el__inner {
   transition-delay: 0.8s;
 }
-.info_el:nth-child(9) .info_el__bg {
+.online_el:nth-child(9) .online_el__bg {
   -webkit-transform: translate3d(-83.82%, 0, 0);
   transform: translate3d(-83.82%, 0, 0);
 }
-.info_el:nth-child(9) .info_el__bg:before {
+.online_el:nth-child(9) .online_el__bg:before {
   transition-delay: 0.8s;
   background-image: url("../../../assets/event_img/CADmaestro.png");
 }
@@ -273,7 +273,7 @@
           transform: translate3d(0, 736.457%, 0);
     transition: opacity 0.95s;
   } 
-  .info_cont.s--info_el-active .info_el:nth-child(9):not(.s--active) {
+  .online_cont.s--online_el-active .online_el:nth-child(9):not(.s--active) {
     -webkit-transform: translate3d(0, 841.666666666%, 0);
     transform: translate3d(0, 841.666666666%, 0);
     transition: opacity 0.95s;
@@ -350,13 +350,13 @@
             transform: translate3d(0, 0, 0);
   } 
 
-  .info_el:nth-child(9) {
+  .online_el:nth-child(9) {
     -webkit-transform: translate3d(0, 841.666666666%, 0);
     transform: translate3d(0, 841.666666666%, 0);
     -webkit-transform-origin: 891.666666666% 50%;
     transform-origin: 891.666666666% 50%;
   }
-  .info_el:nth-child(9) .info_el__bg {
+  .online_el:nth-child(9) .online_el__bg {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
