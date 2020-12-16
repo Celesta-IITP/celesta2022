@@ -60,7 +60,7 @@ class Index extends React.Component {
             {/* <Timer /> */}
             {/* <br />
             <br /> */}
-            {/* <br /> */}
+            <br />
             <StepWise />
             <Stats />
             <EventSlider />
