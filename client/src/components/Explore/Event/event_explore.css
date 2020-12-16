@@ -1,5 +1,5 @@
 .online_el {
-  width: 12%;
+  width: 11%;
 }
 .online_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -201,11 +201,36 @@
   transition-delay: 0.7s;
   background-image: url("../../../assets/event_img/NJATH.png");
 } 
+.online_el:nth-child(9) {
+  -webkit-transform: translate3d(841.666666666%, 0, 0);
+  transform: translate3d(841.666666666%, 0, 0);
+  -webkit-transform-origin: 891.666666666% 50%;
+  transform-origin: 891.666666666% 50%;
+}
+.online_cont.s--online_el-active .online_el:nth-child(9):not(.s--active) {
+  -webkit-transform: scale(0.5) translate3d(841.666666666%, 0, 0);
+  transform: scale(0.5) translate3d(841.666666666%, 0, 0);
+  opacity: 0;
+  transition: opacity 0.95s, -webkit-transform 0.95s;
+  transition: transform 0.95s, opacity 0.95s;
+  transition: transform 0.95s, opacity 0.95s, -webkit-transform 0.95s;
+}
+.online_el:nth-child(9) .info_el__inner {
+  transition-delay: 0.8s;
+}
+.info_el:nth-child(9) .info_el__bg {
+  -webkit-transform: translate3d(-83.82%, 0, 0);
+  transform: translate3d(-83.82%, 0, 0);
+}
+.info_el:nth-child(9) .info_el__bg:before {
+  transition-delay: 0.8s;
+  background-image: url("../../../assets/event_img/CADmaestro.png");
+}
 
 @media only screen and (max-width: 1000px) {
 
   .online_el {
-    height: 12% !important;
+    height: 11% !important;
   }
 
   .online_cont.s--online_el-active .online_el:nth-child(1):not(.s--active) {
@@ -248,6 +273,11 @@
           transform: translate3d(0, 736.457%, 0);
     transition: opacity 0.95s;
   } 
+  .info_cont.s--info_el-active .info_el:nth-child(9):not(.s--active) {
+    -webkit-transform: translate3d(0, 841.666666666%, 0);
+    transform: translate3d(0, 841.666666666%, 0);
+    transition: opacity 0.95s;
+  }
 
   .online_el:nth-child(2) {
     -webkit-transform: translate3d(0, 105.2083333333%, 0);
@@ -319,5 +349,16 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   } 
+
+  .info_el:nth-child(9) {
+    -webkit-transform: translate3d(0, 841.666666666%, 0);
+    transform: translate3d(0, 841.666666666%, 0);
+    -webkit-transform-origin: 891.666666666% 50%;
+    transform-origin: 891.666666666% 50%;
+  }
+  .info_el:nth-child(9) .info_el__bg {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 
 }
