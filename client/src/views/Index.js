@@ -82,10 +82,10 @@ class Index extends React.Component {
           type="info"
           component={
             <NavLink
-              href="/register-page"
+              href="http://njath.org.in/tshirt.html"
               style={{ textDecoration: "none", color: "#fff" }}
             >
-              Be part of Celesta! Register now!
+              Our Tshirts are Out ! Buy Now!
             </NavLink>
           }
         />
