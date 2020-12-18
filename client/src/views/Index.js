@@ -89,6 +89,18 @@ class Index extends React.Component {
             </NavLink>
           }
         />
+        <CustomizedSnackbars
+          type="info"
+          component={
+            <NavLink
+              href="http://njath.org.in"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              NJATH is Live !! Participate Now !
+            </NavLink>
+          }
+        />
+
       </div>
     );
   }
