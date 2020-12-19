@@ -1,5 +1,5 @@
 .info_el {
-  width: 11%;
+  width: 12%;
 }
 .info_el:nth-child(1) {
   -webkit-transform: translate3d(0%, 0, 0);
@@ -124,7 +124,7 @@
 }
 .info_el:nth-child(5) .info_el__bg:before {
   transition-delay: 0.4s;
-  background-image: url("../../../assets/event_img/Samar_cropped.png");
+  background-image: url("../../../assets/event_img/abhinay_cropped.png");
 }
 
 .info_el:nth-child(6) {
@@ -150,7 +150,7 @@
 }
 .info_el:nth-child(6) .info_el__bg:before {
   transition-delay: 0.5s;
-  background-image: url("../../../assets/event_img/abhinay_cropped.png");
+  background-image: url("../../../assets/event_img/HCVerma_cropped.jpg");
 }
 .info_el:nth-child(7) {
   -webkit-transform: translate3d(631.249%, 0, 0);
@@ -175,7 +175,7 @@
 }
 .info_el:nth-child(7) .info_el__bg:before {
   transition-delay: 0.6s;
-  background-image: url("../../../assets/event_img/HCVerma_cropped.jpg");
+  background-image: url("../../../assets/event_img/tamir_cropped.png");
 }
 .info_el:nth-child(8) {
   -webkit-transform: translate3d(736.458333333%, 0, 0);
@@ -200,9 +200,9 @@
 }
 .info_el:nth-child(8) .info_el__bg:before {
   transition-delay: 0.7s;
-  background-image: url("../../../assets/event_img/tamir_cropped.png");
+  background-image: url("../../../assets/event_img/shiraz_cropped.png");
 }
-.info_el:nth-child(9) {
+/*.info_el:nth-child(9) {
   -webkit-transform: translate3d(841.666666666%, 0, 0);
   transform: translate3d(841.666666666%, 0, 0);
   -webkit-transform-origin: 891.666666666% 50%;
@@ -227,7 +227,7 @@
   transition-delay: 0.8s;
   background-image: url("../../../assets/event_img/shiraz_cropped.png");
 }
-/* .info_el:nth-child(10) {
+.info_el:nth-child(10) {
   -webkit-transform: translate3d(946.875%, 0, 0);
   transform: translate3d(946.875%, 0, 0);
   -webkit-transform-origin: 996.875% 50%;
@@ -257,7 +257,7 @@
 }
 @media only screen and (max-width: 1000px) {
   .info_el {
-    height: 11% !important;
+    height: 12% !important;
   }
 
   .info_cont.s--info_el-active .info_el:nth-child(1):not(.s--active) {
@@ -300,12 +300,12 @@
     transform: translate3d(0, 736.458333333%, 0);
     transition: opacity 0.95s;
   }
-  .info_cont.s--info_el-active .info_el:nth-child(9):not(.s--active) {
+  /*.info_cont.s--info_el-active .info_el:nth-child(9):not(.s--active) {
     -webkit-transform: translate3d(0, 841.666666666%, 0);
     transform: translate3d(0, 841.666666666%, 0);
     transition: opacity 0.95s;
   }
-  /* .info_cont.s--info_el-active .info_el:nth-child(10):not(.s--active) {
+  .info_cont.s--info_el-active .info_el:nth-child(10):not(.s--active) {
     -webkit-transform: translate3d(0, 946.875%, 0);
     transform: translate3d(0, 946.875%, 0);
     transition: opacity 0.95s;
@@ -380,7 +380,7 @@
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-  .info_el:nth-child(9) {
+  /*.info_el:nth-child(9) {
     -webkit-transform: translate3d(0, 841.666666666%, 0);
     transform: translate3d(0, 841.666666666%, 0);
     -webkit-transform-origin: 891.666666666% 50%;
@@ -390,7 +390,7 @@
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-  /* .info_el:nth-child(10) {
+  .info_el:nth-child(10) {
     -webkit-transform: translate3d(0, 946.875%, 0);
     transform: translate3d(0, 946.875%, 0);
     -webkit-transform-origin: 996.875% 50%;
