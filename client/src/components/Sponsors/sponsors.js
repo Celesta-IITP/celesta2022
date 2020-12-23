@@ -22,7 +22,7 @@ const Sponsors = ( ) =>  {
          
           <br/><br/><br/><br/>
 
-          <h1 className="sp_head2 heading"> OUR LAST YEAR SPONSORS! </h1>
+          <h1 className="sp_head2 heading"> OUR SPONSORS! </h1>
           <div>
            <br/>
 

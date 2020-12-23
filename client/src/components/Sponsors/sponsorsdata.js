@@ -17,6 +17,22 @@ const sponsorsdata = [
        ],
 
     },
+
+    {
+      "name":"Media Partner",  
+      "image":[ 
+        
+        require("../../assets/img/Sponsors/jhd.png"),
+        require("../../assets/img/Sponsors/AdiKolkata.jpg"),
+        require("../../assets/img/Sponsors/tme.jpeg"),
+        require("../../assets/img/Sponsors/adsm.jpeg"),
+        require("../../assets/img/Sponsors/hmh.jpeg"),
+        require("../../assets/img/Sponsors/hindustantimes.png"),
+        require("../../assets/img/Sponsors/timesofindia.png"),
+
+       ],
+
+    },
     {
       "name":"Strategic Partner",  
       "image":[ 
@@ -149,14 +165,7 @@ const sponsorsdata = [
        ],
 
     },
-    {
-      "name":"Media Partner",  
-      "image":[ 
-        require("../../assets/img/Sponsors/hindustantimes.png"),
-        require("../../assets/img/Sponsors/timesofindia.png"),
-       ],
-
-    },
+    
     {
       "name":"Travel Partner",  
       "image":[ 
