@@ -218,11 +218,6 @@ class schedule extends React.Component {
                                 <td>Paid</td>
                               </tr>
                               <tr>
-                                <td>ByteRace</td>
-                                <td>21st Dec(subject to change)</td>
-                                <td>Not Paid</td>
-                              </tr>
-                              <tr>
                                 <td>Innover</td>
                                 <td>Till 21st December 2020</td>
                                 <td>Not Paid</td>
@@ -236,6 +231,11 @@ class schedule extends React.Component {
                                 <td>Hack It Out</td>
                                 <td>-</td>
                                 <td>Not Paid</td>
+                              </tr>
+                              <tr>
+                                <td>ByteRace</td>
+                                <td>29th December 2020 @8PM</td>
+                                <td>Paid</td>
                               </tr>
                             </tbody>
                           </Table>
