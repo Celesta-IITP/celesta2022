@@ -78,17 +78,17 @@ class Index extends React.Component {
 
           <Footer />
         </div>
-        {/* <CustomizedSnackbars
+        <CustomizedSnackbars
           type="info"
           component={
             <NavLink
-              href="http://njath.org.in/tshirt.html"
+              href="http://codechef.com/BYTR2020"
               style={{ textDecoration: "none", color: "#fff" }}
             >
-              Our Tshirts are Out ! Buy Now!
+              Registrations open for byterace !!
             </NavLink>
           }
-        /> */}
+        />
 
       </div>
     );
