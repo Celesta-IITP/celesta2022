@@ -78,7 +78,7 @@ class Index extends React.Component {
 
           <Footer />
         </div>
-        <CustomizedSnackbars
+        {/* <CustomizedSnackbars
           type="info"
           component={
             <NavLink
@@ -88,7 +88,7 @@ class Index extends React.Component {
               Registrations open for byterace !!
             </NavLink>
           }
-        />
+        /> */}
 
       </div>
     );
