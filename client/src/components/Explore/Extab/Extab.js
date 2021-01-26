@@ -343,7 +343,7 @@ class Extab extends Component {
               </FormGroup>
               )}
             </Form>
-            { (event.charge!=="0") ? (
+            { (event.charge!=="0") && (event.name!=="Hack It Out") ? (
               <Col sm={{ size: 10, offset: 1 }}>
                 <Button href="https://www.townscript.com/v2/e/celesta2k20/booking/tickets">Pay</Button>
               </Col>
