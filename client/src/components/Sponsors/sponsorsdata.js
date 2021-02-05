@@ -15,6 +15,10 @@ const sponsorsdata = [
           require("../../assets/img/Sponsors/2021/Online Media Partner/JH.jpeg"),
           require("../../assets/img/Sponsors/2021/Online Media Partner/MO.jpeg"),
           require("../../assets/img/Sponsors/2021/Online Media Partner/PC.jpeg"),
+          require("../../assets/img/Sponsors/2021/Online Media Partner/DU.png"),
+          require("../../assets/img/Sponsors/2021/Online Media Partner/know.png"),
+          require("../../assets/img/Sponsors/2021/Online Media Partner/blog.png"),
+          require("../../assets/img/Sponsors/2021/Online Media Partner/youth.png"),
        ],
 
     },
