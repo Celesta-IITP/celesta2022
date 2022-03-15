@@ -13,8 +13,6 @@ let server = require("http").Server(app);
 mongoose
   .connect(DB_URI, {
     useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
     useUnifiedTopology: true,
   })
   .then(() => console.log("db connected"))
@@ -71,7 +69,7 @@ app.use((err, req, res, next) => {
 });
 
 //Start the server
-var port = process.env.PORT || 4500;
+var port = process.env.PORT || 8080;
 server.listen(port, function () {
   console.log("App is running on port " + port);
 });
