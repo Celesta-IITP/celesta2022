@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^7.4.0",
+    "antd": "^4.19.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
@@ -30,8 +31,20 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "perfect-scrollbar": "^1.5.5",
+    "react-chartjs-2": "^4.0.1",
+    "react-countup": "^6.1.1",
+    "react-mouse-particles": "^1.1.5",
+    "react-photo-gallery": "^8.0.0",
     "react-process-string": "^1.2.0",
-    "request": "^2.88.2"
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "^5.0.0",
+    "reactstrap": "^9.0.1",
+    "redux-thunk": "^2.4.1",
+    "request": "^2.88.2",
+    "run-script": "^0.1.1",
+    "tabletop": "^1.6.3"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
