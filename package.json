@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.8.2",
     "@sendgrid/mail": "^7.6.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.2",
@@ -46,6 +47,7 @@
     "tabletop": "^1.6.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "package": "^1.0.1"
   }
 }
