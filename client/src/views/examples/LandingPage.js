@@ -592,8 +592,4 @@ class LandingPage extends React.Component {
   }
 }
 
-<<<<<<< HEAD
  export default LandingPage;
-=======
-export default LandingPage;
->>>>>>> 7e8103cf7e79f9c675be064516ddf9ccf57ca049
