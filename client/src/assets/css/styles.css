@@ -11,6 +11,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+<<<<<<< HEAD
   visibility:hidden;
   
 }
@@ -53,6 +54,23 @@
   .fgd{
     top:450px;
 
+=======
+}
+.astronaut {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  max-height: 900px;
+  padding-top: 16.5%;
+  transform: translate(-50%, -80%);
+  animation: astroanimate 5s linear infinite;
+}
+@media only screen and (max-width: 400px) {
+  .astronaut {
+    width: 320px;
+    height: 430px;
+>>>>>>> 7e8103cf7e79f9c675be064516ddf9ccf57ca049
   }
 }
 @keyframes astroanimate {
@@ -81,7 +99,11 @@
   width: 100%;
 }
 .bg {
+<<<<<<< HEAD
   background-color:  #000000;
+=======
+  background-color: #030f33;
+>>>>>>> 7e8103cf7e79f9c675be064516ddf9ccf57ca049
 }
 #content {
   position: relative;

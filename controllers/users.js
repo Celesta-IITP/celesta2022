@@ -12,6 +12,10 @@ const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 const sgMail = require("@sendgrid/mail");
+<<<<<<< HEAD
+=======
+const https = require('https')
+>>>>>>> 7e8103cf7e79f9c675be064516ddf9ccf57ca049
 
 // sgMail.setApiKey(SENDGRID_API_KEY);
 
@@ -99,6 +103,7 @@ var msg =
 // };
 
 sendMail = async (email, celestaId) => {
+<<<<<<< HEAD
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -110,6 +115,19 @@ sendMail = async (email, celestaId) => {
       rejectUnauthorized: false,
     },
   });
+=======
+  // let transporter = nodemailer.createTransport({
+  //   service: "gmail",
+  //   auth: {
+  //     user: EMAIL_USER,
+  //     pass: EMAIL_PASSWORD,
+  //   },
+  //   tls: {
+  //     // do not fail on invalid certs
+  //     rejectUnauthorized: false,
+  //   },
+  // });
+>>>>>>> 7e8103cf7e79f9c675be064516ddf9ccf57ca049
   let mailOptions = {
     from: EMAIL_USER,
     to: email,
@@ -123,8 +141,36 @@ sendMail = async (email, celestaId) => {
       "Regards,\n " +
       "CELESTA DEV Team",
   };
+<<<<<<< HEAD
   try {
     await transporter.sendMail(mailOptions);
+=======
+
+  const options = {
+    host: '50ulcupurc.execute-api.ap-south-1.amazonaws.com',
+    path: '/default/sendMail',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
+
+  try {
+    const req = https.request(options, (res) => {
+      var res = (JSON.stringify(res.statusCode));
+      console.log(res);
+    });
+
+    req.write(JSON.stringify(mailOptions));
+
+    req.on('error', (e) => {
+      reject(e.message);
+    });
+    
+    req.end();
+    //do the request
+>>>>>>> 7e8103cf7e79f9c675be064516ddf9ccf57ca049
     return true;
   } catch (error) {
     console.log(error);
@@ -133,6 +179,7 @@ sendMail = async (email, celestaId) => {
 };
 
 sendCAMail = async (email, celestaId) => {
+<<<<<<< HEAD
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -144,16 +191,59 @@ sendCAMail = async (email, celestaId) => {
       rejectUnauthorized: false,
     },
   });
+=======
+  // let transporter = nodemailer.createTransport({
+  //   service: "gmail",
+  //   auth: {
+  //     user: EMAIL_USER,
+  //     pass: EMAIL_PASSWORD,
+  //   },
+  //   tls: {
+  //     // do not fail on invalid certs
+  //     rejectUnauthorized: false,
+  //   },
+  // });
+>>>>>>> 7e8103cf7e79f9c675be064516ddf9ccf57ca049
   let mailOptions = {
     from: EMAIL_USER,
     to: email,
     subject: "Celesta Campus Ambassador Program 2020",
     text: "Your Celesta Id is" + " " + celestaId + "\n" + msg,
   };
+<<<<<<< HEAD
   try {
     await transporter.sendMail(mailOptions);
     return true;
   } catch (error) {
+=======
+
+  const options = {
+    host: '50ulcupurc.execute-api.ap-south-1.amazonaws.com',
+    path: '/default/sendMail',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
+  try {
+    const req = https.request(options, (res) => {
+      var res = (JSON.stringify(res.statusCode));
+      console.log(res);
+    });
+
+    req.write(JSON.stringify(mailOptions));
+
+    req.on('error', (e) => {
+      reject(e.message);
+    });
+    
+    req.end();
+    //do the request
+    
+    return true;
+  }catch (error) {
+>>>>>>> 7e8103cf7e79f9c675be064516ddf9ccf57ca049
     console.log(error);
     return false;
   }
