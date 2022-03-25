@@ -1,0 +1,7 @@
+node_modules/
+package-lock.json
+.env
+public/profilephotos/
+configs/celesta.json
+client/build
+client/node_modules

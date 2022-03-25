@@ -1,0 +1,100 @@
+.tabs {
+  width: 90%;
+  float: none;
+  list-style: none;
+  position: absolute;
+  margin: 0 0 0 10px;
+  text-align: left;
+  padding-bottom: 50px;
+}
+.tabs .tab-content {
+  z-index: 2;
+  display: block;
+  overflow: ;
+  width: 100%;
+  font-size: 1.4rem;
+  line-height: 25px;
+  /*padding: 25px;*/
+  /*position: absolute;*/
+  /*top: 53px;*/
+  /*left: 0;*/
+}
+
+.download_btn {
+  position: absolute;
+  left: 25px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  font-size: 15px;
+  border: 2px solid cyan;
+}
+
+.gam_el__close-btn, .info_el__close-btn, .man_el__close-btn, .online_el__close-btn, .robo_el__close-btn, .susp_el__close-btn, .tech_el__close-btn{
+  position: fixed;
+}
+.gam_el__content, .info_el__content, .man_el__content, .online_el__content, .robo_el__content, .susp_el__content, .tech_el__content{
+  background: rgba(0,0,0,0.6);
+  overflow-y: auto;
+  /*z-index: 11;*/
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0);
+}
+::-webkit-scrollbar-thumb {
+    background: white; 
+}
+
+.gam_el__preview-cont, .info_el__preview-cont, .man_el__preview-cont,.online_el__preview-cont,.robo_el__preview-cont,.susp_el__preview-cont,.tech_el__preview-cont{
+  background: rgba(0,0,0,0.6);
+}
+.gam_el__index, .info_el__index, .man_el__index, .online_el__index,.robo_el__index,.susp_el__index,.tech_el__index{
+  /*z-index: 2;*/
+}
+
+@media only screen and (max-width: 1000px) {
+.gam_el__content, .info_el__content, .man_el__content, .online_el__content, .robo_el__content, .susp_el__content, .tech_el__content{
+    padding: 10px !important;
+  }
+  .tabs label {
+    padding: 7px 21px;
+  }
+  .tabs .tab-content {
+    font-size: 1.2rem;
+    line-height: 22px;
+    padding: 2px;
+  }
+  .tabs {
+  width: 90%;
+    padding-left: 0px;
+  }
+}
+.event_data {
+  margin-top: 0px;
+  color: white;
+}
+
+.rwt__tab{
+  background: transparent;
+  color: white;
+  border: 0;
+  padding: .7rem .6rem;
+  -webkit-transition: background .3s cubic-bezier(.22,.61,.36,1);
+  transition: background .3s cubic-bezier(.22,.61,.36,1)
+}
+.rwt__tab:focus, .rwt__tab:hover, .rwt__tab:active{
+  outline: 0;
+  background-color: #00d8ff;
+  background-color: rgba(0,0,0,.4);
+  border-radius: 10px;
+}
+
+/*For Event Reg*/
+
+.buttonBackLogin{
+  background: #5fd9fe;
+  cursor: pointer;
+}
