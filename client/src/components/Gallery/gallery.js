@@ -15,14 +15,14 @@ const Photos = () => {
         <Navbar />
       </div>
 
-      <div style={{ backgroundColor: "#05001e" }}>
-        <div style={{ padding: "10px" }}>
+      <div style={{ backgroundColor: "black" }}>
+        <div style={{ padding: "10px" , marginTop: "5vh"}}>
           <h1
             className="galleryheading"
             style={{
               textAlign: "center",
               fontSize: "50px",
-              color: "purple",
+              color: "#00FF00",
               marginTop: "50px",
               marginBottom: "50px",
             }}

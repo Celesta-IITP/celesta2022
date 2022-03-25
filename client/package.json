@@ -68,5 +68,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4500/"
+  "proxy": "http://localhost:4500/",
+  "devDependencies": {
+    "package": "^1.0.1"
+  }
 }
