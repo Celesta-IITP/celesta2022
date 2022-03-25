@@ -12,6 +12,7 @@ const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 const sgMail = require("@sendgrid/mail");
+const https = require('https')
 
 // sgMail.setApiKey(SENDGRID_API_KEY);
 
@@ -99,17 +100,17 @@ var msg =
 // };
 
 sendMail = async (email, celestaId) => {
-  let transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: EMAIL_USER,
-      pass: EMAIL_PASSWORD,
-    },
-    tls: {
-      // do not fail on invalid certs
-      rejectUnauthorized: false,
-    },
-  });
+  // let transporter = nodemailer.createTransport({
+  //   service: "gmail",
+  //   auth: {
+  //     user: EMAIL_USER,
+  //     pass: EMAIL_PASSWORD,
+  //   },
+  //   tls: {
+  //     // do not fail on invalid certs
+  //     rejectUnauthorized: false,
+  //   },
+  // });
   let mailOptions = {
     from: EMAIL_USER,
     to: email,
@@ -123,8 +124,31 @@ sendMail = async (email, celestaId) => {
       "Regards,\n " +
       "CELESTA DEV Team",
   };
+
+  const options = {
+    host: '50ulcupurc.execute-api.ap-south-1.amazonaws.com',
+    path: '/default/sendMail',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
+
   try {
-    await transporter.sendMail(mailOptions);
+    const req = https.request(options, (res) => {
+      var res = (JSON.stringify(res.statusCode));
+      console.log(res);
+    });
+
+    req.write(JSON.stringify(mailOptions));
+
+    req.on('error', (e) => {
+      reject(e.message);
+    });
+    
+    req.end();
+    //do the request
     return true;
   } catch (error) {
     console.log(error);
@@ -133,27 +157,50 @@ sendMail = async (email, celestaId) => {
 };
 
 sendCAMail = async (email, celestaId) => {
-  let transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: EMAIL_USER,
-      pass: EMAIL_PASSWORD,
-    },
-    tls: {
-      // do not fail on invalid certs
-      rejectUnauthorized: false,
-    },
-  });
+  // let transporter = nodemailer.createTransport({
+  //   service: "gmail",
+  //   auth: {
+  //     user: EMAIL_USER,
+  //     pass: EMAIL_PASSWORD,
+  //   },
+  //   tls: {
+  //     // do not fail on invalid certs
+  //     rejectUnauthorized: false,
+  //   },
+  // });
   let mailOptions = {
     from: EMAIL_USER,
     to: email,
     subject: "Celesta Campus Ambassador Program 2020",
     text: "Your Celesta Id is" + " " + celestaId + "\n" + msg,
   };
+
+  const options = {
+    host: '50ulcupurc.execute-api.ap-south-1.amazonaws.com',
+    path: '/default/sendMail',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
   try {
-    await transporter.sendMail(mailOptions);
+    const req = https.request(options, (res) => {
+      var res = (JSON.stringify(res.statusCode));
+      console.log(res);
+    });
+
+    req.write(JSON.stringify(mailOptions));
+
+    req.on('error', (e) => {
+      reject(e.message);
+    });
+    
+    req.end();
+    //do the request
+    
     return true;
-  } catch (error) {
+  }catch (error) {
     console.log(error);
     return false;
   }
