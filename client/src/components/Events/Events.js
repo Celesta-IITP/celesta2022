@@ -1,238 +1,113 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, Component } from "react";
+import { Link, Redirect } from "react-router-dom";
 import { EventsFunctions } from "./EventsFunctions";
 import "./Events.css";
 import IndexNavbar from "../Navbars/IndexNavbar";
 import {Button} from 'reactstrap'
+import RegistrationModal from "./RegistrationModal";
+import { eventsList } from "./eventsJSON";
 
-class Events extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+function EventBox({name, desc, date, img, form, setForm, setOpen}) {
+  return(
+    <div id="event-box">
+        <div className="event-text">
+          <div className="event-name">{name}</div>
+          <div className="event-date">{date}</div>
+          <div className="event-desc">{desc}</div>
+        </div>
+        <img className="event-image" src={img} />
+        {form ? <button onClick={() => {setForm(form); setOpen(true)}} >Register</button> : null}
+        {/* <iframe src={form + '?embedded=true'} width="640" height="947" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
+    </div>
+  )
+}
 
-  componentDidMount() {
-    EventsFunctions();
-  }
+function eventExists(slug) {
+  var cond = false;
+  eventsList.map((event) => {
+    if(event.slug === slug) {
+      cond = true;
+    }
+  })
+  return cond;
+}
 
-  render() {
+function getEventForm(slug) {
+  var cond = '';
+  eventsList.map((event) => {
+    if(event.slug === slug) {
+      cond = event.form;
+    }
+  })
+  return cond;
+}
+
+const events = [
+  {
+    name: "Athul",
+    desc: "Sharma",
+    img: "https://s3.india.com/travel/wp-content/uploads/2018/02/Satara-photo-2.jpg",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSdRPcp2wHppIp4s71Vk_iC0sQjHHC4ulid9wuPTaS11SNlh_g/viewform",
+    slug: 'celesta',
+  },
+]
+
+function Events() {
+    const [open, setOpen] = useState(false);
+    const [form, setForm] = useState('https://docs.google.com/forms/d/e/1FAIpQLSdRPcp2wHppIp4s71Vk_iC0sQjHHC4ulid9wuPTaS11SNlh_g/viewform');
+
+    // useEffect(() => {
+    //   setForm(() => {
+    //     switch(window.location.split("/")[-1]) {
+    //       case 'celesta':
+    //         return ()
+    //     }
+    //   })
+    // }, [window.location])
+
+    useEffect(() => {
+      console.log(window.location.href.split("/")[window.location.href.split("/").length - 1])
+      // switch(window.location.href.split("/")[window.location.href.split("/").length - 1]) {
+      //   case('njath') :
+      //     setOpen(true);
+      //     setForm('https://docs.google.com/forms/d/1hZcsk-gJ2dCGuQYMdbYH5lsQrlAiHGRG5AbJ8zxRbro/viewform');
+      //     break
+      //   case('astropv') :
+      //     setOpen(true);
+      //     setForm('https://docs.google.com/forms/d/10GN5l1E1EBSnaZVDwiSH5pZigCskn5bLw5BsN37xMPs/viewform');
+      //     break
+      //   case('njath') :
+      //     setOpen(true);
+      //     setForm('https://docs.google.com/forms/d/1hZcsk-gJ2dCGuQYMdbYH5lsQrlAiHGRG5AbJ8zxRbro/viewform');
+      //     break
+      //   default:
+      //     setOpen(false);
+      // }
+      if(eventExists(window.location.href.split("/")[window.location.href.split("/").length - 1])) {
+        setForm(getEventForm(window.location.href.split("/")[window.location.href.split("/").length - 1]));
+        setOpen(true);
+      }
+      else if(window.location.href.split("/")[window.location.href.split("/").length - 1] === 'events-page') {
+        setOpen(false);
+        setForm('');
+      }
+      else {
+        window.location = '/404'
+      }
+      console.log("event:", eventExists('astropv'))
+    }, [])
+
     return (
-      <div className="demo-cont">
+      <div className="events-container">
         <IndexNavbar style={{ backgroundColor: "black" }} />
-        {/* <br/>
-		<br/>
-		<br/>
-		<br/>		 */}
-
-        <div className="fnc-slider example-slider">
-          <div className="fnc-slider__slides">
-            <div className="fnc-slide m--blend-green m--active-slide">
-              <div className="fnc-slide__inner">
-                {/* <div className="fnc-slide__mask">
-                  <div className="fnc-slide__mask-inner"></div>
-                </div> */}
-                <div className="fnc-slide__content">
-                  <h2 className="fnc-slide__heading">
-                    <div className="fnc-slide__heading-line">
-                      <span>Events</span>
-                    </div>
-                    <div className="fnc-slide__heading-line">
-                      <span></span>
-                    </div>
-                  </h2>
-                  <Link to="events/event">
-                    <Button className="fnc-slide__action-btn">
-                      View All
-                      <span data-text="View All">View All</span>
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="fnc-slide m--blend-dark">
-              <div className="fnc-slide__inner">
-                {/* <div className="fnc-slide__mask">
-                  <div className="fnc-slide__mask-inner"></div>
-                </div> */}
-                <div className="fnc-slide__content">
-                  <h2 className="fnc-slide__heading">
-                    <div className="fnc-slide__heading-line">
-                      <span>Guest Lecture</span>
-                    </div>
-                    <div className="fnc-slide__heading-line">
-                      <span></span>
-                    </div>
-                  </h2>
-                  <Link to="events/gl">
-                    <Button className="fnc-slide__action-btn">
-                      View All
-                      <span data-text="View All">View All</span>
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {/* <div className="fnc-slide m--blend-red">
-              <div className="fnc-slide__inner">
-                <div className="fnc-slide__mask">
-                  <div className="fnc-slide__mask-inner"></div>
-                </div>
-                <div className="fnc-slide__content">
-                  <h2 className="fnc-slide__heading">
-                    <div className="fnc-slide__heading-line">
-                      {/*<span>School</span>*/}
-                    {/* </div>
-                    <div className="fnc-slide__heading-line"> */}
-                      {/*<span>Events</span>*/}
-                    {/* </div> */}
-                  {/* </h2>
-                  <Link to="events/tech_events">
-                    <button type="button" className="fnc-slide__action-btn">
-                      Explore
-                      <span data-text="Explore">Explore</span>
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>  */}
-            {/* <div className="fnc-slide m--blend-blue">
-              <div className="fnc-slide__inner">
-                <div className="fnc-slide__mask">
-                  <div className="fnc-slide__mask-inner"></div>
-                </div>
-                <div className="fnc-slide__content">
-                  <h2 className="fnc-slide__heading">
-                    <div className="fnc-slide__heading-line"> */}
-                      {/*<span>Ozone</span>*/}
-                    {/* </div>
-                    <div className="fnc-slide__heading-line">
-                      <span></span>
-                    </div>
-                  </h2>
-                  <Link to="events/SUSP_events">
-                    <button type="button" className="fnc-slide__action-btn">
-                      Explore
-                      <span data-text="Explore">Explore</span>
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div> */}
-            <div className="fnc-slide m--blend-dark">
-              <div className="fnc-slide__inner">
-                {/* <div className="fnc-slide__mask">
-                  <div className="fnc-slide__mask-inner"></div>
-                </div> */}
-                <div className="fnc-slide__content">
-                  <h2 className="fnc-slide__heading">
-                    <div className="fnc-slide__heading-line">
-                      <span>Hackathons</span>
-                    </div>
-                    <div className="fnc-slide__heading-line">
-                      <span></span>
-                    </div>
-                  </h2>
-                  <Link to="events/hackathon">
-                    <Button className="fnc-slide__action-btn">
-                      View All
-                      <span data-text="View All">View All</span>
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="fnc-slide m--blend-red">
-              <div className="fnc-slide__inner">
-                {/* <div className="fnc-slide__mask">
-                  <div className="fnc-slide__mask-inner"></div>
-                </div> */}
-                <div className="fnc-slide__content">
-                  <h2 className="fnc-slide__heading">
-                    <div className="fnc-slide__heading-line">
-                      <span>Workshops</span>
-                    </div>
-                    <div className="fnc-slide__heading-line">
-                      <span></span>
-                    </div>
-                  </h2>
-                  <Link to="events/workshop">
-                    <Button className="fnc-slide__action-btn">
-                      View All
-                      <span data-text="View All">View All</span>
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {/* <div className="fnc-slide m--blend-dark">
-              <div className="fnc-slide__inner">
-                <div className="fnc-slide__mask">
-                  <div className="fnc-slide__mask-inner"></div>
-                </div>
-                <div className="fnc-slide__content">
-                  <h2 className="fnc-slide__heading">
-                    <div className="fnc-slide__heading-line"> */}
-                      {/*<span>Pronite</span>*/}
-                    {/* </div>
-                    <div className="fnc-slide__heading-line">
-                      <span></span>
-                    </div>
-                  </h2>
-                  <Link to="events/robo_events">
-                    <button type="button" className="fnc-slide__action-btn">
-                      Explore
-                      <span data-text="Explore">Explore</span>
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div> */}
-            <nav className="fnc-nav">
-              <div className="fnc-nav__bgs">
-                <div className="fnc-nav__bg m--navbg-green m--active-nav-bg"></div>
-                <div className="fnc-nav__bg m--navbg-dark"></div>
-                <div className="fnc-nav__bg m--navbg-red"></div>
-                <div className="fnc-nav__bg m--navbg-blue"></div>
-                {/* <div className="fnc-nav__bg m--navbg-dark"></div>
-                <div className="fnc-nav__bg m--navbg-red"></div>
-                <div className="fnc-nav__bg m--navbg-dark"></div> */}
-              </div>
-              <div className="fnc-nav__controls">
-                <button className="fnc-nav__control">
-                  Events
-                  <span className="fnc-nav__control-progress"></span>
-                </button>
-                <button className="fnc-nav__control">
-                  Guest Lectures 
-                  <span className="fnc-nav__control-progress"></span>
-                </button>
-                <button className="fnc-nav__control">
-                  Hackathons
-                  <span className="fnc-nav__control-progress"></span>
-                </button>
-                <button className="fnc-nav__control">
-                  Workshops
-                  <span className="fnc-nav__control-progress"></span>
-                </button>
-                {/* <button className="fnc-nav__control">
-                  Workshops
-                  <span className="fnc-nav__control-progress"></span>
-                </button>
-                <button className="fnc-nav__control">
-                  Guest Talks
-                  <span className="fnc-nav__control-progress"></span>
-                </button>
-                <button className="fnc-nav__control">
-                  Pronite
-                  <span className="fnc-nav__control-progress"></span>
-                </button> */}
-              </div>
-            </nav>
-          </div>
+        <RegistrationModal open={open} onClose={() => {setOpen(false)}} form={form} />
+        <div className="events-grid">
+          {eventsList.map((item) => {
+            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} setForm={setForm} setOpen={setOpen} />)
+          })}
         </div>
       </div>
     );
-  }
 }
 
 export default Events;
