@@ -2,19 +2,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Footer.css';
-import logo from "../../assets/img/logo_3.png";
+import logo from "../../assets/img/newimg/celestalogo.png";
 class Footer extends React.Component {
   render() {
     return (
       <div>
       <section className="contact-area" id="contact">
 			<div className="container">
-				<div className="row">
+				<div className="row asd">
 					<div className="col-lg-6 offset-lg-3">
 						<div className="contact-content text-center">
-                <img src={logo} alt="Logo" />
+
+                         
+                            <img src={logo} alt="Logo" />
+						
+
+						
 							<p>Celesta is the annual Techno-Management Fest of IIT Patna. To promote technical and managerial enthusiasm amongst young and bright minds of our nation and to provide a platform to transform their innovative ideas into a meaningful reality.</p>
-							<div className="hr"></div>
+							<div className="hr">
 							<h6>Indian Institute of Technology Patna ,<br/>Bihta Patna-801103 (Bihar)</h6>
 							<h6>+91 77548 08781<span>|</span>+91 6387 828 505</h6>
 							<div className="contact-social">
@@ -25,13 +30,16 @@ class Footer extends React.Component {
    
 								</ul>
 							</div>
+							</div>
+						
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<footer>
-			<p>Copyright &copy; 2020 All Rights Reserved.</p>
+			<p>Copyright &copy; 2022 All Rights Reserved.</p>
 		</footer>
     </div>
     );

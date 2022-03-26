@@ -116,23 +116,7 @@ class StepWise extends React.Component {
             </Col>
           </Row>
         </Container>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "4rem",
-            padding: "1rem",
-          }}
-        >
-          <iframe
-            width="600"
-            height="350"
-            src="https://www.youtube.com/embed/iSA7maa9L2M"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
+        
         <div
           style={{
             display: "flex",
@@ -180,7 +164,7 @@ class StepWise extends React.Component {
               <div className="img1">
                 <img
                   className="ca_img"
-                  src={require("../../assets/img/ca.jpg")}
+                  src={require("../../assets/img/newimg/ca.png")}
                   rounded
                 />
               </div>{" "}
@@ -220,6 +204,23 @@ class StepWise extends React.Component {
             </Col>
           </Row>
         </Container>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "4rem",
+            padding: "1rem",
+          }}
+        >
+          <iframe
+            width="600"
+            height="350"
+            src="https://www.youtube.com/embed/iSA7maa9L2M"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     );
   }

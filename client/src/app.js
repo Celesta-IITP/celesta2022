@@ -69,10 +69,10 @@ class App extends React.Component {
             component={Admin}
             // render={(props) => <Admin {...props} />}
           />
-          <Route
-            path="/landing-page"
-            render={(props) => <LandingPage {...props} />}
-          />
+           <Route
+             path="/landing-page"
+             render={(props) => <LandingPage {...props} />}
+           />
           <Route
             path="/events-page"
             render={(props) => <Events {...props} />}

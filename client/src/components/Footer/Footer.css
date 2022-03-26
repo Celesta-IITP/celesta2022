@@ -1,8 +1,8 @@
 /* footer */
 
 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 200%;
+  /* height: auto; */
 }
 section {
   padding: 60px 0;
@@ -21,6 +21,7 @@ ul {
   font-size: 15px;
   margin: 30px 0 60px;
   position: relative;
+  top:-180px;
 }
 
 .contact-content p::after {
@@ -71,14 +72,20 @@ ul {
 }
 
 .contact-content img {
-  max-width: 210px;
+  max-width: 400px;
+  height:400px;
+  position:relative;
+  top:-100px;
+ 
 }
 
 section,
 footer {
   background: #1a1e25;
   color: #868c96;
+ 
 }
+
 
 footer p {
   padding: 40px 0;
@@ -87,4 +94,12 @@ footer p {
 
 footer img {
   width: 44px;
+}
+.hr{
+  position: relative;
+  top: -130px;
+}
+.asd{
+  height:540px;
+  
 }
