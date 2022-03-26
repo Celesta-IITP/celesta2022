@@ -3,11 +3,7 @@ const Joi = require("joi");
 module.exports = {
   validateBody: (schema) => {
     return (req, res, next) => {
-<<<<<<< HEAD
-      const result = Joi.validate(req.body, schema);
-=======
       const result = schema.validate(req.body)
->>>>>>> 7e8103cf7e79f9c675be064516ddf9ccf57ca049
       if (result.error) {
         return res.status(400).json(result.error);
       }
