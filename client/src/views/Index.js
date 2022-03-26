@@ -62,7 +62,7 @@ class Index extends React.Component {
             <br /> */}
             <br />
             <StepWise />
-            <Stats />
+            
             <EventSlider />
             <br />
             <br />

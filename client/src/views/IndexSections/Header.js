@@ -16,7 +16,7 @@ class Header extends React.Component {
     return (
       <div className="landing-page-container" id="home-section">
         <img
-          src={require("../../assets/img/astronaut.png")}
+          src={require("../../assets/img/newimg/celestafrontimg.png")}
           alt=""
           className="astronaut"
         />
@@ -59,25 +59,18 @@ class Header extends React.Component {
             </div>
           </div>
         </div>
+     
 
-        <div className="page-header header-filter bg">
-          <Container>
-            <Row className="justify-content-between align-items-center">
-              <Col className="mb-5 mb-lg-0 content-center brand" lg="5">
-                <h1 className="text-white font-weight-light h1-seo ">
-                  Celesta 2020
-                </h1>
-                <br/>
-                <p className="text-white mt-4">
-                  Celesta is the annual Techno-Management Fest of IIT Patna. To
-                  promote technical and managerial enthusiasm amongst young and
-                  bright minds of our nation and to provide a platform to
-                  transform their innovative ideas into a meaningful reality.
-                </p>
-              </Col>
-            </Row>
-          </Container>
+        <div className="fgd"> 
+          <img
+            src={require("../../assets/img/newimg/celesta2022img.png")}
+            alt=""
+          />
         </div>
+
+        
+        
+        
       </div>
     );
   }

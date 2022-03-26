@@ -115,17 +115,17 @@ class ComponentsNavbar extends React.Component {
               <nav>
                 <ul className="cd-secondary-nav">
                   <li>
-                    <Button>
+                    <Button >
                       <NavLink href="/events-page">Events</NavLink>
                     </Button>
                   </li>
                   <li>
-                    <Button>
+                    <Button >
                       <NavLink href="/signin-page">Login</NavLink>
                     </Button>
                   </li>
                   <li>
-                    <Button>
+                    <Button >
                       <NavLink href="/register-page">Register</NavLink>
                     </Button>
                   </li>
