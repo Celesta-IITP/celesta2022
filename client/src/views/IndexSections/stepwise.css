@@ -1,0 +1,38 @@
+.stepwise-headline {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #5D95AB;    
+}
+
+.stepwise-para {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: left;
+    color: #E5E5E5;    
+}
+
+.button-row {
+    display: flex;
+    font-family: 'Raleway';
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+.stepwise-button {
+    background: #5D95AB;
+    border-radius: 30px;
+}
+
+.youtube-container {
+    width: 100%;
+    height: 90vh;
+}

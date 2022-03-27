@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import classnames from "classnames";
 // react plugin used to create datetimepicker
 import ReactDatetime from "react-datetime";
+import './stepwise.css'
 
 // reactstrap components
 import {
@@ -27,12 +28,12 @@ import {
 } from "reactstrap";
 import { serverUrl } from "../../config";
 const carouselItems = [
-  {
-    src:
-      "https://scontent.fpat2-2.fna.fbcdn.net/v/t1.0-9/126571846_4403571509658157_6900766232859162323_o.jpg?_nc_cat=100&ccb=2&_nc_sid=8bfeb9&_nc_ohc=09rChryv7s0AX9Iuxfv&_nc_ht=scontent.fpat2-2.fna&oh=f60d15793e291d7301ac912d1c8e1a84&oe=5FEE6710",
-    altText: "Slide 1",
-    caption: "",
-  },
+  // {
+  //   src:
+  //     "https://scontent.fpat2-2.fna.fbcdn.net/v/t1.0-9/126571846_4403571509658157_6900766232859162323_o.jpg?_nc_cat=100&ccb=2&_nc_sid=8bfeb9&_nc_ohc=09rChryv7s0AX9Iuxfv&_nc_ht=scontent.fpat2-2.fna&oh=f60d15793e291d7301ac912d1c8e1a84&oe=5FEE6710",
+  //   altText: "Slide 1",
+  //   caption: "",
+  // },
   {
     src: require("../../assets/img/homeassets/whatsapp_image_2019-12-10_at_15.51.14.jpeg"),
     altText: "Slide 2",
@@ -73,38 +74,50 @@ class StepWise extends React.Component {
           <Row className="justify-content-between align-items-center">
             <Col className="mb-5 mb-lg-0" lg="5">
               <h1
-                className="text-white font-weight-light"
+                // className="text-white font-weight-light"
+                className="stepwise-headline"
                 style={{ fontSize: "30px" }}
               >
                 About Celesta
               </h1>
 
-              <p className="text-white mt-4">
+              <p 
+                // className="text-white mt-4"
+                className="stepwise-para"
+              >
                 Celesta is the annual Techno-Management Fest of IIT Patna. To
                 promote technical and managerial enthusiasm amongst young and
                 bright minds of our nation and to provide a platform to
                 transform their innovative ideas into a meaningful reality.
               </p>
+              <div className="button-row">
               <NavLink>
                 <Button
-                  className="mt-4"
-                  color="warning"
+                  // className="mt-4" color="warning"
+                className="stepwise-button"  
+
                   href="https://youtu.be/iSA7maa9L2M"
                 >
                   CA Program
                 </Button>
               </NavLink>
               <NavLink href="/events-page">
-                <Button className="mt-4" color="warning">
+                <Button 
+                // className="mt-4" color="warning"
+                className="stepwise-button"  
+                >
                   Events
                 </Button>
               </NavLink>
               <NavLink href="/schedule">
-                <Button className="mt-4" color="warning">
+                <Button 
+                // className="mt-4" color="warning"
+                className="stepwise-button"  
+              >
                   Events Schedule!
                 </Button>
               </NavLink>
-
+              </div>
               <br />
             </Col>
             <Col lg="6">
@@ -174,12 +187,16 @@ class StepWise extends React.Component {
 
             <Col className="mb-5 mb-lg-0" lg="5">
               <h1
-                className="text-white font-weight-light"
+                // className="text-white font-weight-light"
+                className="stepwise-headline"
                 style={{ fontSize: "30px" }}
               >
                 CA Program
               </h1>
-              <p className="text-white mt-4">
+              <p 
+                // className="text-white mt-4"
+                className="stepwise-para"
+              >
                 The Campus Ambassador program is one of the leading publicity
                 programs of Celesta. The promotion of the fest in the respective
                 colleges is assigned to the campus ambassadors. They serve as
@@ -193,14 +210,24 @@ class StepWise extends React.Component {
                 the coveted certificate and many other goodies.
               </p>
               {/* <Button href="/ca">Register</Button> */}
-              <Button className="mt-4" color="warning">
-                <NavLink href="/ca">Register Here!</NavLink>
+              <div className="button-row">
+              <NavLink href="/ca">
+              <Button 
+                // className="mt-4" color="warning"
+                className="stepwise-button"
+                >
+                Register Here!
               </Button>
-              <Button className="mt-4" color="warning">
-                <NavLink href="https://drive.google.com/file/d/1eoq0klP8LmGccQWTx-F-H9nrU7LOWj1z/view?usp=sharing">
+              </NavLink>
+              <NavLink href="https://drive.google.com/file/d/1eoq0klP8LmGccQWTx-F-H9nrU7LOWj1z/view?usp=sharing">
+              <Button 
+                // className="mt-4" color="warning"
+                className="stepwise-button"
+              >
                   FAQ
-                </NavLink>
               </Button>
+              </NavLink>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -212,14 +239,16 @@ class StepWise extends React.Component {
             padding: "1rem",
           }}
         >
+        <div className="youtube-container">
           <iframe
-            width="600"
-            height="350"
-            src="https://www.youtube.com/embed/iSA7maa9L2M"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/w0fZjcEar1Q"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+          </div>
         </div>
       </div>
     );
