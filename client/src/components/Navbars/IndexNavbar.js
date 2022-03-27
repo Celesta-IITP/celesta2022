@@ -225,19 +225,36 @@ class ComponentsNavbar extends React.Component {
               )}
 
               <li className="cd-label">Follow us</li>
-
-              <li className="cd-social cd-facebook">
-                <a href="#0">Facebook</a>
-              </li>
-              <li className="cd-social cd-instagram">
-                <a href="#0">Instagram</a>
-              </li>
-              <li className="cd-social cd-dribbble">
-                <a href="#0">Dribbble</a>
-              </li>
-              <li className="cd-social cd-twitter">
-                <a href="#0">Twitter</a>
-              </li>
+                  <li className="cd-social">
+                    <Button
+                        className="btn-icon btn-round"
+                        color="twitter"
+                        href="https://twitter.com/celesta_iitp?lang=en"
+                        target="_blank"
+                      >
+                        <i className="fab fa-twitter" />
+                    </Button>
+                  </li>
+                  <li className="cd-social">
+                    <Button
+                      className="btn-icon btn-round"
+                      color="facebook"
+                      href="https://www.facebook.com/CelestaIITP/"
+                      target="_blank"
+                    >
+                      <i className="fab fa-facebook-square" />
+                    </Button>
+                  </li>
+                  <li className="cd-social">
+                    <Button
+                      className="btn-icon btn-round"
+                      color="dribbble"
+                      href="https://www.instagram.com/celestaiitp_official/?hl=en"
+                      target="_blank"
+                    >
+                      <i className="fab fa-instagram" />
+                    </Button>
+                  </li>
             </ul>
           </nav>
         </Container>

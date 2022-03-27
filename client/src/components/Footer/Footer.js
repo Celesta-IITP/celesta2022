@@ -24,9 +24,9 @@ class Footer extends React.Component {
 							<h6>+91 77548 08781<span>|</span>+91 6387 828 505</h6>
 							<div className="contact-social">
 								<ul>
-									<li><a className="hover-target" href="https://www.facebook.com/CelestaIITP"><i className="fab fa-facebook-square"></i></a></li>
-									<li><a className="hover-target" href="https://www.instagram.com/celestaiitp_official/?hl=en"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a className="hover-target" href="https://play.google.com/store/apps/details?id=in.org.celesta.iitp"><i className="fab fa-google-play"></i></a></li>
+									<li><a className="hover-target" href="https://www.facebook.com/CelestaIITP" target="_blank"><i className="fab fa-facebook-square"></i></a></li>
+									<li><a className="hover-target" href="https://www.instagram.com/celestaiitp_official/?hl=en" target="_blank"><i className="fab fa-instagram"></i></a></li>
+                                    <li><a className="hover-target" href="https://twitter.com/celesta_iitp?lang=en" target="_blank"><i className="fab fa-twitter"></i></a></li>
    
 								</ul>
 							</div>
