@@ -114,7 +114,7 @@ sendMail = async (email, celestaId) => {
   let mailOptions = {
     from: EMAIL_USER,
     to: email,
-    subject: "Celesta 2020",
+    subject: "Celesta 2022",
     text:
       "Your Celesta Id is" +
       " " +
@@ -171,7 +171,7 @@ sendCAMail = async (email, celestaId) => {
   let mailOptions = {
     from: EMAIL_USER,
     to: email,
-    subject: "Celesta Campus Ambassador Program 2020",
+    subject: "Celesta Campus Ambassador Program 2022",
     text: "Your Celesta Id is" + " " + celestaId + "\n" + msg,
   };
 

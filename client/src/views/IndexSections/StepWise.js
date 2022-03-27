@@ -204,18 +204,27 @@ class StepWise extends React.Component {
             </Col>
           </Row>
         </Container>
+        <h1 style={{
+            color: "white",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "4rem",
+            fontSize: "30px",
+            padding: "1rem",
+        }}> Theme Release</h1>
         <div
           style={{
             display: "flex",
             justifyContent: "center",
-            marginTop: "4rem",
+            marginTop: "1rem",
             padding: "1rem",
           }}
         >
+          
           <iframe
             width="600"
             height="350"
-            src="https://www.youtube.com/embed/iSA7maa9L2M"
+            src="https://www.youtube.com/embed/w0fZjcEar1Q"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen

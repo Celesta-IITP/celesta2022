@@ -137,7 +137,7 @@ class RegisterPage extends React.Component {
   handleCreate = async (
     name,
     email,
-    password,
+    //password,
     college,
     sex,
     phone,
@@ -147,7 +147,7 @@ class RegisterPage extends React.Component {
     const user = {
       name,
       email,
-      password,
+      //password,
       college,
       sex,
       phone,
@@ -174,7 +174,7 @@ class RegisterPage extends React.Component {
       email: "",
       sex: "Sex",
       phone: "",
-      password: "",
+      //password: "",
       college: "",
       refId: "",
       dob: "",
@@ -189,7 +189,7 @@ class RegisterPage extends React.Component {
     else result = 2;
     console.log(result);
     const email = this.state.email;
-    const password = this.state.password;
+    // const password = this.state.password;
     const name = this.state.name;
     const college = this.state.college;
     const sex = result;
@@ -197,7 +197,7 @@ class RegisterPage extends React.Component {
     const refId = this.state.refId ? this.state.refId : "CLST0000";
     const dob = this.state.dob;
 
-    this.handleCreate(name, email, password, college, sex, phone, refId, dob);
+    this.handleCreate(name, email, college, sex, phone, refId, dob);
   };
   changeValue = (e) => {
     let result;
@@ -340,7 +340,7 @@ class RegisterPage extends React.Component {
                               }}
                             />
                           </InputGroup>
-                          <InputGroup
+                          {/* <InputGroup
                             className={classnames({
                               "input-group-focus": this.state.passwordFocus,
                             })}
@@ -364,7 +364,7 @@ class RegisterPage extends React.Component {
                                 this.setState({ password: e.target.value })
                               }
                             />
-                          </InputGroup>
+                          </InputGroup> */}
                           <InputGroup
                             className={classnames({
                               "input-group-focus": this.state.dobFocus,
@@ -532,7 +532,7 @@ class RegisterPage extends React.Component {
                             size="lg"
                             onClick={this.submitHandler}
                           >
-                            register
+                            Register
                           </Button>
                           {/* <Link to="/ca">
                             <Button
