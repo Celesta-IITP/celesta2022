@@ -94,11 +94,11 @@ class CA extends Component {
 
           <div id="homeSection" className="homes">
             <h1 className="display-3 main-headline">
-              CELESTA'20 Campus Ambassador Program
+              CELESTA'22 Campus Ambassador Program
             </h1>
             <p className="abt-headline">
               Indian Institute Of Technology Patna is bringing forward it’s very
-              own techno-management fest, <strong>CELESTA-20</strong>. Be the
+              own techno-management fest, <strong>CELESTA-22</strong>. Be the
               face of the innovation in your college. Inspire your friends to
               take part in the exciting events, be the leader!!
             </p>
