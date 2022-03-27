@@ -1,3 +1,9 @@
+
+.mid, 
+.navbar .navbar-nav{
+  background-color: #00ada2 !important;
+}
+
 .btn,
 .navbar .navbar-nav > a.btn{
     border-width: $border-thick;
@@ -5,15 +11,17 @@
     position: relative;
     overflow: hidden;
     margin:4px 1px;
-    border-radius: $border-radius-lg;
+    border-radius: 5rem;  //$border-radius-sm
     cursor: pointer;
+    background-color: white;
 
-    @include btn-styles($default, $default-states);
+    //@include btn-styles(white, white);  //$default, $default-states
 
     &:hover,
     &:focus{
         @include opacity(1);
         outline: 0 !important;
+        background-color: greenyellow;
     }
     &:active,
     &.active,
