@@ -70,17 +70,17 @@ class RegisterPage extends React.Component {
         if (!email || !password || !name || !college || !sex || !phone) {
           this.setState({
             temp: "1",
-            msg: "Please enter all fields",
+            msg: "Please enter all mandatory fields!",
           });
         } else if (error.status === 403) {
           this.setState({
             temp: "1",
-            msg: "Email is already registered",
+            msg: "Email is already registered :(",
           });
         } else if (error.status === 500) {
           this.setState({
             temp: "1",
-            msg: "Mail send failed.",
+            msg: "Could not send mail. Please try again!",
           });
         } else if (error.status === 404) {
           this.setState({
@@ -204,7 +204,7 @@ class RegisterPage extends React.Component {
     if (e.currentTarget.textContent == "Male") result = 0;
     else if (e.currentTarget.textContent == "Female") result = 1;
     else result = 2;
-    console.log(result);
+    // console.log(result);
     this.setState({ sex: e.currentTarget.textContent });
   };
   render() {

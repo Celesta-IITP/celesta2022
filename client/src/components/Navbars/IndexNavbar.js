@@ -119,11 +119,11 @@ class ComponentsNavbar extends React.Component {
                       <NavLink href="/events-page">Events</NavLink>
                     </Button>
                   </li>
-                  <li>
+                  {/* <li>
                     <Button >
                       <NavLink href="/signin-page">Login</NavLink>
                     </Button>
-                  </li>
+                  </li> */}
                   <li>
                     <Button >
                       <NavLink href="/register-page">Register</NavLink>
@@ -215,9 +215,9 @@ class ComponentsNavbar extends React.Component {
                 </nav>
               ) : (
                 <ul>
-                  <NavItem>
+                  {/* <NavItem>
                     <NavLink href="/signin-page">Login</NavLink>
-                  </NavItem>
+                  </NavItem> */}
                   <NavItem>
                     <NavLink href="/register-page">Register</NavLink>
                   </NavItem>

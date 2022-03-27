@@ -6,8 +6,10 @@ import IndexNavbar from "../Navbars/IndexNavbar";
 import {Button} from 'reactstrap'
 import RegistrationModal from "./RegistrationModal";
 import { eventsList } from "./eventsJSON";
+import Footer from "components/Footer/Footer";
+import bgImage from '../../assets/img/newimg/celestafrontimg.png';
 
-function EventBox({name, desc, date, img, form, setForm, setOpen}) {
+function EventBox({name, desc, date, img, form, rules, setForm, setImage, setOpen}) {
   return(
     <div id="event-box">
         <div className="event-text">
@@ -15,8 +17,11 @@ function EventBox({name, desc, date, img, form, setForm, setOpen}) {
           <div className="event-date">{date}</div>
           <div className="event-desc">{desc}</div>
         </div>
-        <img className="event-image" src={img} />
-        {form ? <button onClick={() => {setForm(form); setOpen(true)}} >Register</button> : null}
+        <img className="event-image" src={img || bgImage} />
+        <div className="btn-row">
+        {rules ? <button className="rules-btn"><a href={rules}>Rulebook</a></button> : null}
+        {form ? <button className="reg-btn" onClick={() => {setForm(form); setImage(img); setOpen(true)}} >Register</button> : null}
+        </div>
         {/* <iframe src={form + '?embedded=true'} width="640" height="947" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
     </div>
   )
@@ -54,6 +59,7 @@ const events = [
 
 function Events() {
     const [open, setOpen] = useState(false);
+    const [image, setImage] = useState('');
     const [form, setForm] = useState('https://docs.google.com/forms/d/e/1FAIpQLSdRPcp2wHppIp4s71Vk_iC0sQjHHC4ulid9wuPTaS11SNlh_g/viewform');
 
     // useEffect(() => {
@@ -87,25 +93,26 @@ function Events() {
         setForm(getEventForm(window.location.href.split("/")[window.location.href.split("/").length - 1]));
         setOpen(true);
       }
-      else if(window.location.href.split("/")[window.location.href.split("/").length - 1] === 'events-page') {
+      else if(!window.location.href.split("/")[window.location.href.split("/").length - 1] || window.location.href.split("/")[window.location.href.split("/").length - 1] === 'events-page') {
         setOpen(false);
         setForm('');
       }
       else {
         window.location = '/404'
       }
-      console.log("event:", eventExists('astropv'))
+      // console.log("event:", eventExists('astropv'))
     }, [])
 
     return (
       <div className="events-container">
         <IndexNavbar style={{ backgroundColor: "black" }} />
-        <RegistrationModal open={open} onClose={() => {setOpen(false)}} form={form} />
+        <RegistrationModal open={open} onClose={() => {setOpen(false)}} img={image} form={form} />
         <div className="events-grid">
           {eventsList.map((item) => {
-            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} setForm={setForm} setOpen={setOpen} />)
+            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
           })}
         </div>
+        <Footer />
       </div>
     );
 }
