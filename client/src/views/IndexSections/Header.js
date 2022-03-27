@@ -47,11 +47,11 @@ function Header() {
     
     return (
       <div className="landing-page-container" id="home-section" ref={heroRef}>
-        <img
+        {/* <img
           src={require("../../assets/img/newimg/celestafrontimg.png")}
           alt=""
           className="astronaut"
-        />
+        /> */}
         <div className="landing-page-main">
           <div className="parallax-container">
             <div style={{ background: `url(${img1})` }}></div>

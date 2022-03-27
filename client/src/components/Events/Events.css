@@ -49,6 +49,10 @@
     flex-direction: column;
     width: 95%;
   }
+  .modal-box {
+    width: 90%;
+    right: 5%;
+  }
 }
 
 #event-box {
