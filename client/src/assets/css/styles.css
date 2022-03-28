@@ -4,7 +4,8 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background-image: url('../../assets/img/newimg/celestafrontimg.png');
+  /* background-image: url('../../assets/img/newimg/celestafrontimg.png'); */
+  background-image: url('../../assets/img/landing.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -59,6 +60,56 @@
 
   }
 }
+
+.clouds {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 5;
+  height: fit-content;
+  animation: cloudAnimation 10s infinite;
+  /* animation-name: cloudAnimation;
+  animation-duration: infinite; */
+}
+
+.logo-landing {
+  
+}
+
+.layer {
+  position: absolute;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+}
+
+.layer img {
+  object-fit: cover;
+}
+
+.clouds img {
+  height: 250px;
+}
+
+/* .clouds:before {
+  animation-name: cloudAnimation;
+  animation-duration:10s;
+} */
+
+@keyframes cloudAnimation{
+	from{
+    right:0px;
+	}
+
+	33%{
+    right:100px;
+	}
+
+	66%{
+    right:0px;
+	}  
+}
+
 @keyframes astroanimate {
   0% {
     transform: translate(-50%, -80%);

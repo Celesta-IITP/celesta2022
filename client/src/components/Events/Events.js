@@ -20,7 +20,20 @@ function EventBox({name, desc, date, img, form, rules, setForm, setImage, setOpe
         <img className="event-image" src={img || bgImage} />
         <div className="btn-row">
         {rules ? <button className="rules-btn"><a href={rules}>Rulebook</a></button> : null}
-        {form ? <button className="reg-btn" onClick={() => {setForm(form); setImage(img); setOpen(true)}} >Register</button> : null}
+        {form ? <button className="reg-btn" onClick={() => {
+          // if("dare2compete" in form) {
+          //   window.location=
+          // }
+          // else {
+          //   setForm(form); 
+          //   setImage(img); 
+          //   setOpen(true);
+          // }
+            setForm(form); 
+            setImage(img); 
+            setOpen(true);
+          }
+        } >Register</button> : null}
         </div>
         {/* <iframe src={form + '?embedded=true'} width="640" height="947" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
     </div>
