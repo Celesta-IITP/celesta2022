@@ -4,6 +4,9 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
+  background-image: url('../../assets/img/newimg/celestafrontimg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .landing-page-main {
   position: relative;
@@ -27,7 +30,7 @@
   /* animation: astroanimate 5s linear infinite; */
   position: absolute;
   width: 100%;
-  height: 640px;
+  height: 100%;
   left: 0px;
   top: 60px;
 }
@@ -36,7 +39,8 @@
   width: 90%;
   height: 176px;
   left: 5%;
-  top: 510px;
+  /* top: 510px; */
+  bottom: 40px;
   font-family: 'Bronx Bystreets';
   font-style: normal;
   font-weight: 400;
@@ -137,4 +141,12 @@
   right: 20%;
   will-change: transform;
   animation: move-astronaut 25s infinite linear both alternate;
+}
+
+.particles {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  font-weight: 100%;
+  opacity: 40%;
 }

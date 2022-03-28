@@ -278,7 +278,7 @@ class CA extends Component {
           {/* end of registration section here */}
         <Footer/>
         </div>
-        <CustomizedSnackbars
+        {/* <CustomizedSnackbars
           type="info"
           component={
             <a>
@@ -286,7 +286,7 @@ class CA extends Component {
               </a>
             
           }
-        />
+        /> */}
       </div>
     );
   }
