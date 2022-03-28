@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
-import { BrowserRouter as Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo_3.png";
 import { compose } from "redux";
 import { connect } from "react-redux";

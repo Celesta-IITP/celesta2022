@@ -177,7 +177,7 @@ class RegisterPage extends React.Component {
       password: "",
       college: "",
       refId: "",
-      dob: "",
+      dob: "dd-mm-yyyy",
     });
     console.log(this.state.name);
   };
@@ -198,7 +198,7 @@ class RegisterPage extends React.Component {
     const refId = this.state.refId ? this.state.refId : "CLST0000";
     const dob = this.state.dob;
 
-    this.handleCreate(name, email, college, sex, phone, refId, dob);
+    this.handleCreate(name, email, password, college, sex, phone, refId, dob);
   };
   changeValue = (e) => {
     let result;
@@ -232,15 +232,15 @@ class RegisterPage extends React.Component {
                     />
                     <Card className="card-register">
                       <CardHeader>
-                        <CardImg
+                        {/* <CardImg
                           alt="..."
                           src={require("assets/img/square-purple-1.png")}
-                        />
+                        /> */}
 
-                        <CardTitle tag="h4" className="ml-2">
+                        <CardTitle tag="h4" className="ml-2" style={{"color" :"#64ff9d"}}>
                           Register
                         </CardTitle>
-                        <Row>
+                        {/* <Row>
                           <Button
                             className="btn-icon btn-round"
                             href="#pablo"
@@ -269,7 +269,7 @@ class RegisterPage extends React.Component {
                           >
                             <i className={"fab fa-google-plus-g"} />
                           </Button>
-                        </Row>
+                        </Row> */}
                       </CardHeader>
                       <div>
                         {msg ? (
@@ -343,7 +343,7 @@ class RegisterPage extends React.Component {
                             {/* <Input 
                             type="date"/> */}
                           </InputGroup>
-                          {/* <InputGroup
+                          <InputGroup
                             className={classnames({
                               "input-group-focus": this.state.passwordFocus,
                             })}
@@ -367,7 +367,7 @@ class RegisterPage extends React.Component {
                                 this.setState({ password: e.target.value })
                               }
                             />
-                          </InputGroup> */}
+                          </InputGroup>
                           <InputGroup
                             className={classnames({
                               "input-group-focus": this.state.dobFocus,

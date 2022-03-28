@@ -10,7 +10,7 @@ export const photos = [
     height: 1000,
   },
   {
-    src: require("../../assets/img/img15.jpg"),
+    src: require("../../assets/img/img14.jpg"),
     width: 1500,
     height: 1000,
   },
