@@ -147,6 +147,9 @@ body {
   /* hidden on small devices */
   display: none;
 }
+.cd-primary-nav .nav-item-new {
+  color: white !important;
+}
 .nav-but-wrap {
   position: absolute;
   top: 40%;
@@ -166,7 +169,7 @@ body {
   height: 2px;
   width: 30px;
   display: block;
-  background-color: violet;
+  background-color: #00FF00;
   margin-bottom: 7px;
   cursor: pointer;
   -webkit-transition: background-color 0.5s ease, -webkit-transform 0.2s ease;
