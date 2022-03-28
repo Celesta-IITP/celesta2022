@@ -24,13 +24,14 @@
     flex-direction: row;
     justify-content: left;
     margin-top: 10px;
-    margin-left: 0px;
+    margin-left: 2px;
 }
 
 .stepwise-button {
     background: #5D95AB;
     border-radius: 30px;
     color: beige;
+    margin: 2px !important;
 }
 
 .youtube-container {
