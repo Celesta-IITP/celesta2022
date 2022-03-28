@@ -159,7 +159,7 @@ class ComponentsNavbar extends React.Component {
                 <NavLink href="/Points">CA Leaderboard</NavLink>
               </NavItem> */}
               <NavItem>
-                <NavLink className="nav-item-new" href="/ca">Campus Ambasaddor</NavLink>
+                <NavLink className="nav-item-new" href="/ca">Campus Ambassador</NavLink>
               </NavItem>
               {(userInfo.ca ||
                 (userInfo.roles && userInfo.roles.includes("MPR"))) && (
