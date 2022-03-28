@@ -137,7 +137,7 @@ class RegisterPage extends React.Component {
   handleCreate = async (
     name,
     email,
-    //password,
+    password,
     college,
     sex,
     phone,
@@ -146,8 +146,8 @@ class RegisterPage extends React.Component {
   ) => {
     const user = {
       name,
-      email,
-      //password,
+      email:email.trim(),
+      password,
       college,
       sex,
       phone,
@@ -174,7 +174,7 @@ class RegisterPage extends React.Component {
       email: "",
       sex: "Sex",
       phone: "",
-      //password: "",
+      password: "",
       college: "",
       refId: "",
       dob: "",
@@ -188,8 +188,9 @@ class RegisterPage extends React.Component {
     else if (this.state.sex == "Female") result = 1;
     else result = 2;
     console.log(result);
-    const email = this.state.email;
-    // const password = this.state.password;
+    let email = this.state.email;
+    email=email.trim();
+    const password = this.state.password;
     const name = this.state.name;
     const college = this.state.college;
     const sex = result;
@@ -288,7 +289,7 @@ class RegisterPage extends React.Component {
                       </div>
                       <CardBody>
                         <h6>Time to get_TechXited....</h6>
-                        <Form className="form" onSubmit={this.submitHandler}>
+                        <Form className="form" onSubmit={this.submitHandler} autoComplete="nopess">
                           <InputGroup
                             className={classnames({
                               "input-group-focus": this.state.fullNameFocus,
@@ -335,7 +336,7 @@ class RegisterPage extends React.Component {
                                 this.setState({ emailFocus: false })
                               }
                               onChange={(e) => {
-                                this.setState({ email: e.target.value });
+                                this.setState({ email: e.target.value});
                                 console.log(this.state.email);
                               }}
                             />

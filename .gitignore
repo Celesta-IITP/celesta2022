@@ -5,3 +5,4 @@ public/profilephotos/
 configs/celesta.json
 client/build
 client/node_modules
+client/celesta_build
