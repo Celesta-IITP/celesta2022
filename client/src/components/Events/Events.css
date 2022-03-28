@@ -78,7 +78,15 @@
   font-size: 45px;
   font-family: 'Poppins';
   margin: 15px;
-  color: #658401;
+  color: #bfe053;
+}
+
+.restricted{
+  font-size: 15px;
+  font-family: 'Poppins';
+  margin: 15px;
+  color: #fff;
+  font-weight: bold;
 }
 
 .event-desc {

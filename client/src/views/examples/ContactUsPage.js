@@ -99,7 +99,7 @@ class ContactUsPage extends React.Component {
               src={require("assets/img/path4.png")}
             />
             <Container className="align-items-center">
-              <Row>
+              <Row  >
                 <Col lg="6" md="6">
                   <h1 className="profile-title text-left">Reach Us At</h1>
                   <h5 className="text-on-back">01</h5>
@@ -113,9 +113,9 @@ class ContactUsPage extends React.Component {
                     >
                       <blockquote>
                         <p className="blockquote blockquote-info">
-                          Kunj Taneja :- +91 77548 08781
+                          Aakanksha :- +91 8708 945 855
                           <br />
-                          Anmol Chaddha :- +91 6387 828 505
+                          Satyam :- +91 7352 862 047
                           <br />
                           
                           {/* <br /> */}

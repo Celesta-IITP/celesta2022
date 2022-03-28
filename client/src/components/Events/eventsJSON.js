@@ -1,7 +1,10 @@
-import apv from '../../assets/img/events/apv.jpeg'
-import crypto from '../../assets/img/events/crypto.jpeg'
-import hack from '../../assets/img/events/hack.jpeg'
-import sudo from '../../assets/img/events/sudo.jpg'
+
+import quest from '../../assets/img/events/quest.jpg'
+import crypto from '../../assets/img/events/bit.png'
+import sudo from '../../assets/img/events/sudo_override.png'
+import xcv from '../../assets/img/events/xcv.png'
+import soliddesign from '../../assets/img/events/solid_design.png'
+import hack from '../../assets/img/events/hack.png'
 
 // export const eventsList = [
     // {
@@ -132,23 +135,23 @@ import sudo from '../../assets/img/events/sudo.jpg'
 export const eventsList = [
   {
     "name": "QUEST-ion",
-    "description": "It will be a two-stage quiz event open for all age groups. The quiz would be on the topic of Science and Technology.\nPrelims: 20 questions (including audio & visual). It is an elimination round. Top 8 teams qualify for finals.\nFinals: The teams which qualify for this round will go through multiple rounds.\nThe team with the highest score in the finals win.",
+    "desc": "It will be a two-stage quiz event open for all age groups. The quiz would be on the topic of Science and Technology.\nPrelims: 20 questions (including audio & visual). It is an elimination round. Top 8 teams qualify for finals.\nFinals: The teams which qualify for this round will go through multiple rounds.\nThe team with the highest score in the finals win.",
     "date": "2nd April",
-    "img": "",
+    "img": quest,
     "form": "https://docs.google.com/forms/d/1VqL7dJnQToVvzVAIvnQOC7ZVru7c4SC5owYbz6Tzipw/viewform",
     "rules": ""
   },
-  {
-    "name": "NJATH",
-    "description": "NJATH is a online treasure hunt event. It has multiple rounds with each round having multiple questions. Answering questions correctly gives you points whereas opening questions and asking hints deducts points. The event happens over a duration of couple of days, at the end of which the participant with the highest points win.",
-    "date": "08th -10th April",
-    "img": "",
-    "form": "https://docs.google.com/forms/d/1hZcsk-gJ2dCGuQYMdbYH5lsQrlAiHGRG5AbJ8zxRbro/viewform",
-    "rules": ""
-  },
+  // {
+  //   "name": "NJATH",
+  //   "desc": "NJATH is a online treasure hunt event. It has multiple rounds with each round having multiple questions. Answering questions correctly gives you points whereas opening questions and asking hints deducts points. The event happens over a duration of couple of days, at the end of which the participant with the highest points win.",
+  //   "date": "08th -10th April",
+  //   "image": "https://drive.google.com/file/d/1bMHGKvPPmcuBe9eIi0zzCjKxWh6BMEoZ/view?usp=sharing",
+  //   "form": "https://docs.google.com/forms/d/1hZcsk-gJ2dCGuQYMdbYH5lsQrlAiHGRG5AbJ8zxRbro/viewform",
+  //   "rules": ""
+  // },
   {
     "name": "Virtual Crypto Trading",
-    "description": "It is similar to actual trading where you can buy and sell stocks. However, here no real money is involved. You invest only in virtual money. You can use this money to practice trading. Stock simulators provide real-time stock data, which means that you can try out different strategies of trading in stocks just like the real world stock market, but risk-free.",
+    "desc": "It is similar to actual trading where you can buy and sell stocks. However, here no real money is involved. You invest only in virtual money. You can use this money to practice trading. Stock simulators provide real-time stock data, which means that you can try out different strategies of trading in stocks just like the real world stock market, but risk-free.",
     "date": "31st March- 2nd April",
     "img": crypto,
     "form": "https://docs.google.com/forms/d/e/1FAIpQLSc2SZdc1Xrn4H9NFKYij6jBp6a-1LcdwXta3e95d50zJ2rytg/viewform",
@@ -156,15 +159,15 @@ export const eventsList = [
   },
   {
     "name": "Astro Particle Voyage",
-    "description": "This is a multi stage event catering to the astro geeks.\nStructure\nRound 1: It is an elimination round featuring basic astronomy and particle physics questions.\nRound 2: The selected teams enter this round where they’ll be asked multiple questions on the selected themes. The round will test the scientific concepts of the participants.\nRound 3: It would be a simulation round. Participants would be shown a simulation and they would answer questions related to that.\nThe team with the highest score after 3 rounds will win.",
+    "desc": "This is a multi stage event catering to the astro geeks.\nStructure\nRound 1: It is an elimination round featuring basic astronomy and particle physics questions.\nRound 2: The selected teams enter this round where they’ll be asked multiple questions on the selected themes. The round will test the scientific concepts of the participants.\nRound 3: It would be a simulation round. Participants would be shown a simulation and they would answer questions related to that.\nThe team with the highest score after 3 rounds will win.",
     "date": "25th - 26th March, 30th March - 1st April",
-    "img": apv,
+    "img": xcv,
     "form": "https://docs.google.com/forms/d/e/1FAIpQLSeOB2Q7AtVNMerRMwr4ToXOJqzCyk_xYT_IPvJ7PWLGFrkP-A/viewform",
     "rules": "https://docs.google.com/document/d/174X1UtUlXd28YeY4iczFgHr8RSBfjrFYCKrLeZZpNz4/edit"
   },
   {
     "name": "Sudo Override (Capture the Flag)",
-    "description": "Sudo Override is the first edition of Capture the Flag (CTF) event organized by NJACK, IIT Patna in collaboration with Celesta 2022.\nIt aims to bring students with various skill sets together, where participants must reverse engineer, break, hack, decrypt, and think creatively and critically to solve the challenges and capture the flags. This is a twenty-four hour long timed CTF competition.",
+    "desc": "Sudo Override is the first edition of Capture the Flag (CTF) event organized by NJACK, IIT Patna in collaboration with Celesta 2022.\nIt aims to bring students with various skill sets together, where participants must reverse engineer, break, hack, decrypt, and think creatively and critically to solve the challenges and capture the flags. This is a twenty-four hour long timed CTF competition.",
     "date": "28th March",
     "img": sudo,
     "form": "https://docs.google.com/forms/d/e/1FAIpQLSchpb29kywuTGHAe342rgRJNftDrfCtnFkkhdyqMlXVKy3_MQ/viewform",
@@ -172,23 +175,23 @@ export const eventsList = [
   },
   {
     "name": "SolidDesign",
-    "description": "A team of minimum 2 and maximum 4 members need to create a 3D model of the proposed design using any software like AutoCAD 3D,Revit or any BIM/3d modeling software...Team members can be from different colleges and departments but at least one student from Civil is mandatory\nonly one round for screening and result declaration",
+    "desc": "A team of minimum 2 and maximum 4 members need to create a 3D model of the proposed design using any software like AutoCAD 3D,Revit or any BIM/3d modeling software...Team members can be from different colleges and departments but at least one student from Civil is mandatory\nonly one round for screening and result declaration",
     "date": "30th - 31st March (submission)",
-    "img": "",
+    "img": soliddesign,
     "form": "https://docs.google.com/forms/d/1ecdg8P_DrMXVrZd2904ZcAWc6-SGV7cmMIKo0LYhrAU/viewform",
     "rules": ""
   },
   {
     "name": "Devil's Advocate",
-    "description": "Event where you are given a topic and you have to speak in favour of the topic for some time and against the topic for some time, that is you have to change your side after a fixed amount of time.\nIn devil's advocate, the judge decides when you have to switch your side....Each speech will be of 3.5-4 mins and The judge can ask you to switch sides infinite times.\nJudging:- The switch should be as smooth as possible, and long pauses should not be taken while switching.\nYou can't repeat the same points for instance, you gotta have new arguments and good rebuttals for your own speech.",
+    "desc": "Event where you are given a topic and you have to speak in favour of the topic for some time and against the topic for some time, that is you have to change your side after a fixed amount of time.\nIn devil's advocate, the judge decides when you have to switch your side....Each speech will be of 3.5-4 mins and The judge can ask you to switch sides infinite times.\nJudging:- The switch should be as smooth as possible, and long pauses should not be taken while switching.\nYou can't repeat the same points for instance, you gotta have new arguments and good rebuttals for your own speech.",
     "date": "1 April",
-    "img": "",
+    "image": "",
     "form": "https://docs.google.com/forms/d/1bVyUzLZBk_sJPftql_eGlVkVnf89j04GHuu-dU9r19A/viewform",
     "rules": ""
   },
   {
     "name": "Hack-it-out",
-    "description": "Hackathon event wherein problem statements will be given and participants must code a web/mobile application within the time frame.",
+    "desc": "Hackathon event wherein problem statements will be given and participants must code a web/mobile application within the time frame.",
     "date": "27-3 April",
     "img": hack,
     "form": "https://docs.google.com/forms/d/e/1FAIpQLScklMeO95IEvda3LU5n0Gt2jjsKoKapB1hzxo7r74WgOtsfGg/viewform",
@@ -196,33 +199,33 @@ export const eventsList = [
   },
   {
     "name": "Brand-Verse",
-    "description": "You have to click a picture of any product by styling it in such a way that its unique features are expressed subtly so that the product looks worth buying. The photograph must be original and there should be not be any kind of watermark. The frame should be of the given dimensions. Note that you have to focus on only one quantity of the product. The judging criteria would be completely based on the creativity and how appealing your product looks, not the basis of the product you have chosen.",
+    "desc": "You have to click a picture of any product by styling it in such a way that its unique features are expressed subtly so that the product looks worth buying. The photograph must be original and there should be not be any kind of watermark. The frame should be of the given dimensions. Note that you have to focus on only one quantity of the product. The judging criteria would be completely based on the creativity and how appealing your product looks, not the basis of the product you have chosen.",
     "date": "27 March - 3 April",
-    "img": "",
+    "image": "",
     "form": "https://docs.google.com/forms/d/11IQvVay6PwFGemT32Y5eFl2zyHSks0E8Uj0nFaxuI-Y/viewform",
-    "rules": ""
+    "rules": "https://docs.google.com/document/d/1612JdMJYrGfstmc9PEDHIWAo_GoBc9HD0fCFwSfoEkQ/edit"
   },
   {
     "name": "Static Rush",
-    "description": "Fast-paced offline treasure hunt event where partcipants have to decipher clues against the clock to rise above the competition.",
+    "desc": "Fast-paced offline treasure hunt event where partcipants have to decipher clues against the clock to rise above the competition.",
     "date": "2nd April (all day)",
-    "img": "",
+    "image": "",
     "form": "https://docs.google.com/forms/d/11OEV8ab7MraAJOTsOdjs_SmOgf46MZYzWyHjmYs3u2c/viewform",
     "rules": ""
   },
   {
     "name": "Depiction",
-    "description": "Portraying the theme through artwork (digital or handmade)",
-    "date": "26 March- 3 April (submission)",
-    "img": "",
+    "desc": "Portraying the theme of post-apocalypse through artwork (digital or handmade).",
+    "date": "27 March- 3 April",
+    "image": "",
     "form": "https://docs.google.com/forms/d/e/1FAIpQLSe4v9SqPGVNucUkEobQhROcp5rYKP0bmR4POISeJpqJO2I0aQ/viewform",
     "rules": "https://docs.google.com/document/d/1Lb8-u-RHoOXq4Sz9_W_sb-HEHIbd6EKQX0WahUCIxRk/edit"
   },
   {
     "name": "Beg Borrow Steal",
-    "description": "",
+    "desc": "",
     "date": "3rd April",
-    "img": "",
+    "image": "",
     "form": "https://docs.google.com/forms/d/1rE0GAH4QqXjIO7rnLqrAaJL3fhrVS-ArC1oBFAiCX1E/viewform",
     "rules": ""
   }
