@@ -201,7 +201,7 @@ class schedule extends React.Component {
                               <tr>
                                 <td>Hack-it-out</td>
                                 <td>27 March-3 April 2022</td>
-                                <td>Paid</td>
+                                <td>Not Paid</td>
                               </tr>
                               <tr>
                                 <td>Depiction</td>
