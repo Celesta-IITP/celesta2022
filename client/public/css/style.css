@@ -540,7 +540,7 @@ span.countdown-item {
 /* fixing the card in signin and register page  */
 .card-register .card-header .card-title {
   font-size: 3.8em !important;
-  color: rgb(230, 227, 222) !important;
+  color: rgb(230, 227, 222);
   text-transform: none !important;
 }
 

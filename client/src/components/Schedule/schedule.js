@@ -39,7 +39,7 @@ class schedule extends React.Component {
       <div className="section section-tabs">
         <Container>
           <div className="title">
-            <h3 className="mb-3">Schedule</h3>
+            <h1 className="mb-3 my-3 text-center">Schedule</h1>
           </div>
           <Row>
             <Col className="ml-auto mr-auto" >
@@ -213,31 +213,31 @@ class schedule extends React.Component {
                                 <td>27 March- 3 April 2022</td>
                                 <td>Not Paid</td>
                               </tr>
-                              {/* <tr>
-                                <td>ROS Workshop+Hackathon</td>
-                                <td>"Workshop: 09-14 Jan,Hackathon: 15-16 Jan"</td>
-                                <td>Paid</td>
-                              </tr>
                               <tr>
-                                <td>Innover</td>
-                                <td>Till 21st December 2020</td>
+                                <td>QUEST-ion</td>
+                                <td>2nd April 2022</td>
                                 <td>Not Paid</td>
                               </tr>
                               <tr>
-                                <td>NJATH</td>
-                                <td>18-20th December 2020</td>
+                                <td>SolidDesign</td>
+                                <td>30th - 31st March 2022</td>
                                 <td>Not Paid</td>
                               </tr>
                               <tr>
-                                <td>Hack It Out</td>
-                                <td>-</td>
+                                <td>Devil's Advocate</td>
+                                <td>1 April 2022</td>
                                 <td>Not Paid</td>
                               </tr>
                               <tr>
-                                <td>ByteRace</td>
-                                <td>29th December 2020 @8PM</td>
-                                <td>Paid</td>
-                              </tr> */}
+                                <td>Static Rush</td>
+                                <td>2nd April 2022</td>
+                                <td>Not Paid</td>
+                              </tr>
+                              <tr>
+                                <td>Beg Borrow Steal</td>
+                                <td>3rd April 2022</td>
+                                <td>Not Paid</td>
+                              </tr> 
                             </tbody>
                           </Table>
                         </TabPane>
