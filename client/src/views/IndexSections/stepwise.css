@@ -24,7 +24,7 @@
     flex-direction: row;
     justify-content: left;
     margin-top: 10px;
-    margin-left: 0px;
+    margin-left: 2px;
 }
 
 .stepwise-button {
@@ -32,6 +32,7 @@
     border-radius: 30px;
     margin-right: 10%;
     color: beige;
+    margin: 2px !important;
 }
 
 .youtube-container {

@@ -91,7 +91,7 @@ class StepWise extends React.Component {
                 transform their innovative ideas into a meaningful reality.
               </p>
               <div className="button-row">
-              <NavLink>
+              {/* <NavLink>
                 <Button
                   // className="mt-4" color="warning"
                 className="stepwise-button"  
@@ -101,6 +101,7 @@ class StepWise extends React.Component {
                   CA Program
                 </Button>
               </NavLink>
+              <br /> */}
               <NavLink href="/events-page">
                 <Button 
                 // className="mt-4" color="warning"
@@ -109,6 +110,7 @@ class StepWise extends React.Component {
                   Events
                 </Button>
               </NavLink>
+              <br />
               <NavLink href="/schedule">
                 <Button 
                 // className="mt-4" color="warning"
