@@ -340,6 +340,8 @@ class RegisterPage extends React.Component {
                                 console.log(this.state.email);
                               }}
                             />
+                            {/* <Input 
+                            type="date"/> */}
                           </InputGroup>
                           <InputGroup
                             className={classnames({
@@ -379,6 +381,7 @@ class RegisterPage extends React.Component {
                             <Input
                               placeholder="Date of birth"
                               type="date"
+                              value={this.state.dob}
                               onFocus={(e) => this.setState({ dobFocus: true })}
                               onBlur={(e) => this.setState({ dobFocus: false })}
                               onChange={(e) => {

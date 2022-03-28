@@ -2,9 +2,11 @@ import React, {useRef, useEffect} from "react";
 import "../../assets/css/styles.css";
 import particles from '../../assets/img/blueparticles.gif'
 import ParticleAnimation from 'react-particle-animation'
-
-// reactstrap components
 import { Container, Row, Col } from "reactstrap";
+
+let cloud = '../../assets/img/pixelclouds.png'
+let layer = '../../assets/img/cubetp.png'
+// reactstrap components
 
 let img1 = "https://cdn2.hubspot.net/hubfs/1951013/Parallax/SkyBG.png";
 let img2 = "https://cdn2.hubspot.net/hubfs/1951013/Parallax/Clouds1.png";
@@ -12,6 +14,9 @@ let img3 = "https://cdn2.hubspot.net/hubfs/1951013/Parallax/Clouds2.png";
 let img4 = "https://cdn2.hubspot.net/hubfs/1951013/Parallax/Clouds3.png";
 let img5 = "https://cdn2.hubspot.net/hubfs/1951013/Parallax/Moon.png";
 let img6 = "https://cdn2.hubspot.net/hubfs/1951013/Parallax/Hill.png";
+
+// let background = "https://cdn2.hubspot.net/hubfs/1951013/Parallax/Hill.png";
+
 
 function Header() {
     const heroRef = useRef();
@@ -95,14 +100,23 @@ function Header() {
         {/* <img className="particles" src={particles} /> */}
         <ParticleAnimation />
 
-        <div className="fgd"> 
+        {/* <div className="fgd"> 
           <img
             src={require("../../assets/img/newimg/celesta2022img.png")}
             alt=""
           />
+        </div> */}
+        <div className="clouds">
+        <img
+          src={require("../../assets/img/pixelclouds.png")}
+          // className='clouds'
+        />
+        </div>
+        <div className="layer">
+          <img src={require("../../assets/img/cubetp.png")} />
         </div>
 
-        
+        <img className="logo-landing" src={require("../../assets/img/newimg/celestalogo.png")} />
         
         
       </div>

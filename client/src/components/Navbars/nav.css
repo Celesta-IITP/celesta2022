@@ -17,6 +17,14 @@ a:hover {
   text-decoration: none;
 }
 
+.navbar-transparent {
+  background: none;
+}
+
+.fixed-top {
+  background: none;
+}
+
 /* #Cursor
 ================================================== */
 
@@ -154,11 +162,12 @@ a:hover {
     height cubic-bezier(0.77, 0, 0.175, 1) 0.6s;
 }
 .nav:after {
-  background-color: rgba(9, 9, 12, 1);
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");
+  /* background-color: rgba(9, 9, 12, 1); */
+  background: none;
+  /* background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");
   background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: 300%;
+  background-size: 300%; */
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
   box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.3);

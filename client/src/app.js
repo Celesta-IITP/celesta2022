@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss?v=1.1.0";
 import "assets/demo/demo.css";
+import "./app.css";
+import './assets/fonts/Gotham-Black.otf';
 
 import Index from "views/Index.js";
 import LandingPage from "views/examples/LandingPage.js";

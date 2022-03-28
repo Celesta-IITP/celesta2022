@@ -158,7 +158,7 @@ export const eventsList = [
     "desc": "It is similar to actual trading where you can buy and sell stocks. However, here no real money is involved. You invest only in virtual money. You can use this money to practice trading. Stock simulators provide real-time stock data, which means that you can try out different strategies of trading in stocks just like the real world stock market, but risk-free.",
     "date": "31st March- 2nd April",
     "img": crypto,
-    "form": "https://docs.google.com/forms/d/e/1FAIpQLSc2SZdc1Xrn4H9NFKYij6jBp6a-1LcdwXta3e95d50zJ2rytg/viewform",
+    "form": "https://dare2compete.com/o/GCtnoMi?lb=nDxybzh",
     "rules": "https://docs.google.com/document/d/1i4KUgpdfgyHqZbGCaOvpBbZAy6k4GYyl6ABc2B9DDPY/edit"
   },
   {

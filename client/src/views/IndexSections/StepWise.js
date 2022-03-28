@@ -177,7 +177,7 @@ class StepWise extends React.Component {
               <div className="img1">
                 <img
                   className="ca_img"
-                  src={require("../../assets/img/newimg/ca.png")}
+                  src={require("../../assets/img/caposter.png")}
                   rounded
                 />
               </div>{" "}
@@ -211,14 +211,14 @@ class StepWise extends React.Component {
               </p>
               {/* <Button href="/ca">Register</Button> */}
               <div className="button-row">
-              <NavLink href="/ca">
+              {/* <NavLink href="/ca">
               <Button 
                 // className="mt-4" color="warning"
                 className="stepwise-button"
                 >
                 Register Here!
               </Button>
-              </NavLink>
+              </NavLink> */}
               <NavLink href="https://drive.google.com/file/d/1eoq0klP8LmGccQWTx-F-H9nrU7LOWj1z/view?usp=sharing">
               <Button 
                 // className="mt-4" color="warning"
