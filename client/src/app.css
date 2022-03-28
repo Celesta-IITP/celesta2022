@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Gotham';
+    src: local('Gotham'), url(./assets/fonts/Gotham-Black.otf) format('opentype');
+  }
+
+:root {
+  font-family: 'Gotham';
+}

@@ -73,7 +73,9 @@
 }
 
 .logo-landing {
-  
+  position: absolute;
+  bottom: 30px;
+  align-self: center;
 }
 
 .layer {
@@ -84,7 +86,9 @@
 }
 
 .layer img {
-  object-fit: cover;
+  /* object-fit: cover; */
+  height: 100%;
+  width: 100%;
 }
 
 .clouds img {
