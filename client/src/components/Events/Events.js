@@ -9,32 +9,22 @@ import { eventsList } from "./eventsJSON";
 import Footer from "components/Footer/Footer";
 import bgImage from '../../assets/img/newimg/celestafrontimg.png';
 
-function EventBox({name,restricted, desc, date, img, form, rules, setForm, setImage, setOpen}) {
+function EventBox({name, desc, date, img, form, rules, setForm, setImage, setOpen}) {
   return(
     <div id="event-box">
         <div className="event-text">
           <div className="event-name">{name}</div>
-          <div className="restricted">{restricted}</div>
           <div className="event-date">{date}</div>
           <div className="event-desc">{desc}</div>
         </div>
         <img className="event-image" src={img || bgImage} />
         <div className="btn-row">
         {rules ? <button className="rules-btn"><a href={rules}>Rulebook</a></button> : null}
-        {form ? <button className="reg-btn" onClick={() => {
-          // if("dare2compete" in form) {
-          //   window.location=
-          // }
-          // else {
-          //   setForm(form); 
-          //   setImage(img); 
-          //   setOpen(true);
-          // }
+        {!form ? null : form.includes('dare2compete') ? <a className="reg-btn" target="_blank" href={form}>Register</a> : <button className="reg-btn" onClick={() => {
             setForm(form); 
             setImage(img); 
             setOpen(true);
-          }
-        } >Register</button> : null}
+        }}>Register</button>}
         </div>
         {/* <iframe src={form + '?embedded=true'} width="640" height="947" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
     </div>
@@ -123,7 +113,7 @@ function Events() {
         <RegistrationModal open={open} onClose={() => {setOpen(false)}} img={image} form={form} />
         <div className="events-grid">
           {eventsList.map((item) => {
-            return(<EventBox name={item.name} desc={item.desc} restricted={item.restricted} date={item.date} img={item.img} form={item.form} rules={item.rules} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
+            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
           })}
         </div>
         <Footer />

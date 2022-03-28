@@ -30,9 +30,15 @@
 .stepwise-button {
     background: #5D95AB;
     border-radius: 30px;
+    margin-right: 10%;
 }
 
 .youtube-container {
     width: 70%;
     height: 100vh;
+}
+
+.ca_img {
+    height: 100%;
+    width: auto;
 }
