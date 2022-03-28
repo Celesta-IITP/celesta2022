@@ -9,11 +9,12 @@ import { eventsList } from "./eventsJSON";
 import Footer from "components/Footer/Footer";
 import bgImage from '../../assets/img/newimg/celestafrontimg.png';
 
-function EventBox({name, desc, date, img, form, rules, setForm, setImage, setOpen}) {
+function EventBox({name,restricted, desc, date, img, form, rules, setForm, setImage, setOpen}) {
   return(
     <div id="event-box">
         <div className="event-text">
           <div className="event-name">{name}</div>
+          <div className="restricted">{restricted}</div>
           <div className="event-date">{date}</div>
           <div className="event-desc">{desc}</div>
         </div>
@@ -109,7 +110,7 @@ function Events() {
         <RegistrationModal open={open} onClose={() => {setOpen(false)}} img={image} form={form} />
         <div className="events-grid">
           {eventsList.map((item) => {
-            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
+            return(<EventBox name={item.name} desc={item.desc} restricted={item.restricted} date={item.date} img={item.img} form={item.form} rules={item.rules} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
           })}
         </div>
         <Footer />
