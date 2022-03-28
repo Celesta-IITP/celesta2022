@@ -1,7 +1,14 @@
 @font-face {
     font-family: 'Gotham';
-    src: local('Gotham'), url(./assets/fonts/Gotham-Black.otf) format('opentype');
-  }
+    src: local('Gotham'), url(./assets/fonts/GothamBook.ttf) format('truetype');
+    font-weight: 200;
+}
+
+/* @font-face {
+  font-family: 'Gotham';
+  src: local('Gotham'), url(./assets/fonts/GothamBook.otf) format('opentype');
+  font-weight: 200;
+} */
 
 :root {
   font-family: 'Gotham';

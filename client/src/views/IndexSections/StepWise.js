@@ -76,7 +76,7 @@ class StepWise extends React.Component {
               <h1
                 // className="text-white font-weight-light"
                 className="stepwise-headline"
-                style={{ fontSize: "30px" }}
+                style={{ fontSize: "50px", fontFamily: "Gotham" }}
               >
                 About Celesta
               </h1>
@@ -189,7 +189,7 @@ class StepWise extends React.Component {
               <h1
                 // className="text-white font-weight-light"
                 className="stepwise-headline"
-                style={{ fontSize: "30px" }}
+                style={{ fontSize: "50px", fontFamily: "Gotham" }}
               >
                 CA Program
               </h1>
