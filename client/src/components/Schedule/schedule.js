@@ -92,7 +92,7 @@ class schedule extends React.Component {
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
+                              {/* <tr>
                                 <td>Dr. Shankar Venugopal</td>
                                 <td>DESIrable Skills for the Future</td>
                                 <td>Saturday</td>
@@ -165,8 +165,9 @@ class schedule extends React.Component {
                                 <td>20/12/20</td>
                                 
                                 <td>17:00-18:00</td>
-                              </tr>
+                              </tr> */}
                             </tbody>
+                            <h3>Coming Soon!!</h3>
                           </Table>
                         </TabPane>
                     </TabPane>
@@ -183,36 +184,36 @@ class schedule extends React.Component {
                             </thead>
                             <tbody>
                               <tr>
-                                <td>Are We Alone</td>
-                                <td>Till 25th December 2020</td>
+                                <td>Virtual Crypto Trading</td>
+                                <td>31st March-2nd April 2022</td>
                                 <td>Not Paid</td>
                               </tr>
                               <tr>
-                                <td>SolidDesigns</td>
-                                <td>12-24 December 2020</td>
-                                <td>Paid</td>
-                              </tr>
-                              <tr>
-                                <td>Quest-Ion</td>
-                                <td>11/13/15/17/19 December 2020</td>
+                                <td>Astro Particle Voyage</td>
+                                <td>25,26 March, 30 March-1 April 2022</td>
                                 <td>Not Paid</td>
                               </tr>
                               <tr>
-                                <td>1v1 Debate</td>
-                                <td>19-20th December 2020</td>
-                                <td>Paid</td>
+                                <td>Sudo Override (Capture the Flag)</td>
+                                <td>28 March 2022</td>
+                                <td>Not Paid</td>
                               </tr>
                               <tr>
-                                <td>Case Study</td>
-                                <td>20th December 2020</td>
-                                <td>Paid</td>
+                                <td>Hack-it-out</td>
+                                <td>27 March-3 April 2022</td>
+                                <td>Not Paid</td>
                               </tr>
                               <tr>
-                                <td>Vivus Chroma</td>
-                                <td>Till 25th December 2020</td>
-                                <td>Paid</td>
+                                <td>Depiction</td>
+                                <td>27 March- 3 April 2022</td>
+                                <td>Not Paid</td>
                               </tr>
                               <tr>
+                                <td>Brand-Verse</td>
+                                <td>27 March- 3 April 2022</td>
+                                <td>Not Paid</td>
+                              </tr>
+                              {/* <tr>
                                 <td>ROS Workshop+Hackathon</td>
                                 <td>"Workshop: 09-14 Jan,Hackathon: 15-16 Jan"</td>
                                 <td>Paid</td>
@@ -236,7 +237,7 @@ class schedule extends React.Component {
                                 <td>ByteRace</td>
                                 <td>29th December 2020 @8PM</td>
                                 <td>Paid</td>
-                              </tr>
+                              </tr> */}
                             </tbody>
                           </Table>
                         </TabPane>

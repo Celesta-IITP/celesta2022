@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Route, Link } from "react-router-dom";
 import logo from "../../assets/img/logo_3.png";
 import { compose } from "redux";
 import { connect } from "react-redux";
@@ -150,13 +150,13 @@ class ComponentsNavbar extends React.Component {
           <nav>
             <ul className="cd-primary-nav">
               <NavItem>
-                <NavLink href="/">Home</NavLink>
+                <NavLink className="nav-item-new" href="/">Home</NavLink>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink href="/Points">CA Leaderboard</NavLink>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
-                <NavLink href="/ca">Campus Ambasaddor</NavLink>
+                <NavLink className="nav-item-new" href="/ca">Campus Ambasaddor</NavLink>
               </NavItem>
               {(userInfo.ca ||
                 (userInfo.roles && userInfo.roles.includes("MPR"))) && (
@@ -165,23 +165,23 @@ class ComponentsNavbar extends React.Component {
                 </NavItem>
               )}
               <NavItem>
-                <NavLink href="/schedule">Schedule</NavLink>
+                <NavLink className="nav-item-new" href="/schedule">Schedule</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/events-page">Events</NavLink>
+                <NavLink className="nav-item-new" href="/events-page">Events</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/gallery">Gallery</NavLink>
+                <NavLink className="nav-item-new" href="/gallery">Gallery</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/sponsors">Sponsors</NavLink>
+                <NavLink className="nav-item-new" href="/sponsors">Sponsors</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/Team">Our Team</NavLink>
+                <NavLink className="nav-item-new" href="/Team">Our Team</NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink href="/contact-us-page">Contact Us</NavLink>
+                <NavLink className="nav-item-new" href="/contact-us-page">Contact Us</NavLink>
               </NavItem>
 
               {Object.keys(this.state.userInfo).length !== 0 ? (
@@ -219,24 +219,41 @@ class ComponentsNavbar extends React.Component {
                     <NavLink href="/signin-page">Login</NavLink>
                   </NavItem> */}
                   <NavItem>
-                    <NavLink href="/register-page">Register</NavLink>
+                    <NavLink className="nav-item-new" href="/register-page">Register</NavLink>
                   </NavItem>
                 </ul>
               )}
 
               <li className="cd-label">Follow us</li>
-
-              <li className="cd-social cd-facebook">
-                <a href="#0">Facebook</a>
+              <li className="cd-social">
+                <Button
+                    className="btn-icon btn-round"
+                    color="twitter"
+                    href="https://twitter.com/celesta_iitp?lang=en"
+                    target="_blank"
+                  >
+                    <i className="fab fa-twitter" />
+                </Button>
               </li>
-              <li className="cd-social cd-instagram">
-                <a href="#0">Instagram</a>
+              <li className="cd-social">
+                <Button
+                  className="btn-icon btn-round"
+                  color="facebook"
+                  href="https://www.facebook.com/CelestaIITP/"
+                  target="_blank"
+                >
+                  <i className="fab fa-facebook-square" />
+                </Button>
               </li>
-              <li className="cd-social cd-dribbble">
-                <a href="#0">Dribbble</a>
-              </li>
-              <li className="cd-social cd-twitter">
-                <a href="#0">Twitter</a>
+              <li className="cd-social">
+                <Button
+                  className="btn-icon btn-round"
+                  color="dribbble"
+                  href="https://www.instagram.com/celestaiitp_official/?hl=en"
+                  target="_blank"
+                >
+                  <i className="fab fa-instagram" />
+                </Button>
               </li>
             </ul>
           </nav>

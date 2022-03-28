@@ -355,3 +355,7 @@ body.nav-active .nav__list-item:nth-child(10) {
   box-shadow: 0 4px 4px rgba(26, 53, 71, 0.25), 0 0 0 1px rgba(26, 53, 71, 0.07);
   background: #fff;
 }
+
+.cd-social-new li {
+  display: inline-block !important;
+}

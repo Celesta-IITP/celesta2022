@@ -198,7 +198,7 @@ class RegisterPage extends React.Component {
     const refId = this.state.refId ? this.state.refId : "CLST0000";
     const dob = this.state.dob;
 
-    this.handleCreate(name, email, password, college, sex, phone, refId, dob);
+    this.handleCreate(name, email, college, sex, phone, refId, dob);
   };
   changeValue = (e) => {
     let result;
@@ -341,7 +341,7 @@ class RegisterPage extends React.Component {
                               }}
                             />
                           </InputGroup>
-                          <InputGroup
+                          {/* <InputGroup
                             className={classnames({
                               "input-group-focus": this.state.passwordFocus,
                             })}
@@ -365,7 +365,7 @@ class RegisterPage extends React.Component {
                                 this.setState({ password: e.target.value })
                               }
                             />
-                          </InputGroup>
+                          </InputGroup> */}
                           <InputGroup
                             className={classnames({
                               "input-group-focus": this.state.dobFocus,
@@ -533,7 +533,7 @@ class RegisterPage extends React.Component {
                             size="lg"
                             onClick={this.submitHandler}
                           >
-                            register
+                            Register
                           </Button>
                           {/* <Link to="/ca">
                             <Button

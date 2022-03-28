@@ -31,8 +31,8 @@ signToken = (user) => {
 var msg =
   "Hola amigos!!\n\n" +
   "We hope you are safe, healthy and doing well in your lives.\n" +
-  "Continuing our legacy, Celesta'20 is back again this year with double excitement to promote technical and managerial enthusiasm amongst this generation and transform the innovative ideas into reality.\n" +
-  "So, Celesta, the techno-management fest of IIT Patna officially launches its Campus Ambassador program for the year 2020!!\n" +
+  "Continuing our legacy, Celesta'22 is back again this year with double excitement to promote technical and managerial enthusiasm amongst this generation and transform the innovative ideas into reality.\n" +
+  "So, Celesta, the techno-management fest of IIT Patna officially launches its Campus Ambassador program for the year 2022!!\n" +
   "Team Celesta cordially welcome you, the selected ones, onboard this enthralling journey. Give yourself a chance to develop the leadership and management qualities and build our brand to the best of your ability!!\n" +
   "So Let's get ready!!\n\n" +
   "Rulebook CA Program : https://drive.google.com/file/d/1_XuC6Q8ueSCMjeS0nzSZVwHFNiuMuqy5/view?usp=drivesdk \n" +
@@ -67,7 +67,7 @@ var msg =
 //   const msg = {
 //     to: emailId,
 //     from: "celesta.iitp@gmail.com",
-//     subject: "Celesta Campus Ambassador Program 2020",
+//     subject: "Celesta Campus Ambassador Program 2022",
 //     text: "Your Celesta Id is" + " " + celestaId + "\n" + Msg,
 //     // html: emailBody,
 //   };
@@ -114,9 +114,9 @@ sendMail = async (email, celestaId) => {
   let mailOptions = {
     from: EMAIL_USER,
     to: email,
-    subject: "Celesta 2020",
+    subject: "Celesta ID 2022",
     text:
-      "Your Celesta Id is" +
+      "Your Celesta ID is" +
       " " +
       celestaId +
       "\n" +
@@ -171,7 +171,7 @@ sendCAMail = async (email, celestaId) => {
   let mailOptions = {
     from: EMAIL_USER,
     to: email,
-    subject: "Celesta Campus Ambassador Program 2020",
+    subject: "Celesta Campus Ambassador Program 2022",
     text: "Your Celesta Id is" + " " + celestaId + "\n" + msg,
   };
 
