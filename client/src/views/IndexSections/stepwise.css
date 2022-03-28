@@ -1,7 +1,7 @@
 .stepwise-headline {
     font-family: 'Raleway';
     font-style: normal;
-    font-weight: 700;
+    font-weight: normal;
     font-size: 36px;
     line-height: 42px;
     text-align: center;
@@ -9,9 +9,9 @@
 }
 
 .stepwise-para {
-    font-family: 'Merriweather';
+    font-family: 'Gotham';
     font-style: normal;
-    font-weight: 400;
+    font-weight: lighter;
     font-size: 18px;
     line-height: 23px;
     text-align: left;
