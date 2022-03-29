@@ -14,17 +14,21 @@
     font-weight: lighter;
     font-size: 18px;
     line-height: 23px;
-    text-align: left;
-    color: #E5E5E5;    
+    text-align: justify;
+    color: #E5E5E5; 
+    margin-right: 5%;
+    margin-left: 5%;
+       
 }
 
 .button-row {
     display: flex;
     font-family: 'Raleway';
     flex-direction: row;
-    justify-content: left;
-    margin-top: 10px;
-    margin-left: 2px;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* margin-left: 2px; */
 }
 
 .stepwise-button {
