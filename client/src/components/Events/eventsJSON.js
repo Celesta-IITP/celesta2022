@@ -166,7 +166,7 @@ export const eventsList = [
     "desc": "This is a multi stage event catering to the astro geeks.\nStructure\nRound 1: It is an elimination round featuring basic astronomy and particle physics questions.\nRound 2: The selected teams enter this round where they’ll be asked multiple questions on the selected themes. The round will test the scientific concepts of the participants.\nRound 3: It would be a simulation round. Participants would be shown a simulation and they would answer questions related to that.\nThe team with the highest score after 3 rounds will win.",
     "date": "27th March-31st March",
     "img": xcv,
-    "form": "https://docs.google.com/forms/d/e/1FAIpQLSeOB2Q7AtVNMerRMwr4ToXOJqzCyk_xYT_IPvJ7PWLGFrkP-A/viewform",
+    "form": "https://dare2compete.com/o/5ZvfdT1?lb=nDxybzh",
     "rules": "https://docs.google.com/document/d/174X1UtUlXd28YeY4iczFgHr8RSBfjrFYCKrLeZZpNz4/edit"
   },
   {
