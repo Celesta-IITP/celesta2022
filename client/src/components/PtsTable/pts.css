@@ -33,9 +33,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
-h1 {
+h1 {                            /* about celesta margin changed */
     text-align: center;
-    margin: -2.5rem 0 0.625rem 0;
+    margin: 2rem 0 6rem 0;
 }
 /* END CSS RESET + COMMON STYLES */
 
@@ -144,7 +144,7 @@ table tbody tr:hover .delete-btn {
         padding: 1.25rem;
     }
     h1 {
-        margin: 0;
+        margin: 0 0 1rem;
     }
 }
 @media(max-width: 668px) {
