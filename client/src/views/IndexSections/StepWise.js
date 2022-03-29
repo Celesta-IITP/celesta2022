@@ -245,6 +245,7 @@ class StepWise extends React.Component {
             marginTop: "4rem",
             fontSize: "30px",
             padding: "1rem",
+            fontFamily: "Gotham"
         }}> Theme Release</h1>
         <div
           style={{
