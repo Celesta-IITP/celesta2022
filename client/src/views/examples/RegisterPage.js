@@ -4,6 +4,7 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { Alert } from "antd";
 import { Link } from "react-router-dom";
+import { DatePicker } from "antd";
 
 // reactstrap components
 import {
@@ -373,7 +374,7 @@ class RegisterPage extends React.Component {
                           >
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="tim-icons icon-email-85" />
+                                <i className="tim-icons icon-calendar-60" />
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
