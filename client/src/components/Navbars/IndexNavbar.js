@@ -69,8 +69,11 @@ class ComponentsNavbar extends React.Component {
     const { userInfo } = this.state;
     return (
       <Navbar
-        className={this.state.color + " fixed-top"}
-        color-on-scroll="100"
+        // className={this.state.color + " fixed-top"}
+        scrolling 
+        dark
+        fixed="top"
+        // color-on-scroll="100"
         expand="lg"
       >
         <Container>

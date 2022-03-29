@@ -3,6 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './Footer.css';
 import logo from "../../assets/img/newimg/celestalogo.png";
+import '../../assets/fonts/Gotham-Black.otf';
+
 class Footer extends React.Component {
   render() {
     return (

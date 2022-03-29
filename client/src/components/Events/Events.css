@@ -145,6 +145,12 @@
   width: fit-content;
 }
 
+.reg-btn :hover {
+  background-color: #658401;
+  transform: scale(1.05);
+  color: #59aecb;
+}
+
 .btn-row {
   position: absolute;
   bottom: 10px;

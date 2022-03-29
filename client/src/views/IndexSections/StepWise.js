@@ -76,7 +76,7 @@ class StepWise extends React.Component {
               <h1
                 // className="text-white font-weight-light"
                 className="stepwise-headline"
-                style={{ fontSize: "30px" }}
+                style={{ fontSize: "50px", fontFamily: "Gotham" }}
               >
                 About Celesta
               </h1>
@@ -179,7 +179,7 @@ class StepWise extends React.Component {
               <div className="img1">
                 <img
                   className="ca_img"
-                  src={require("../../assets/img/newimg/ca.png")}
+                  src={require("../../assets/img/caposter.png")}
                   rounded
                 />
               </div>{" "}
@@ -191,7 +191,7 @@ class StepWise extends React.Component {
               <h1
                 // className="text-white font-weight-light"
                 className="stepwise-headline"
-                style={{ fontSize: "30px" }}
+                style={{ fontSize: "50px", fontFamily: "Gotham" }}
               >
                 CA Program
               </h1>

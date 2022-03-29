@@ -5,6 +5,10 @@ import sudo from '../../assets/img/events/sudo_override.png'
 import xcv from '../../assets/img/events/xcv.png'
 import soliddesign from '../../assets/img/events/solid_design.png'
 import hack from '../../assets/img/events/hack.png'
+import devil from '../../assets/img/events/devil.png'
+import brand from '../../assets/img/events/brand.png'
+import depict from '../../assets/img/events/depict.png'
+import beg from '../../assets/img/events/beg.png'
 
 // export const eventsList = [
     // {
@@ -154,19 +158,20 @@ export const eventsList = [
     "desc": "It is similar to actual trading where you can buy and sell stocks. However, here no real money is involved. You invest only in virtual money. You can use this money to practice trading. Stock simulators provide real-time stock data, which means that you can try out different strategies of trading in stocks just like the real world stock market, but risk-free.",
     "date": "31st March- 2nd April",
     "img": crypto,
-    "form": "https://docs.google.com/forms/d/e/1FAIpQLSc2SZdc1Xrn4H9NFKYij6jBp6a-1LcdwXta3e95d50zJ2rytg/viewform",
+    "form": "https://dare2compete.com/o/GCtnoMi?lb=nDxybzh",
     "rules": "https://docs.google.com/document/d/1i4KUgpdfgyHqZbGCaOvpBbZAy6k4GYyl6ABc2B9DDPY/edit"
   },
   {
     "name": "Astro Particle Voyage",
     "desc": "This is a multi stage event catering to the astro geeks.\nStructure\nRound 1: It is an elimination round featuring basic astronomy and particle physics questions.\nRound 2: The selected teams enter this round where they’ll be asked multiple questions on the selected themes. The round will test the scientific concepts of the participants.\nRound 3: It would be a simulation round. Participants would be shown a simulation and they would answer questions related to that.\nThe team with the highest score after 3 rounds will win.",
-    "date": "25th - 26th March, 30th March - 1st April",
+    "date": "27th March-31st March",
     "img": xcv,
     "form": "https://docs.google.com/forms/d/e/1FAIpQLSeOB2Q7AtVNMerRMwr4ToXOJqzCyk_xYT_IPvJ7PWLGFrkP-A/viewform",
     "rules": "https://docs.google.com/document/d/174X1UtUlXd28YeY4iczFgHr8RSBfjrFYCKrLeZZpNz4/edit"
   },
   {
     "name": "Sudo Override (Capture the Flag)",
+    "restricted" : "*Only for IITP Students",
     "desc": "Sudo Override is the first edition of Capture the Flag (CTF) event organized by NJACK, IIT Patna in collaboration with Celesta 2022.\nIt aims to bring students with various skill sets together, where participants must reverse engineer, break, hack, decrypt, and think creatively and critically to solve the challenges and capture the flags. This is a twenty-four hour long timed CTF competition.",
     "date": "28th March",
     "img": sudo,
@@ -176,7 +181,7 @@ export const eventsList = [
   {
     "name": "SolidDesign",
     "desc": "A team of minimum 2 and maximum 4 members need to create a 3D model of the proposed design using any software like AutoCAD 3D,Revit or any BIM/3d modeling software...Team members can be from different colleges and departments but at least one student from Civil is mandatory\nonly one round for screening and result declaration",
-    "date": "30th - 31st March (submission)",
+    "date": "28th - 31st March (submission)",
     "img": soliddesign,
     "form": "https://docs.google.com/forms/d/1ecdg8P_DrMXVrZd2904ZcAWc6-SGV7cmMIKo0LYhrAU/viewform",
     "rules": ""
@@ -185,14 +190,14 @@ export const eventsList = [
     "name": "Devil's Advocate",
     "desc": "Event where you are given a topic and you have to speak in favour of the topic for some time and against the topic for some time, that is you have to change your side after a fixed amount of time.\nIn devil's advocate, the judge decides when you have to switch your side....Each speech will be of 3.5-4 mins and The judge can ask you to switch sides infinite times.\nJudging:- The switch should be as smooth as possible, and long pauses should not be taken while switching.\nYou can't repeat the same points for instance, you gotta have new arguments and good rebuttals for your own speech.",
     "date": "1 April",
-    "image": "",
+    "img": devil,
     "form": "https://docs.google.com/forms/d/1bVyUzLZBk_sJPftql_eGlVkVnf89j04GHuu-dU9r19A/viewform",
     "rules": ""
   },
   {
     "name": "Hack-it-out",
     "desc": "Hackathon event wherein problem statements will be given and participants must code a web/mobile application within the time frame.",
-    "date": "27-3 April",
+    "date": "27th March - 3 April",
     "img": hack,
     "form": "https://docs.google.com/forms/d/e/1FAIpQLScklMeO95IEvda3LU5n0Gt2jjsKoKapB1hzxo7r74WgOtsfGg/viewform",
     "rules": "https://docs.google.com/document/d/1c567Omi-2mdTx3aiZf3ojV-jp36PbG4hvZzMHoOw6_U/edit"
@@ -201,15 +206,16 @@ export const eventsList = [
     "name": "Brand-Verse",
     "desc": "You have to click a picture of any product by styling it in such a way that its unique features are expressed subtly so that the product looks worth buying. The photograph must be original and there should be not be any kind of watermark. The frame should be of the given dimensions. Note that you have to focus on only one quantity of the product. The judging criteria would be completely based on the creativity and how appealing your product looks, not the basis of the product you have chosen.",
     "date": "27 March - 3 April",
-    "image": "",
+    "img": brand,
     "form": "https://docs.google.com/forms/d/11IQvVay6PwFGemT32Y5eFl2zyHSks0E8Uj0nFaxuI-Y/viewform",
     "rules": "https://docs.google.com/document/d/1612JdMJYrGfstmc9PEDHIWAo_GoBc9HD0fCFwSfoEkQ/edit"
   },
   {
     "name": "Static Rush",
+    "restricted" : "*Only for IITP Students",
     "desc": "Fast-paced offline treasure hunt event where partcipants have to decipher clues against the clock to rise above the competition.",
-    "date": "2nd April (all day)",
-    "image": "",
+    "date": "2nd April",
+    "img": "",
     "form": "https://docs.google.com/forms/d/11OEV8ab7MraAJOTsOdjs_SmOgf46MZYzWyHjmYs3u2c/viewform",
     "rules": ""
   },
@@ -217,15 +223,16 @@ export const eventsList = [
     "name": "Depiction",
     "desc": "Portraying the theme of post-apocalypse through artwork (digital or handmade).",
     "date": "27 March- 3 April",
-    "image": "",
+    "img": depict,
     "form": "https://docs.google.com/forms/d/e/1FAIpQLSe4v9SqPGVNucUkEobQhROcp5rYKP0bmR4POISeJpqJO2I0aQ/viewform",
     "rules": "https://docs.google.com/document/d/1Lb8-u-RHoOXq4Sz9_W_sb-HEHIbd6EKQX0WahUCIxRk/edit"
   },
   {
     "name": "Beg Borrow Steal",
+    "restricted" : "*Only for IITP Students",
     "desc": "",
     "date": "3rd April",
-    "image": "",
+    "img": beg,
     "form": "https://docs.google.com/forms/d/1rE0GAH4QqXjIO7rnLqrAaJL3fhrVS-ArC1oBFAiCX1E/viewform",
     "rules": ""
   }
