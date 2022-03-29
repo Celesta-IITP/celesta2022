@@ -69,21 +69,23 @@ class StepWise extends React.Component {
   };
   render() {
     return (
-      <div className="section bg">
+      <div className="section bg">      
         <Container>
-          <Row className="justify-content-between align-items-center">
-            <Col className="mb-5 mb-lg-0" lg="5">
+          <Row style={{display: 'flex',  justifyContent:'center', alignItems:'center' }}// about section layout changed
+          >  
+                        
+            <Col className="mb-5 mb-lg-0" lg="5" >
               <h1
                 // className="text-white font-weight-light"
                 className="stepwise-headline"
-                style={{ fontSize: "50px", fontFamily: "Gotham" }}
+                style={{ fontSize: "50px", fontFamily: "Gotham"}}
               >
                 About Celesta
               </h1>
 
               <p 
                 // className="text-white mt-4"
-                className="stepwise-para"
+                className="stepwise-para"  style={{ textAlign: "justify"}}    //inline font alignment changed
               >
                 Celesta is the annual Techno-Management Fest of IIT Patna. To
                 promote technical and managerial enthusiasm amongst young and
@@ -110,7 +112,10 @@ class StepWise extends React.Component {
                   Events
                 </Button>
               </NavLink>
-              <br />
+              
+              
+              </div>
+              <div className="button-row">
               <NavLink href="/schedule">
                 <Button 
                 // className="mt-4" color="warning"
@@ -120,9 +125,9 @@ class StepWise extends React.Component {
                 </Button>
               </NavLink>
               </div>
-              <br />
+
             </Col>
-            <Col lg="6">
+            <Col lg="9"  >
               <UncontrolledCarousel
                 items={carouselItems}
                 indicators={false}
