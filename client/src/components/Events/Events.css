@@ -114,6 +114,16 @@
   border-radius: 20px;
 }
 
+#event-box a {
+  font-family: 'Gotham';
+}
+
+#event-box a :hover {
+  background-color: #658401;
+  transform: scale(1.05);
+  color: #59aecb;
+}
+
 /* #event-box button {
   position: absolute;
   bottom: 10px;

@@ -23,6 +23,7 @@ import {
   Col,
   UncontrolledTooltip,
 } from "reactstrap";
+import { style } from "@mui/system";
 
 class ComponentsNavbar extends React.Component {
   constructor(props) {
@@ -118,9 +119,9 @@ class ComponentsNavbar extends React.Component {
               <nav>
                 <ul className="cd-secondary-nav">
                   <li>
-                    <Button >
-                      <NavLink href="/events-page">Events</NavLink>
-                    </Button>
+                  
+                      <NavLink href="/events-page"><Button>Events</Button></NavLink>
+                      
                   </li>
                   {/* <li>
                     <Button >
@@ -128,9 +129,9 @@ class ComponentsNavbar extends React.Component {
                     </Button>
                   </li> */}
                   <li>
-                    <Button >
-                      <NavLink href="/register-page">Register</NavLink>
-                    </Button>
+                  
+                      <NavLink href="/register-page"><Button >Register</Button></NavLink>
+                    
                   </li>
                   {/* <NavItem>
                     <NavLink href="/signin-page">Login</NavLink>
