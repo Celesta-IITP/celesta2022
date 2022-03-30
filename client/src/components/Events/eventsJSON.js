@@ -143,7 +143,7 @@ export const eventsList = [
     "date": "2nd April",
     "img": quest,
     "form": "https://docs.google.com/forms/d/1VqL7dJnQToVvzVAIvnQOC7ZVru7c4SC5owYbz6Tzipw/viewform",
-    "rules": ""
+    "rules": "http://bit.ly/question_rulebook"
   },
   // {
   //   "name": "NJATH",
@@ -184,7 +184,7 @@ export const eventsList = [
     "date": "28th - 31st March (submission)",
     "img": soliddesign,
     "form": "https://docs.google.com/forms/d/1ecdg8P_DrMXVrZd2904ZcAWc6-SGV7cmMIKo0LYhrAU/viewform",
-    "rules": ""
+    "rules": "https://bit.ly/soliddesign_rulebook"
   },
   {
     "name": "Devil's Advocate",
@@ -192,7 +192,7 @@ export const eventsList = [
     "date": "1 April",
     "img": devil,
     "form": "https://docs.google.com/forms/d/1bVyUzLZBk_sJPftql_eGlVkVnf89j04GHuu-dU9r19A/viewform",
-    "rules": ""
+    "rules": "https://bit.ly/devil_rulebook"
   },
   {
     "name": "Hack-it-out",
@@ -230,11 +230,11 @@ export const eventsList = [
   {
     "name": "Beg Borrow Steal",
     "restricted" : "*Only for IITP Students",
-    "desc": "",
+    "desc": "So many items to be found, but so little time. Gather your friends or foes and use whatever means possible in order to attain the maximum amount of items in the given time period. Remember, the only rule is that the items should be genuine. The rest is up to you :)",
     "date": "3rd April",
     "img": beg,
     "form": "https://docs.google.com/forms/d/1rE0GAH4QqXjIO7rnLqrAaJL3fhrVS-ArC1oBFAiCX1E/viewform",
-    "rules": "",
+    "rules": "https://docs.google.com/document/d/1hF7FyRsueFvexqfWohRkH_135IUC7NG3Ve9KrzjdnI8/edit",
     "online": "TRUE",
     "restricted": "TRUE",
   }

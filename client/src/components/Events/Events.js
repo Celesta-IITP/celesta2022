@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Component } from "react";
+import classnames from "classnames";
 import { Link, Redirect } from "react-router-dom";
 import { EventsFunctions } from "./EventsFunctions";
 import "./Events.css";
@@ -8,13 +9,24 @@ import RegistrationModal from "./RegistrationModal";
 import { eventsList } from "./eventsJSON";
 import Footer from "components/Footer/Footer";
 import bgImage from '../../assets/img/newimg/celestafrontimg.png';
-// import onlineIcon from './onlineIcon'
-// import offlineIcon from './offlineIcon'
 import onlineIcon from '../../assets/img/online.svg';
 import offlineIcon from '../../assets/img/offline.svg';
+import { workshops } from "./workshopJSON";
 
-// const onlineIcon = '../../assets/img/online.svg';
-// const offlineIcon = '../../assets/img/offline.svg';
+import {
+  TabContent,
+  Table,
+  TabPane,
+  Container,
+  Row,
+  Col,
+  Card,
+  CardHeader,
+  CardBody,
+  Nav,
+  NavItem,
+  NavLink
+} from "reactstrap";
 
 function EventBox({name, desc, date, img, form, rules, online, restricted, setForm, setImage, setOpen}) {
   return(
@@ -75,6 +87,12 @@ function Events() {
     const [image, setImage] = useState('');
     const [form, setForm] = useState('https://docs.google.com/forms/d/e/1FAIpQLSdRPcp2wHppIp4s71Vk_iC0sQjHHC4ulid9wuPTaS11SNlh_g/viewform');
 
+    const [toggleState, setToggleState] = useState(1);
+
+    const toggleTab = (index) => {
+      setToggleState(index);
+    }
+
     // useEffect(() => {
     //   setForm(() => {
     //     switch(window.location.split("/")[-1]) {
@@ -118,10 +136,33 @@ function Events() {
 
     return (
       <div className="events-container">
-        <IndexNavbar style={{ backgroundColor: "black" }} />
+        <IndexNavbar style={{ backgroundColor: "black" }}/>
+        
         <RegistrationModal open={open} onClose={() => {setOpen(false)}} img={image} form={form} />
+          <div className="event-nav">
+          <ul>
+            <li>
+            <Button
+              className={toggleState === 1 ? "events-tab events-tab-active" : "events-tab"}
+              onClick={() => toggleTab(1)} 
+            >
+              Events
+            </Button>
+          </li>
+          <li>
+            <Button
+              className={toggleState === 2 ? "events-tab events-tab-active" : "events-tab"}
+              onClick={() => toggleTab(2)}
+            >
+              Workshops
+            </Button>
+          </li>
+          </ul>
+        </div>
         <div className="events-grid">
-          {eventsList.map((item) => {
+          {toggleState === 1 ? eventsList.map((item) => {
+            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
+          }) : workshops.map((item) => {
             return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
           })}
         </div>

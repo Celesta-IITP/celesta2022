@@ -1,0 +1,30 @@
+import deep_learning_web from '../../assets/img/Workshops/deep_learning_web.png'
+import the_ledger_web from '../../assets/img/Workshops/the_ledger_web.png'
+import ros_web  from '../../assets/img/Workshops/ros_web.png'
+
+export const workshops = [
+    {
+        "name": "Nvidia DLI Workshop",
+        "desc": "Learn how to analyze and gain skills in Deep Learning effectively from scratch and learn about the invariable future of AI and Automation.",
+        "date": "9th April",
+        "img": deep_learning_web,
+        "form": "https://forms.gle/4oeVFu8wV19MKi928",
+        "rules": ""
+    },
+    {
+        "name": "The Ledger Workshop",
+        "desc": "Learn basics of NFTs, blockchain & it's applications effectively from scratch & get a chance to win free NFTs after completion of assignments.",
+        "date": "10th April",
+        "img": the_ledger_web,
+        "form": "https://forms.gle/z8h55kKA9GKhmrDX6",
+        "rules": ""
+    },
+    {
+        "name": "Robotic Workshop And Hackathon",
+        "desc": "Learn from scratch how to make a ROS based which can traverse autonomously in complex terrains and implement all learings in Hackathon.",
+        "date": "11th- 17th April",
+        "img": the_ledger_web,
+        "form": "https://forms.gle/jX372QxucqMJpTa26",
+        "rules": ""
+    }
+]

@@ -14,6 +14,16 @@
   z-index: 2;
 }
 
+.event-tabs {
+  position: absolute;
+  top: 10%;
+  font-family: 'Gotham';
+}
+
+.events-tab-active {
+  background-color: #1d8cf8;
+}
+
 .modal-box {
   position: absolute;
   top: 10%;
@@ -29,6 +39,17 @@
   border: 2px solid #658401;
   border-radius: 20px;
 
+}
+
+.event-nav ul {
+  text-decoration: none;
+  display: inline-flex;
+  margin-top: 100px;
+  margin-left: 5%;
+}
+
+.event-nav ul li {
+  margin: 5px;
 }
 
 .events-grid {
