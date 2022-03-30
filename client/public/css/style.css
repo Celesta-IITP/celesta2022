@@ -149,6 +149,10 @@ body {
 }
 .cd-primary-nav .nav-item-new {
   color: white !important;
+  font-family: 'Gotham';
+}
+.navbar-list {
+  font-family: 'Gotham';
 }
 .nav-but-wrap {
   position: absolute;
@@ -378,6 +382,7 @@ body {
   font-size: 14px;
   font-size: 0.875rem;
   margin: 2.4em 0 0.8em;
+  font-family: 'Gotham';
 }
 .cd-primary-nav .cd-social {
   display: inline-block;
@@ -426,6 +431,7 @@ body {
   .cd-primary-nav .cd-label {
     font-size: 16px;
     font-size: 1rem;
+    font-family: 'Gotham';
   }
 }
 

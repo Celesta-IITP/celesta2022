@@ -13,6 +13,7 @@
             border-radius: 30px;
             padding: $padding-btn-vertical $padding-round-horizontal;
             line-height: $line-height-sm;
+            font-family: 'Gotham';
 
             &:hover {
                 background-color: $transparent-bg;
@@ -68,6 +69,7 @@
             > .nav-link{
                 &.active{
                     border-color: $info;
+                    font-family: 'Gotham';
                     color: $info;
                 }
             }

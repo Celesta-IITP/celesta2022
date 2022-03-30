@@ -75,8 +75,8 @@
 }
 
 .event-name {
-  font-size: 45px;
-  font-family: 'Poppins';
+  font-size: 30px;
+  font-family: 'Gotham';
   margin: 15px;
   color: #bfe053;
 }
@@ -90,14 +90,14 @@
 }
 
 .event-desc {
-  font-size: 15px;
-  font-family: 'Poppins';
+  font-size: 16px;
+  font-family: 'Gotham';
   margin: 15px 15px 50px 15px;
 }
 
 .event-date {
-  font-size: 18px;
-  font-family: 'Raleway';
+  font-size: 15px;
+  font-family: 'Gotham';
   margin-left: 15px;
 }
 
@@ -153,6 +153,8 @@
   margin: 10px;
   height: fit-content;
   width: fit-content;
+  font-family: 'Gotham';
+  font-weight: 300;
 }
 
 .reg-btn :hover {
@@ -188,7 +190,7 @@
 }
 
 .rules-btn a {
-  font-family: 'Poppins';
+  font-family: 'Gotham';
   padding: 0px;
   height: fit-content;
   width: fit-content;

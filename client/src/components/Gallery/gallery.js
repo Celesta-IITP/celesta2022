@@ -22,7 +22,6 @@ const Photos = () => {
             style={{
               textAlign: "center",
               fontSize: "50px",
-              color: "#00FF00",
               marginTop: "50px",
               marginBottom: "50px",
             }}
