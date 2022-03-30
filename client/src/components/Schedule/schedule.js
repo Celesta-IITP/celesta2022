@@ -50,7 +50,7 @@ class schedule extends React.Component {
               <Card>
                 <CardHeader>
                   <Nav className="nav-tabs-info" role="tablist" tabs>
-                    <NavItem>
+                    {/* <NavItem>
                       <NavLink
                         className={classnames({
                           active: this.state.textTabs === 4
@@ -59,6 +59,17 @@ class schedule extends React.Component {
                         href="#pablo"
                       >
                         Guest Lectures
+                      </NavLink>
+                    </NavItem> */}
+                    <NavItem>
+                      <NavLink
+                        className={classnames({
+                          active: this.state.textTabs === 4
+                        })}
+                        onClick={e => this.toggleTabs(e, "textTabs", 4)}
+                        href="#pablo"
+                      >
+                        Events
                       </NavLink>
                     </NavItem>
                     <NavItem>
@@ -69,7 +80,7 @@ class schedule extends React.Component {
                         onClick={e => this.toggleTabs(e, "textTabs", 5)}
                         href="#pablo"
                       >
-                        Events
+                        Workshops
                       </NavLink>
                     </NavItem>
                   </Nav>
@@ -79,7 +90,7 @@ class schedule extends React.Component {
                     className="tab-space"
                     activeTab={"link" + this.state.textTabs}
                   >
-                    <TabPane tabId="link4">
+                    {/* <TabPane tabId="link4">
                     <TabPane tabId="tab1">
                           <Table className="tablesorter" responsive>
                           <thead className="text-primary">
@@ -166,12 +177,12 @@ class schedule extends React.Component {
                                 
                                 <td>17:00-18:00</td>
                               </tr> */}
-                            </tbody>
+                            {/*</tbody>
                             <h3>Coming Soon!!</h3>
                           </Table>
                         </TabPane>
-                    </TabPane>
-                    <TabPane tabId="link5">
+                    </TabPane> */}
+                    <TabPane tabId="link4">
 
                     <TabPane tabId="tab1">
                           <Table className="tablesorter" responsive>
@@ -242,6 +253,36 @@ class schedule extends React.Component {
                           </Table>
                         </TabPane>
                       
+                    </TabPane>
+                    <TabPane tabId="link5">
+                      <TabPane tabId="tab1">
+                        <Table className="tablesorter" responsive>
+                            <thead className="text-primary">
+                              <tr>
+                                <th className="header">Workshop</th>
+                                <th className="header" style={{ textAlign: "center"}}>Date</th>
+                                <th className="header" style={{ textAlign: "center"}}>Paid/Non-Paid</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Nvidia DLI Workshop</td>
+                                <td>9th April 2022</td>
+                                <td>Not Paid</td>
+                              </tr>
+                              <tr>
+                                <td>The Ledger Workshop</td>
+                                <td>10th April 2022</td>
+                                <td>Not Paid</td>
+                              </tr>
+                              <tr>
+                                <td>Robotic Workshop And Hackathon</td>
+                                <td>11th - 17th April 2022</td>
+                                <td>Paid</td>
+                              </tr>
+                            </tbody>
+                        </Table>
+                      </TabPane>
                     </TabPane>
                   </TabContent>
                 </CardBody>
