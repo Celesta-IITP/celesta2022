@@ -118,9 +118,11 @@ class ComponentsNavbar extends React.Component {
               <nav>
                 <ul className="cd-secondary-nav">
                   <li>
+                  <NavLink href="/events-page" className="navbar-list">
                     <Button >
-                      <NavLink href="/events-page" className="navbar-list">Events</NavLink>
+                      Events
                     </Button>
+                  </NavLink>
                   </li>
                   {/* <li>
                     <Button >
@@ -128,9 +130,11 @@ class ComponentsNavbar extends React.Component {
                     </Button>
                   </li> */}
                   <li>
+                  <NavLink href="/register-page" className="navbar-list">
                     <Button >
-                      <NavLink href="/register-page" className="navbar-list">Register</NavLink>
+                      Register
                     </Button>
+                  </NavLink>
                   </li>
                   {/* <NavItem>
                     <NavLink href="/signin-page">Login</NavLink>

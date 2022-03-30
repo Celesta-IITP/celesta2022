@@ -20,7 +20,7 @@ function EventBox({name, desc, date, img, form, rules, setForm, setImage, setOpe
         <img className="event-image" src={img || bgImage} />
         <div className="btn-row">
         {rules ? <button className="rules-btn"><a href={rules}>Rulebook</a></button> : null}
-        {!form ? null : form.includes('dare2compete') ? <a className="reg-btn" target="_blank" href={form}>Register</a> : <button className="reg-btn" onClick={() => {
+        {!form ? null : form.includes('dare2compete') ? <button className="reg-btn"><a target="_blank" href={form}>Register</a></button> : <button className="reg-btn" onClick={() => {
             setForm(form); 
             setImage(img); 
             setOpen(true);
