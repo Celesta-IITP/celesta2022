@@ -39,9 +39,25 @@
     margin: 2px !important;
 }
 
+@media (min-width: 1200px){
 .youtube-container {
     width: 70%;
-    height: 100vh;
+    height: 85vh;
+}
+}
+
+@media (max-width: 1200px){
+    .youtube-container{
+        width: 90%;
+        height: 600px;
+    }
+}
+
+@media (max-width: 750px){
+    .youtube-container{
+        width: 90%;
+        height: 300px;
+    }
 }
 
 .ca_img {
