@@ -5,9 +5,11 @@
   overflow: hidden;
   position: relative;
   /* background-image: url('../../assets/img/newimg/celestafrontimg.png'); */
-  background-image: url('../../assets/img/landing.png');
+  /* background-image: url('../../assets/img/landing.png'); */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../assets/img/landing.png');
   background-repeat: no-repeat;
   background-size: cover;
+  
 }
 .landing-page-main {
   position: relative;
@@ -75,7 +77,17 @@
 .logo-landing {
   position: absolute;
   bottom: 30px;
-  align-self: center;
+  width: 30%;
+  left: 35%;
+}
+
+@media screen and (max-width: 750px) {
+  .logo-landing {
+    position: absolute;
+    bottom: 30px;
+    width: 50%;
+    left: 25%;
+  }
 }
 
 .layer {
