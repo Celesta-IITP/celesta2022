@@ -23,7 +23,7 @@ class Footer extends React.Component {
 							<p>Celesta is the annual Techno-Management Fest of IIT Patna. To promote technical and managerial enthusiasm amongst young and bright minds of our nation and to provide a platform to transform their innovative ideas into a meaningful reality.</p>
 							<div className="hr">
 							<h6>Indian Institute of Technology Patna ,<br/>Bihta Patna-801103 (Bihar)</h6>
-							<h6>+91 8708 945 855<span>|</span>+91 7352 862 047</h6>
+							<h6><a href="tel:+918708945855">+91 8708 945 855</a><span>|</span><a href="tel:+917352862047">+91 7352 862 047</a></h6>
 							<div className="contact-social">
 								<ul>
 									<li><a className="hover-target" href="https://www.facebook.com/CelestaIITP" target="_blank"><i className="fab fa-facebook-square"></i></a></li>

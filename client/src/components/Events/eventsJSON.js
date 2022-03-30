@@ -234,6 +234,8 @@ export const eventsList = [
     "date": "3rd April",
     "img": beg,
     "form": "https://docs.google.com/forms/d/1rE0GAH4QqXjIO7rnLqrAaJL3fhrVS-ArC1oBFAiCX1E/viewform",
-    "rules": ""
+    "rules": "",
+    "online": "TRUE",
+    "restricted": "TRUE",
   }
 ]

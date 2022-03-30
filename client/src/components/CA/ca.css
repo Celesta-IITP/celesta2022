@@ -21,7 +21,7 @@
   }
 }
 body .ca {
-  height: auto;
+  height: 100vh;
   width: 100%;
   border: 0;
   margin: 0;
@@ -35,7 +35,7 @@ p .ca {
 .ca .homes {
   /*height: auto;*/
   /*background: linear-gradient(to top right, #fc144e 0%, #6c4079 100%) no-repeat;*/
-  background: url("1876.jpg") no-repeat center center fixed;
+  background: linear-gradient(rgba(30, 65, 9, 0.5), rgba(30,65,9,0.5)), url("1876.png") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   padding: 15vh 4vw 10vh 4vw !important;
@@ -49,7 +49,7 @@ p .ca {
   margin: 5vh auto;
   color: #ffffff;
   font-family: 'Gotham';
-  font-weight: 350;
+  font-weight: bolder;
   text-align: center;
   line-height: 1.1;
 }
@@ -62,6 +62,9 @@ p .ca {
   font-weight: 300;
   text-align: center;
   color: #f0f0f0;
+  background-color: rgb(34,42,13, 0.6);
+  border-radius: 20px;
+  padding: 20px;
 }
 
 .ca .btn-outline-dark {
@@ -99,7 +102,7 @@ p .ca {
 .ca .features-headline {
   padding: 0vh 15vw;
   margin-top: 5vh;
-  color: #e681bf;
+  color: #bfe053;
   font-family: 'Gotham';
   font-weight: 400;
   text-align: center;
@@ -120,7 +123,7 @@ p .ca {
   margin-bottom: 2vh;
   font-size: 1.8rem;
   font-weight: 700;
-  color: #e681bf;
+  color: #bfe053;
   font-family: 'Gotham';
 }
 
@@ -383,4 +386,8 @@ p .ca {
 .ca .container h1 {
   margin-top: 50vh;
   text-align: center;
+}
+
+.btn-round {
+  background-color: #bfe053;
 }
