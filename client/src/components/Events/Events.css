@@ -144,6 +144,7 @@
   height: fit-content;
   width: fit-content;
   font-family: 'Gotham';
+  font-weight: 300;
 }
 
 .reg-btn :hover {
