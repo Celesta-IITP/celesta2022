@@ -105,14 +105,16 @@ const teamdata = [
             },
             {
                 "name" : "Debarghya Maity",
-                "image" :  "https://i.ibb.co/JC4skS0/team-animate.jpg",
+                // "image" :  "https://i.ibb.co/JC4skS0/team-animate.jpg",
+                "image" :   require("../../assets/img/CORDS/Debargya.jpeg"),
                 "position" : "",
                 "fb" : "www.fb.com",
                 "ln" : "www.linkedin.com",
             },
             {
                 "name" : "Darshil Patel",
-                "image" :  "https://i.ibb.co/JC4skS0/team-animate.jpg",
+                // "image" :  "https://i.ibb.co/JC4skS0/team-animate.jpg",
+                "image" :   require("../../assets/img/CORDS/Darshil.jpeg"),
                 "position" : "",
                 "fb" : "www.fb.com",
                 "ln" : "www.linkedin.com",

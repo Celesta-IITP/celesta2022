@@ -9,6 +9,8 @@ import RegistrationModal from "./RegistrationModal";
 import { eventsList } from "./eventsJSON";
 import Footer from "components/Footer/Footer";
 import bgImage from '../../assets/img/newimg/celestafrontimg.png';
+import onlineIcon from '../../assets/img/online.svg';
+import offlineIcon from '../../assets/img/offline.svg';
 import { workshops } from "./workshopJSON";
 
 import {
@@ -26,7 +28,7 @@ import {
   NavLink
 } from "reactstrap";
 
-function EventBox({name, desc, date, img, form, rules, setForm, setImage, setOpen}) {
+function EventBox({name, desc, date, img, form, rules, online, restricted, setForm, setImage, setOpen}) {
   return(
     <div id="event-box">
         <div className="event-text">
@@ -34,6 +36,8 @@ function EventBox({name, desc, date, img, form, rules, setForm, setImage, setOpe
           <div className="event-date">{date}</div>
           <div className="event-desc">{desc}</div>
         </div>
+        {restricted ? <div className="event-comment">*Only for IITP students</div> : null}
+        {/* <img className="status-icon" src={online ? onlineIcon : offlineIcon} alt={online ? "Online Event" : "Offline Event"}/> */}
         <img className="event-image" src={img || bgImage} />
         <div className="btn-row">
         {rules ? <button className="rules-btn"><a href={rules}>Rulebook</a></button> : null}
@@ -157,9 +161,9 @@ function Events() {
         </div>
         <div className="events-grid">
           {toggleState === 1 ? eventsList.map((item) => {
-            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
+            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
           }) : workshops.map((item) => {
-            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
+            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
           })}
         </div>
         <Footer />
