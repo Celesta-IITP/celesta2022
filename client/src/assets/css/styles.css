@@ -5,9 +5,11 @@
   overflow: hidden;
   position: relative;
   /* background-image: url('../../assets/img/newimg/celestafrontimg.png'); */
-  background-image: url('../../assets/img/landing.png');
+  /* background-image: url('../../assets/img/landing.png'); */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../assets/img/landing.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 .landing-page-main {
   position: relative;
@@ -75,21 +77,35 @@
 .logo-landing {
   position: absolute;
   bottom: 30px;
-  align-self: center;
+  width: 30%;
+  left: 35%;
+}
+
+@media screen and (max-width: 750px) {
+  .logo-landing {
+    position: absolute;
+    bottom: 30px;
+    width: 50%;
+    left: 25%;
+  }
 }
 
 .layer {
   position: absolute;
-  z-index: 2;
   height: 100%;
   width: 100%;
+  /* top: 0px; */
+  top: 0pt;
+  object-fit: cover;
+  filter: brightness(40%);
+  z-index: 6;
 }
 
-.layer img {
-  /* object-fit: cover; */
+/* .layer img {
+  object-fit: cover;
   height: 100%;
   width: 100%;
-}
+} */
 
 .clouds img {
   height: 250px;

@@ -112,9 +112,9 @@ function Header() {
           // className='clouds'
         />
         </div>
-        <div className="layer">
-          <img src={require("../../assets/img/cubetp.png")} />
-        </div>
+        {/* <div className="layer"> */}
+          <img className="layer" src={require("../../assets/img/cubetp.png")} />
+        {/* </div> */}
 
         <img className="logo-landing" src={require("../../assets/img/newimg/celestalogo.png")} />
         

@@ -72,7 +72,7 @@ body {
 @media only screen and (min-width: 768px) {
   .cd-header {
     height: 80px;
-    background: black;
+    background: transparent;
     box-shadow: none;
   }
 }

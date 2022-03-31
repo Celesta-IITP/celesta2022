@@ -95,6 +95,23 @@
   z-index: 2;
 }
 
+.event-comment {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  font-size: 10px;
+  z-index: 2;
+  font-weight: lighter;
+}
+
+.status-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 20px;
+  z-index: 2;
+}
+
 .event-name {
   font-size: 30px;
   font-family: 'Gotham';
@@ -133,6 +150,16 @@
   filter: brightness(40%);
   border: 2px solid #658401;
   border-radius: 20px;
+}
+
+#event-box a {
+  font-family: 'Gotham';
+}
+
+#event-box a :hover {
+  background-color: #658401;
+  transform: scale(1.05);
+  color: #59aecb;
 }
 
 /* #event-box button {

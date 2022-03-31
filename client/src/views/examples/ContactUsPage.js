@@ -113,9 +113,9 @@ class ContactUsPage extends React.Component {
                     >
                       <blockquote>
                         <p className="blockquote blockquote-info">
-                          Aakanksha :- +91 8708 945 855
+                          Aakanksha :- <a href="tel:+918708945855">+91 8708 945 855</a>
                           <br />
-                          Satyam :- +91 7352 862 047
+                          Satyam :- <a href="tel:+917352862047">+91 7352 862 047</a>
                           <br />
                           
                           {/* <br /> */}

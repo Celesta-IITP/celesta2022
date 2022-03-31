@@ -60,9 +60,10 @@ a:hover {
 .cd-header {
   position: fixed;
   width: 100%;
-  top: 0;
+  top: 10;
   left: 0;
   z-index: 100;
+  background: none;
 }
 .header-wrapper {
   position: relative;
