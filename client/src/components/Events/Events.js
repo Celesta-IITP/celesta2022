@@ -2,6 +2,7 @@ import React, { useState, useEffect, Component } from "react";
 import classnames from "classnames";
 import { Link, Redirect } from "react-router-dom";
 import { EventsFunctions } from "./EventsFunctions";
+import TshirtModal from "components/Merchandise/TshirtModal";
 import "./Events.css";
 import IndexNavbar from "../Navbars/IndexNavbar";
 import {Button} from 'reactstrap'
@@ -12,6 +13,8 @@ import bgImage from '../../assets/img/newimg/celestafrontimg.png';
 import onlineIcon from '../../assets/img/online.svg';
 import offlineIcon from '../../assets/img/offline.svg';
 import { workshops } from "./workshopJSON";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 import {
   TabContent,
@@ -28,7 +31,7 @@ import {
   NavLink
 } from "reactstrap";
 
-function EventBox({name, desc, date, img, form, rules, online, restricted, setForm, setImage, setOpen, submission}) {
+function EventBox({name, desc, date, img, form, rules, submission, online, restricted, setForm, setImage, setOpen}) {
   return(
     <div id="event-box">
         <div className="event-text">
@@ -46,6 +49,7 @@ function EventBox({name, desc, date, img, form, rules, online, restricted, setFo
             setImage(img); 
             setOpen(true);
         }}>Register</button>}
+        {/* {submission ? <button className="rules-btn"><a href={submission}>Submission</a></button> : null} */}
         {!submission ? null : <button className="reg-btn" onClick={() => {
             setForm(submission); 
             setImage(img); 
@@ -77,18 +81,9 @@ function getEventForm(slug) {
   return cond;
 }
 
-const events = [
-  {
-    name: "Athul",
-    desc: "Sharma",
-    img: "https://s3.india.com/travel/wp-content/uploads/2018/02/Satara-photo-2.jpg",
-    form: "https://docs.google.com/forms/d/e/1FAIpQLSdRPcp2wHppIp4s71Vk_iC0sQjHHC4ulid9wuPTaS11SNlh_g/viewform",
-    slug: 'celesta',
-  },
-]
-
 function Events() {
     const [open, setOpen] = useState(false);
+    // const [open1, setOpen1] = useState(false);
     const [image, setImage] = useState('');
     const [form, setForm] = useState('https://docs.google.com/forms/d/e/1FAIpQLSdRPcp2wHppIp4s71Vk_iC0sQjHHC4ulid9wuPTaS11SNlh_g/viewform');
     //const [submission, setSubmission] = useState('https://docs.google.com/forms/d/e/1FAIpQLSck-cn2SiXFbDoToJrYW8S_oCWq_Cj2eRs8PxqkZJ_lMOjbUg/viewform');
@@ -142,7 +137,22 @@ function Events() {
     return (
       <div className="events-container">
         <IndexNavbar style={{ backgroundColor: "black" }}/>
-        
+        {/* <Carousel autoPlay infiniteLoop interval={1000} showThumbs={false} showIndicators={false} showStatus={false}>
+                <div className="carosuel-div">
+                    <img src={bgImage} />
+                    <p className="legend">Legend 1</p>
+                </div>
+                <div className="carosuel-div">
+                    <img src={onlineIcon} />
+                    <p className="legend">Legend 2</p>
+                </div>
+                <div className="carosuel-div">
+                    <img src="assets/3.jpeg" />
+                    <p className="legend">Legend 3</p>
+                </div>
+            </Carousel>
+         */}
+         {/* <TshirtModal open={open1} onClose={() => {setOpen1(false)}} /> */}
         <RegistrationModal open={open} onClose={() => {setOpen(false)}} img={image} form={form} />
           <div className="event-nav">
           <ul>

@@ -1,0 +1,93 @@
+.tshirt-modal-box {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    width: 70%;
+    /* background-color: #fff; */
+    border-radius: 20px;
+    color: #fff;
+}
+
+@media screen and (max-width: 1300px) {
+    .tshirt-modal-box {
+        flex-direction: column;
+        /* background: linear-gradient(rgba(124, 20, 194, 0.5), rgba(155, 20, 148, 0.5)), url('../../assets/img/1876.png');
+        background-size: cover;
+        background-position: center; */
+        border-radius: 20px;
+        width: 90%;
+        left: 5%;
+    }
+    .tshirt-modal-text {
+        position: absolute;
+        z-index: 2;
+        background: none;
+        border-radius: 20px;
+    }
+    .tshirt-poster {
+        position: absolute;
+        z-index: 1;
+        height: 300px;
+        border: 20px;
+    }
+}
+
+.tshirt-poster {
+    border-radius: 20px 0px 0px 20px;
+}
+
+.tshirt-modal-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: linear-gradient(rgba(124, 20, 194, 0.5), rgba(155, 20, 148, 0.5)), url('../../assets/img/1876.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.tshirt-form-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.tshirt-form-link {
+    color: #000;
+    background-color: #595bcb;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.tshirt-form-link :hover {
+    background-color: blue;
+}
+
+.tshirt-modal-text a {
+    color: #000;
+}
+
+.tshirt-punchline {
+    font-size: 25px;
+    text-align: center;
+}
+
+.tshirt-order {
+    font-weight: light;
+}
+
+.tshirt-iitp {
+    font-weight: light;
+}
+
+.tshirt-img {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}

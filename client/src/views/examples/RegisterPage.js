@@ -51,7 +51,7 @@ class RegisterPage extends React.Component {
     college: "",
     refId: "",
     phone: "",
-    dob: "DD/MM/YYYY",
+    dob: "",
     msg: "",
     temp: "0",
     dropdownOpen: false,
@@ -177,7 +177,7 @@ class RegisterPage extends React.Component {
       password: "",
       college: "",
       refId: "",
-      dob: "dd-mm-yyyy",
+      dob: "",
     });
     console.log(this.state.name);
   };
@@ -209,6 +209,19 @@ class RegisterPage extends React.Component {
     this.setState({ sex: e.currentTarget.textContent });
   };
   render() {
+    function formatDate (input) {
+      if(!input) {
+        return(input)
+      }
+      var datePart = input.match(/\d+/g);
+      var year = datePart[0]; // get only two digits
+      var month = datePart[1], day = datePart[2];
+    
+      return (day+'/'+month+'/'+year);
+    }
+
+    console.log(formatDate('2022/04/20'))
+
     const { msg } = this.state;
     return (
       <>
@@ -337,7 +350,6 @@ class RegisterPage extends React.Component {
                               }
                               onChange={(e) => {
                                 this.setState({ email: e.target.value});
-                                console.log(this.state.email);
                               }}
                             />
                             {/* <Input 
@@ -380,14 +392,16 @@ class RegisterPage extends React.Component {
                             </InputGroupAddon>
                             <Input
                               placeholder="Date of birth"
-                              type="date"
-                              value={this.state.dob}
-                              onFocus={(e) => this.setState({ dobFocus: true })}
-                              onBlur={(e) => this.setState({ dobFocus: false })}
+                              type="text"
+                              value={formatDate(this.state.dob)}
+                              onFocus={(e) => {this.setState({ dobFocus: true}); e.target.type = 'date'; e.target.value = this.state.dob}}
+                              onBlur={(e) => {this.setState({ dobFocus: false }); e.target.type = 'text'; e.target.value = formatDate(this.state.dob)}}
                               onChange={(e) => {
                                 this.setState({ dob: e.target.value });
+                                console.log(this.state.dob)
                               }}
                             />
+                            {/* <input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" id="date"></input> */}
                           </InputGroup>
                           <InputGroup
                             className={classnames({
