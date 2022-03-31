@@ -28,7 +28,7 @@ import {
   NavLink
 } from "reactstrap";
 
-function EventBox({name, desc, date, img, form, rules, online, restricted, setForm, setImage, setOpen}) {
+function EventBox({name, desc, date, img, form, rules, online, restricted, setForm, setImage, setOpen, submission}) {
   return(
     <div id="event-box">
         <div className="event-text">
@@ -43,6 +43,11 @@ function EventBox({name, desc, date, img, form, rules, online, restricted, setFo
         {rules ? <button className="rules-btn"><a href={rules}>Rulebook</a></button> : null}
         {!form ? null : form.includes('dare2compete') ? <button className="reg-btn"><a target="_blank" href={form}>Register</a></button> : <button className="reg-btn" onClick={() => {
             setForm(form); 
+            setImage(img); 
+            setOpen(true);
+        }}>Register</button>}
+        {!submission ? null : <button className="reg-btn" onClick={() => {
+            setForm(submission); 
             setImage(img); 
             setOpen(true);
         }}>Register</button>}
@@ -86,7 +91,7 @@ function Events() {
     const [open, setOpen] = useState(false);
     const [image, setImage] = useState('');
     const [form, setForm] = useState('https://docs.google.com/forms/d/e/1FAIpQLSdRPcp2wHppIp4s71Vk_iC0sQjHHC4ulid9wuPTaS11SNlh_g/viewform');
-
+    //const [submission, setSubmission] = useState('https://docs.google.com/forms/d/e/1FAIpQLSck-cn2SiXFbDoToJrYW8S_oCWq_Cj2eRs8PxqkZJ_lMOjbUg/viewform');
     const [toggleState, setToggleState] = useState(1);
 
     const toggleTab = (index) => {
@@ -142,28 +147,28 @@ function Events() {
           <div className="event-nav">
           <ul>
             <li>
-            <Button
-              className={toggleState === 1 ? "events-tab events-tab-active" : "events-tab"}
-              onClick={() => toggleTab(1)} 
-            >
-              Events
-            </Button>
-          </li>
-          <li>
-            <Button
-              className={toggleState === 2 ? "events-tab events-tab-active" : "events-tab"}
-              onClick={() => toggleTab(2)}
-            >
-              Workshops
-            </Button>
-          </li>
+              <Button
+                className={toggleState === 1 ? "events-tab events-tab-active" : "events-tab"}
+                onClick={() => toggleTab(1)} 
+              >
+                Events
+              </Button>
+            </li>
+            <li>
+              <Button
+                className={toggleState === 2 ? "events-tab events-tab-active" : "events-tab"}
+                onClick={() => toggleTab(2)}
+              >
+                Workshops
+              </Button>
+            </li>
           </ul>
         </div>
         <div className="events-grid">
           {toggleState === 1 ? eventsList.map((item) => {
-            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
+            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} submission={item.submission} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
           }) : workshops.map((item) => {
-            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
+            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} submission={item.submission} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
           })}
         </div>
         <Footer />
