@@ -23,8 +23,8 @@ export const workshops = [
         "name": "Robotic Workshop And Hackathon",
         "desc": "Learn from scratch how to make a ROS based which can traverse autonomously in complex terrains and implement all learings in Hackathon.",
         "date": "11th- 17th April",
-        "img": the_ledger_web,
-        "form": "https://forms.gle/jX372QxucqMJpTa26",
+        "img": ros_web,
+        "form": "https://docs.google.com/forms/d/e/1FAIpQLSePldiuoBlTbUMX98a4MMm_MXJLwXB2v4gdpYFwtm5uOXde6w/viewform",
         "rules": ""
     }
 ]
