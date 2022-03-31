@@ -8,7 +8,7 @@ export const workshops = [
         "desc": "Learn how to analyze and gain skills in Deep Learning effectively from scratch and learn about the invariable future of AI and Automation.",
         "date": "9th April",
         "img": deep_learning_web,
-        "form": "https://forms.gle/4oeVFu8wV19MKi928",
+        "form": "https://docs.google.com/forms/d/e/1FAIpQLSfX6YYpfou2wPDn4huCzyGqq1Le5IFa_iHj53ZWhKRvTS_QuA/viewform",
         "rules": ""
     },
     {
@@ -16,7 +16,7 @@ export const workshops = [
         "desc": "Learn basics of NFTs, blockchain & it's applications effectively from scratch & get a chance to win free NFTs after completion of assignments.",
         "date": "10th April",
         "img": the_ledger_web,
-        "form": "https://forms.gle/z8h55kKA9GKhmrDX6",
+        "form": "https://docs.google.com/forms/d/e/1FAIpQLSd_Fn3DcCARS9kR_awdHr5nu3TlK09MmqHUHQcVNYpBk85KiA/viewform",
         "rules": ""
     },
     {

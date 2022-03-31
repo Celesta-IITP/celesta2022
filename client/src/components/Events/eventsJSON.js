@@ -200,7 +200,8 @@ export const eventsList = [
     "date": "27th March - 3 April",
     "img": hack,
     "form": "https://docs.google.com/forms/d/e/1FAIpQLScklMeO95IEvda3LU5n0Gt2jjsKoKapB1hzxo7r74WgOtsfGg/viewform",
-    "rules": "https://docs.google.com/document/d/1c567Omi-2mdTx3aiZf3ojV-jp36PbG4hvZzMHoOw6_U/edit"
+    "rules": "https://docs.google.com/document/d/1c567Omi-2mdTx3aiZf3ojV-jp36PbG4hvZzMHoOw6_U/edit",
+    "submission": "https://docs.google.com/forms/d/e/1FAIpQLSck-cn2SiXFbDoToJrYW8S_oCWq_Cj2eRs8PxqkZJ_lMOjbUg/viewform"
   },
   {
     "name": "Brand-Verse",
