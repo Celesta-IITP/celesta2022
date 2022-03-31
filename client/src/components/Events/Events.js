@@ -78,7 +78,7 @@ function getEventForm(slug) {
 
 function Events() {
     const [open, setOpen] = useState(false);
-    const [open1, setOpen1] = useState(false);
+    // const [open1, setOpen1] = useState(false);
     const [image, setImage] = useState('');
     const [form, setForm] = useState('https://docs.google.com/forms/d/e/1FAIpQLSdRPcp2wHppIp4s71Vk_iC0sQjHHC4ulid9wuPTaS11SNlh_g/viewform');
 
@@ -147,7 +147,7 @@ function Events() {
                 </div>
             </Carousel>
          */}
-         <TshirtModal open={open1} onClose={() => {setOpen1(false)}} />
+         {/* <TshirtModal open={open1} onClose={() => {setOpen1(false)}} /> */}
         <RegistrationModal open={open} onClose={() => {setOpen(false)}} img={image} form={form} />
           <div className="event-nav">
           <ul>
@@ -176,7 +176,6 @@ function Events() {
             return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
           })}
         </div>
-        <div onClick={() => {setOpen1(true)}}>Hehe</div>
         <Footer />
       </div>
     );
