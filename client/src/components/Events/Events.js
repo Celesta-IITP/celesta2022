@@ -50,7 +50,7 @@ function EventBox({name, desc, date, img, form, rules, online, restricted, setFo
             setForm(submission); 
             setImage(img); 
             setOpen(true);
-        }}>Register</button>}
+        }}>Submit</button>}
         </div>
         {/* <iframe src={form + '?embedded=true'} width="640" height="947" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
     </div>
