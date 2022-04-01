@@ -50,7 +50,7 @@ class schedule extends React.Component {
               <Card>
                 <CardHeader>
                   <Nav className="nav-tabs-info" role="tablist" tabs>
-                    {/* <NavItem>
+                    <NavItem>
                       <NavLink
                         className={classnames({
                           active: this.state.textTabs === 4
@@ -60,13 +60,13 @@ class schedule extends React.Component {
                       >
                         Guest Lectures
                       </NavLink>
-                    </NavItem> */}
+                    </NavItem>
                     <NavItem>
                       <NavLink
                         className={classnames({
-                          active: this.state.textTabs === 4
+                          active: this.state.textTabs === 5
                         })}
-                        onClick={e => this.toggleTabs(e, "textTabs", 4)}
+                        onClick={e => this.toggleTabs(e, "textTabs", 5)}
                         href="#pablo"
                       >
                         Events
@@ -75,9 +75,9 @@ class schedule extends React.Component {
                     <NavItem>
                       <NavLink
                         className={classnames({
-                          active: this.state.textTabs === 5
+                          active: this.state.textTabs === 6
                         })}
-                        onClick={e => this.toggleTabs(e, "textTabs", 5)}
+                        onClick={e => this.toggleTabs(e, "textTabs", 6)}
                         href="#pablo"
                       >
                         Workshops
@@ -90,7 +90,7 @@ class schedule extends React.Component {
                     className="tab-space"
                     activeTab={"link" + this.state.textTabs}
                   >
-                    {/* <TabPane tabId="link4">
+                    <TabPane tabId="link4">
                     <TabPane tabId="tab1">
                           <Table className="tablesorter" responsive>
                           <thead className="text-primary">
@@ -103,31 +103,31 @@ class schedule extends React.Component {
                               </tr>
                             </thead>
                             <tbody>
-                              {/* <tr>
-                                <td>Dr. Shankar Venugopal</td>
-                                <td>DESIrable Skills for the Future</td>
+                              <tr>
+                                <td>Haren Chelle</td>
+                                <td>The StartUp Growth Journey</td>
                                 <td>Saturday</td>
-                                <td>12/12/20</td>
+                                <td>02/04/22</td>
                                 
-                                <td>10:00-11:00</td>
+                                <td>15:00-16:00</td>
                               </tr>
                               <tr>
-                                <td>Avelo roy</td>
-                                <td>Business Model</td>
-                                <td>Saturday</td>
-                                <td>12/12/20</td>
-                                
-                                <td>17:00-18:00</td>
-                              </tr>
-                              <tr>
-                                <td>Rakesh malhotra</td>
-                                <td>Enterpreneurship</td>
+                                <td>Prateek Kishore</td>
+                                <td>Transforming Challenges into Opportunities</td>
                                 <td>Sunday</td>
-                                <td>13/12/20</td>
+                                <td>03/04/22</td>
                                 
-                                <td>10:00-11:00</td>
+                                <td>12:00-13:00</td>
                               </tr>
                               <tr>
+                                <td>Anil Kakodkar</td>
+                                <td>Clean Energy Transition</td>
+                                <td>Tuesday</td>
+                                <td>05/04/22</td>
+                                
+                                <td>17:30-18:30</td>
+                              </tr>
+                              {/* <tr>
                                 <td>Shiraz Minwalla</td>
                                 <td>The search for Quantum Gravity</td>
                                 <td>Thursday</td>
@@ -177,12 +177,11 @@ class schedule extends React.Component {
                                 
                                 <td>17:00-18:00</td>
                               </tr> */}
-                            {/*</tbody>
-                            <h3>Coming Soon!!</h3>
+                            </tbody>
                           </Table>
                         </TabPane>
-                    </TabPane> */}
-                    <TabPane tabId="link4">
+                    </TabPane>
+                    <TabPane tabId="link5">
 
                     <TabPane tabId="tab1">
                           <Table className="tablesorter" responsive>
@@ -254,7 +253,7 @@ class schedule extends React.Component {
                         </TabPane>
                       
                     </TabPane>
-                    <TabPane tabId="link5">
+                    <TabPane tabId="link6">
                       <TabPane tabId="tab1">
                         <Table className="tablesorter" responsive>
                             <thead className="text-primary">

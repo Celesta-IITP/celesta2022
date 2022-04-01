@@ -13,6 +13,7 @@ import bgImage from '../../assets/img/newimg/celestafrontimg.png';
 import onlineIcon from '../../assets/img/online.svg';
 import offlineIcon from '../../assets/img/offline.svg';
 import { workshops } from "./workshopJSON";
+import guestLecture from './guestlecture'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -30,8 +31,9 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
+import { guestLectures } from "./guestlecture";
 
-function EventBox({name, desc, date, img, form, rules, submission, online, restricted, setForm, setImage, setOpen}) {
+function EventBox({name, desc, date, img, form, rules, online, restricted, youtube, setForm, setImage, setOpen, submission}) {
   return(
     <div id="event-box">
         <div className="event-text">
@@ -55,6 +57,7 @@ function EventBox({name, desc, date, img, form, rules, submission, online, restr
             setImage(img); 
             setOpen(true);
         }}>Submit</button>}
+        {!youtube? null : <button className="rules-btn"><a href="https://www.youtube.com/c/CelestaIITPatna" target="_blank">Watch Live</a></button>}
         </div>
         {/* <iframe src={form + '?embedded=true'} width="640" height="947" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
     </div>
@@ -172,13 +175,23 @@ function Events() {
                 Workshops
               </Button>
             </li>
+            <li>
+              <Button
+                className={toggleState === 3 ? "events-tab events-tab-active" : "events-tab"}
+                onClick={() => toggleTab(3)}
+              >
+                Guest Lectures
+              </Button>
+            </li>
           </ul>
         </div>
         <div className="events-grid">
           {toggleState === 1 ? eventsList.map((item) => {
             return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} submission={item.submission} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
-          }) : workshops.map((item) => {
+          }) : toggleState ===2 ? workshops.map((item) => {
             return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} submission={item.submission} online={item.online} restricted={item.restricted} setForm={setForm} setImage={setImage} setOpen={setOpen} />)
+          }) : guestLectures.map((item) => {
+            return(<EventBox name={item.name} desc={item.desc} date={item.date} img={item.img} form={item.form} rules={item.rules} submission={item.submission} online={item.online} restricted={item.restricted} youtube="TRUE" setForm={setForm} setImage={setImage} setOpen={setOpen} />)
           })}
         </div>
         <Footer />
