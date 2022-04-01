@@ -30,8 +30,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { refreshPage } from "../redux/actions/authActions";
 import Timer from "views/IndexSections/Timer.js";
 import CustomizedSnackbars from "./examples/snackBar";
+import TshirtModal from "components/Merchandise/TshirtModal.jsx";
 import { NavLink } from "reactstrap";
 class Index extends React.Component {
+  // constructor(){
+    state={open: false}
+  // }
   refreshFunction = async () => {
     await this.props.refreshPage(JSON.parse(localStorage.getItem("user")));
   };
@@ -54,6 +58,8 @@ class Index extends React.Component {
     return (
       <div>
         <IndexNavbar />
+        <TshirtModal open={this.state.open} onClose={() => {this.setState({open: false})}} />
+        <div className="tshirt-logo" onClick={() => {this.setState({open: true})}}>Official Celesta'22 Tshirt</div>
         <div className="wrapper bg">
           <Header />
           <div className="main">
